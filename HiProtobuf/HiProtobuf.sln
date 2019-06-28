@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HiProtobufUI", "HiProtobufUI\HiProtobufUI.csproj", "{D9CD206B-0BCB-41A4-BCE0-9CE5C1F9E212}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HiProtobufLib", "HiProtobufLib\HiProtobufLib.csproj", "{F564D060-5A3F-43C4-8E1B-10F22D536B1D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D9CD206B-0BCB-41A4-BCE0-9CE5C1F9E212}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9CD206B-0BCB-41A4-BCE0-9CE5C1F9E212}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9CD206B-0BCB-41A4-BCE0-9CE5C1F9E212}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9CD206B-0BCB-41A4-BCE0-9CE5C1F9E212}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F564D060-5A3F-43C4-8E1B-10F22D536B1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F564D060-5A3F-43C4-8E1B-10F22D536B1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F564D060-5A3F-43C4-8E1B-10F22D536B1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F564D060-5A3F-43C4-8E1B-10F22D536B1D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {933D48B5-61FA-4E53-8C58-D48632F885CD}
+	EndGlobalSection
+EndGlobal
