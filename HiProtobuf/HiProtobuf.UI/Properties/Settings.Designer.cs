@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace HiProtobufUI.Properties
+namespace HiProtobuf.UI.Properties
 {
 
 

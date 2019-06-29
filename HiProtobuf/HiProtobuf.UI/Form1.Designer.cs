@@ -1,4 +1,4 @@
-﻿namespace HiProtobufUI
+﻿namespace HiProtobuf.UI
 {
     partial class Form1
     {

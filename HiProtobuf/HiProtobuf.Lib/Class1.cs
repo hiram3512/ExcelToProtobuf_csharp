@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HiProtobufLib
+namespace HiProtobuf.Lib
 {
     public class Class1
     {
