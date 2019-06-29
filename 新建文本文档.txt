@@ -1,0 +1,1 @@
+--proto_path=D:\MyGit\github\HiProtobuf\Proto --csharp_out=D:\MyGit\github\HiProtobuf\Generate\csharp D:\MyGit\github\HiProtobuf\Proto\addressbook.proto
