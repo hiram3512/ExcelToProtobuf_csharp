@@ -1,4 +1,5 @@
 ﻿using System;
+using HiProtobuf.Lib;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace HiProtobuf.Test
@@ -7,8 +8,10 @@ namespace HiProtobuf.Test
     public class UnitTest1
     {
         [TestMethod]
-        public void TestMethod1()
+        public void TestExcelFolder()
         {
+            var handler = new ExcelHandler();
+            handler.Export();
         }
     }
 }

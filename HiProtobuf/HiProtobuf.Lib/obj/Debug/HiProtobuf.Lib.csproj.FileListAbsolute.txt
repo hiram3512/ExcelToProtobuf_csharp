@@ -7,3 +7,4 @@ D:\MyGit\github\HiProtobuf\HiProtobuf\HiProtobuf.Lib\obj\Debug\HiProtobuf.Lib.cs
 D:\MyGit\github\HiProtobuf\HiProtobuf\HiProtobuf.Lib\obj\Debug\HiProtobuf.Lib.csproj.CopyComplete
 D:\MyGit\github\HiProtobuf\HiProtobuf\HiProtobuf.Lib\obj\Debug\HiProtobuf.Lib.dll
 D:\MyGit\github\HiProtobuf\HiProtobuf\HiProtobuf.Lib\obj\Debug\HiProtobuf.Lib.pdb
+D:\MyGit\github\HiProtobuf\HiProtobuf\HiProtobuf.Lib\bin\Debug\Google.Protobuf.dll
