@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HiProtobuf.UI", "HiProtobuf
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HiProtobuf.Lib", "HiProtobuf.Lib\HiProtobuf.Lib.csproj", "{6BEF4405-D34B-45EE-B577-C2F2F0336269}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HiProtobuf.Example", "HiProtobuf.Example\HiProtobuf.Example.csproj", "{1BE388AD-E73C-4487-9F3C-C2C45139AF85}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HiProtobuf.Test", "HiProtobuf.Test\HiProtobuf.Test.csproj", "{71D39BEB-DF52-4E8F-B61E-5DD89B0E5DBE}"
 EndProject
 Global
@@ -25,10 +23,6 @@ Global
 		{6BEF4405-D34B-45EE-B577-C2F2F0336269}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6BEF4405-D34B-45EE-B577-C2F2F0336269}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6BEF4405-D34B-45EE-B577-C2F2F0336269}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1BE388AD-E73C-4487-9F3C-C2C45139AF85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1BE388AD-E73C-4487-9F3C-C2C45139AF85}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1BE388AD-E73C-4487-9F3C-C2C45139AF85}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1BE388AD-E73C-4487-9F3C-C2C45139AF85}.Release|Any CPU.Build.0 = Release|Any CPU
 		{71D39BEB-DF52-4E8F-B61E-5DD89B0E5DBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{71D39BEB-DF52-4E8F-B61E-5DD89B0E5DBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{71D39BEB-DF52-4E8F-B61E-5DD89B0E5DBE}.Release|Any CPU.ActiveCfg = Release|Any CPU

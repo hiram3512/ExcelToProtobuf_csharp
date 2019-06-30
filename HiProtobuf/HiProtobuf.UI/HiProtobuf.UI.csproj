@@ -75,5 +75,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HiProtobuf.Lib\HiProtobuf.Lib.csproj">
+      <Project>{6bef4405-d34b-45ee-b577-c2f2f0336269}</Project>
+      <Name>HiProtobuf.Lib</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

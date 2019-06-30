@@ -1,0 +1,9 @@
+D:\MyGit\github\HiProtobuf\HiProtobuf\HiProtobuf.UI\bin\Debug\HiProtobuf.UI.exe.config
+D:\MyGit\github\HiProtobuf\HiProtobuf\HiProtobuf.UI\bin\Debug\HiProtobuf.UI.exe
+D:\MyGit\github\HiProtobuf\HiProtobuf\HiProtobuf.UI\bin\Debug\HiProtobuf.UI.pdb
+D:\MyGit\github\HiProtobuf\HiProtobuf\HiProtobuf.UI\obj\Debug\HiProtobuf.UI.csprojAssemblyReference.cache
+D:\MyGit\github\HiProtobuf\HiProtobuf\HiProtobuf.UI\obj\Debug\HiProtobuf.UI.Properties.Resources.resources
+D:\MyGit\github\HiProtobuf\HiProtobuf\HiProtobuf.UI\obj\Debug\HiProtobuf.UI.csproj.GenerateResource.cache
+D:\MyGit\github\HiProtobuf\HiProtobuf\HiProtobuf.UI\obj\Debug\HiProtobuf.UI.csproj.CoreCompileInputs.cache
+D:\MyGit\github\HiProtobuf\HiProtobuf\HiProtobuf.UI\obj\Debug\HiProtobuf.UI.exe
+D:\MyGit\github\HiProtobuf\HiProtobuf\HiProtobuf.UI\obj\Debug\HiProtobuf.UI.pdb
