@@ -22,6 +22,10 @@ namespace HiProtobuf.Lib
             for (int i = 0; i < files.Length; i++)
             {
                 var filePath = files[i];
+                if (filePath.Contains("~$"))//已打开的表格格式
+                {
+                    continue;
+                }
                 AssertThat.IsNotNullOrEmpty(filePath, "Per excel path is null or empty");
                 if (File.Exists(filePath))
                 {
@@ -53,17 +57,18 @@ namespace HiProtobuf.Lib
             //        var str = value.ToString();
             //    }
             //}
-            List<string> types = new List<string>();
+            List<VariableInfo> types = new List<VariableInfo>();
             for (int j = 1; j <= colCount; j++)
             {
-                var value = ((Range)usedRange.Cells[2, j]).Value2;
-                var str = value.ToString();
-                types.Add(str);
+                var type = ((Range)usedRange.Cells[2, j]).Value2.ToString();
+                var name = ((Range)usedRange.Cells[3, j]).Value2.ToString();
+                var info = new VariableInfo(type, name);
+                types.Add(info);
             }
-
             var generater = new ProtoGenerater(workbooks.Name);
-            generater.SetTypes(types);
+            generater.AddTypes(types);
             excelApp.Workbooks.Close();
+            excelApp.Quit();
         }
     }
 }
