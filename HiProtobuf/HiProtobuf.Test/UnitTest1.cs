@@ -10,8 +10,7 @@ namespace HiProtobuf.Test
         [TestMethod]
         public void TestExcelFolder()
         {
-            var handler = new VariableHandler();
-            handler.Export();
+          Manager.Export();
         }
     }
 }
