@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
+using HiFramework.Assert;
 
 namespace HiProtobuf.Lib
 {
@@ -10,7 +12,7 @@ namespace HiProtobuf.Lib
         public ProtoGenerater(string name)
         {
             name = name.Split('.')[0];
-            _path = Common.ExportFolder + "/" + name + ".proto";
+            _path = Common.ExportFolder_proto + "/" + name + ".proto";
             if (File.Exists(_path))
             {
                 File.Delete(_path);
@@ -22,19 +24,23 @@ syntax = ""proto3"";
 package HiProtobuf;
 option csharp_namespace = ""HiProtobuf""; 
 ";
-            header += String.Format("message {0} {", name);
-
-            File.WriteAllText(_path, header);
+            header += "message " + name + " {";
+            var sw = File.AppendText(_path);
+            sw.WriteLine(header);
+            sw.Close();
         }
 
-        public void AddTypes(List<VariableInfo> infos)
+        public void GenerateProto(List<VariableInfo> infos)
         {
             string str = "";
             for (int i = 0; i < infos.Count; i++)
             {
                 str += ProcessVariable(infos[i], i + 1);
             }
-            File.WriteAllText(_path, "}");
+            str += "}";
+            var sw = File.AppendText(_path);
+            sw.WriteLine(str);
+            sw.Close();
         }
 
         /// <summary>
@@ -59,13 +65,17 @@ option csharp_namespace = ""HiProtobuf"";
             //bool
             //string
             //bytes
+
+            string[] all = new[] { "double", "float", "int32", "int64", "uint32", "uint64", "sint32", "sint64", "fixed32", "fixed64", "sfixed32", "sfixed64", "bool", "string", "bytes" };
+            AssertThat.IsTrue(all.Contains(info.Type),"Excel proto type define error");
+
             string str = "";
             var type = info.Type;
             if (type.Contains("[]"))//如果是数组进行转换
             {
                 type = "repeated " + type.Split('[')[0];
             }
-            str += type + " " + info.Name + " = " + index + ";";
+            str += "  " + type + " " + info.Name + " = " + index + ";";
             str += "\n";
             return str;
         }

@@ -12,3 +12,4 @@ D:\MyGit\github\HiProtobuf\HiProtobuf\HiProtobuf.UI\bin\Debug\HiFramework.Log.dl
 D:\MyGit\github\HiProtobuf\HiProtobuf\HiProtobuf.UI\bin\Debug\HiFramework.Assert.dll
 D:\MyGit\github\HiProtobuf\HiProtobuf\HiProtobuf.UI\bin\Debug\HiProtobuf.Lib.pdb
 D:\MyGit\github\HiProtobuf\HiProtobuf\HiProtobuf.UI\obj\Debug\HiProtobuf.UI.csproj.CopyComplete
+D:\MyGit\github\HiProtobuf\HiProtobuf\HiProtobuf.UI\obj\Debug\HiProtobuf.UI.Form1.resources
