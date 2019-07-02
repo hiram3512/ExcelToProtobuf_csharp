@@ -4,7 +4,9 @@
  * Document: https://github.com/hiramtan/HiProtobuf
  * Author: hiramtan@live.com
  ****************************************************************************/
- using HiFramework.Assert;
+
+using System;
+using HiFramework.Assert;
 using HiFramework.Log;
 using Microsoft.Office.Interop.Excel;
 using System.Collections.Generic;
@@ -15,8 +17,7 @@ namespace HiProtobuf.Lib
 {
     public class ExcelHandler
     {
-        public string Name { get; private set; }
-        public List<VariableInfo> VariableInfos { get; private set; }
+        public Action<string, List<VariableInfo>> OnFinish;
 
         public void Process()
         {
@@ -90,8 +91,11 @@ namespace HiProtobuf.Lib
                 AssertThat.IsTrue(all.Contains(info.Type), "Excel proto type define error:" + workbooks.Name);
                 infos.Add(info);
             }
-            Name = workbooks.Name.Split('.')[0]; ;
-            VariableInfos = infos;
+            var className = workbooks.Name.Split('.')[0]; ;
+            if (OnFinish != null)
+            {
+                OnFinish.Invoke(className, infos);
+            }
             excelApp.Workbooks.Close();
             excelApp.Quit();
         }

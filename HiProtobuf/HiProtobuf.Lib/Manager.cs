@@ -18,11 +18,12 @@ namespace HiProtobuf.Lib
             AssertThat.IsNotNullOrEmpty(Common.Export_Folder, "Out folder is null or empty");
 
             var excelHandler = new ExcelHandler();
+            excelHandler.OnFinish = (x, y) =>
+            {
+                new ProtoGenerater(x, y).Process();
+            };
             excelHandler.Process();
-            var protoHandler = new ProtoHandler(excelHandler.Name, excelHandler.VariableInfos);
-            protoHandler.Process();
-            var languageGenerater = new LanguageGenerater();
-            languageGenerater.Process();
+            new LanguageGenerater().Process();
         }
     }
 }

@@ -4,8 +4,10 @@
  * Document: https://github.com/hiramtan/HiProtobuf
  * Author: hiramtan@live.com
  ****************************************************************************/
+
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,18 +16,20 @@ namespace HiProtobuf.Lib
 {
     public class ProtoHandler
     {
-        public string Name { get; private set; }
-        public List<VariableInfo> VariableInfos { get; private set; }
 
-        public ProtoHandler(string name, List<VariableInfo> infos)
+        public ProtoHandler()
         {
-            Name = name;
-            VariableInfos = infos;
+            var path = Common.Export_Folder + Common.proto_folder;
+            if (Directory.Exists(path))
+            {
+                Directory.Delete(path, true);
+            }
+            Directory.CreateDirectory(path);
         }
 
-        public void Process()
+        public void Process(string name, List<VariableInfo> infos)
         {
-            new ProtoGenerater(Name, VariableInfos).Process();
+            new ProtoGenerater(name,infos).Process();
         }
     }
 }
