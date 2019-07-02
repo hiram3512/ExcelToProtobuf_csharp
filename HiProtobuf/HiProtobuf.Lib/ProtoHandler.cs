@@ -25,11 +25,7 @@ namespace HiProtobuf.Lib
 
         public void Process()
         {
-            new ProtoGenerate_csharp(Name, VariableInfos).Process();
-            new ProtoGenerate_cpp(Name, VariableInfos).Process();
-            new ProtoGenerate_go(Name, VariableInfos).Process();
-            new ProtoGenerate_java(Name, VariableInfos).Process();
-            new ProtoGenerate_python(Name, VariableInfos).Process();
+            new ProtoGenerater(Name, VariableInfos).Process();
         }
     }
 }

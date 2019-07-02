@@ -14,18 +14,17 @@ namespace HiProtobuf.Lib
         public void Process()
         {
             var path_language = Common.Export_Folder + Common.language_folder;
-
             if (Directory.Exists(path_language))
             {
                 Directory.Delete(path_language, true);
-                Directory.CreateDirectory(path_language);
             }
+            Directory.CreateDirectory(path_language);
 
-            Process_csharp(Common.Export_Folder + Common.proto_folder + Common.csharp_folder);
-            Process_cpp(Common.Export_Folder + Common.proto_folder + Common.cpp_folder);
-            Process_go(Common.Export_Folder + Common.proto_folder + Common.go_folder);
-            Process_java(Common.Export_Folder + Common.proto_folder + Common.java_folder);
-            Process_python(Common.Export_Folder + Common.proto_folder + Common.python_folder);
+            Process_csharp(Common.Export_Folder + Common.proto_folder);
+            Process_cpp(Common.Export_Folder + Common.proto_folder);
+            Process_go(Common.Export_Folder + Common.proto_folder);
+            Process_java(Common.Export_Folder + Common.proto_folder);
+            Process_python(Common.Export_Folder + Common.proto_folder);
         }
 
         private void Process_csharp(string protoPath)
