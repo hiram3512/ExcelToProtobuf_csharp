@@ -1,4 +1,10 @@
-﻿using System;
+﻿/****************************************************************************
+ * Description: 
+ * 
+ * Document: https://github.com/hiramtan/HiProtobuf
+ * Author: hiramtan@live.com
+ ****************************************************************************/
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -7,12 +13,11 @@ using System.Threading.Tasks;
 
 namespace HiProtobuf.Lib
 {
-    class ProtoGenerate_go:ProtoGenerateBase
+    class ProtoGenerate_go : ProtoGenerateBase
     {
-        private string _folder = "/go";
         public ProtoGenerate_go(string name, List<VariableInfo> infos) : base(name, infos)
         {
-            Path += _folder;
+            Path += Common.go_folder;
             if (Directory.Exists(Path))
             {
                 Directory.Delete(Path, true);

@@ -1,15 +1,20 @@
-﻿using System;
+﻿/****************************************************************************
+ * Description: 
+ * 
+ * Document: https://github.com/hiramtan/HiProtobuf
+ * Author: hiramtan@live.com
+ ****************************************************************************/
+using System;
 using System.Collections.Generic;
 using System.IO;
 
 namespace HiProtobuf.Lib
 {
-    class ProtoGenerate_cpp:ProtoGenerateBase
+    class ProtoGenerate_cpp : ProtoGenerateBase
     {
-        private string _folder = "/cpp";
         public ProtoGenerate_cpp(string name, List<VariableInfo> infos) : base(name, infos)
         {
-            Path += _folder;
+            Path += Common.cpp_folder;
             if (Directory.Exists(Path))
             {
                 Directory.Delete(Path, true);

@@ -1,4 +1,10 @@
-﻿using System;
+﻿/****************************************************************************
+ * Description: 
+ * 
+ * Document: https://github.com/hiramtan/HiProtobuf
+ * Author: hiramtan@live.com
+ ****************************************************************************/
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,7 +25,11 @@ namespace HiProtobuf.Lib
 
         public void Process()
         {
-
+            new ProtoGenerate_csharp(Name, VariableInfos).Process();
+            new ProtoGenerate_cpp(Name, VariableInfos).Process();
+            new ProtoGenerate_go(Name, VariableInfos).Process();
+            new ProtoGenerate_java(Name, VariableInfos).Process();
+            new ProtoGenerate_python(Name, VariableInfos).Process();
         }
     }
 }

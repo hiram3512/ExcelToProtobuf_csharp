@@ -1,4 +1,10 @@
-﻿using System;
+﻿/****************************************************************************
+ * Description: 
+ * 
+ * Document: https://github.com/hiramtan/HiProtobuf
+ * Author: hiramtan@live.com
+ ****************************************************************************/
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;

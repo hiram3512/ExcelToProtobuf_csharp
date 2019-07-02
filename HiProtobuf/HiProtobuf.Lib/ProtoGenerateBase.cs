@@ -1,20 +1,25 @@
-﻿using System.Collections.Generic;
+﻿/****************************************************************************
+ * Description: 
+ * 
+ * Document: https://github.com/hiramtan/HiProtobuf
+ * Author: hiramtan@live.com
+ ****************************************************************************/
+using System.Collections.Generic;
 using System.IO;
 
 namespace HiProtobuf.Lib
 {
     internal abstract class ProtoGenerateBase
     {
-        private string _folder = "/proto";
         protected string Path;
         protected string Name { get; private set; }
         protected List<VariableInfo> VariableInfos { get; private set; }
 
         public ProtoGenerateBase(string name, List<VariableInfo> infos)
         {
-            Name = name.Split('.')[0];
+            Name = name;
             VariableInfos = infos;
-            Path = Common.ExportFolder + _folder;
+            Path = Common.Export_Folder + Common.proto_folder;
 
             //// [START declaration]
             //syntax = ""proto3"";

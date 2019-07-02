@@ -1,4 +1,10 @@
-﻿using System;
+﻿/****************************************************************************
+ * Description: 
+ * 
+ * Document: https://github.com/hiramtan/HiProtobuf
+ * Author: hiramtan@live.com
+ ****************************************************************************/
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -9,10 +15,9 @@ namespace HiProtobuf.Lib
 {
     class ProtoGenerate_python : ProtoGenerateBase
     {
-        private string _folder = "/python";
         public ProtoGenerate_python(string name, List<VariableInfo> infos) : base(name, infos)
         {
-            Path += _folder;
+            Path += Common.python_folder;
             if (Directory.Exists(Path))
             {
                 Directory.Delete(Path, true);

@@ -1,4 +1,10 @@
-﻿using HiFramework.Assert;
+﻿/****************************************************************************
+ * Description: 
+ * 
+ * Document: https://github.com/hiramtan/HiProtobuf
+ * Author: hiramtan@live.com
+ ****************************************************************************/
+ using HiFramework.Assert;
 using HiFramework.Log;
 using Microsoft.Office.Interop.Excel;
 using System.Collections.Generic;
@@ -15,7 +21,7 @@ namespace HiProtobuf.Lib
         public void Process()
         {
             //递归查询
-            string[] files = Directory.GetFiles(Common.ExcelFolder, "*.xlsx", SearchOption.AllDirectories);
+            string[] files = Directory.GetFiles(Common.Excel_Folder, "*.xlsx", SearchOption.AllDirectories);
             for (int i = 0; i < files.Length; i++)
             {
                 var filePath = files[i];
@@ -84,7 +90,7 @@ namespace HiProtobuf.Lib
                 AssertThat.IsTrue(all.Contains(info.Type), "Excel proto type define error:" + workbooks.Name);
                 infos.Add(info);
             }
-            Name = workbooks.Name;
+            Name = workbooks.Name.Split('.')[0]; ;
             VariableInfos = infos;
             excelApp.Workbooks.Close();
             excelApp.Quit();
