@@ -98,7 +98,7 @@ namespace HiProtobuf.Lib
             }
             workbooks.Close();
             excelApp.Quit();
-            //System.Runtime.InteropServices.Marshal.ReleaseComObject(excelApp);
+            System.Runtime.InteropServices.Marshal.ReleaseComObject(excelApp);
         }
     }
 }
