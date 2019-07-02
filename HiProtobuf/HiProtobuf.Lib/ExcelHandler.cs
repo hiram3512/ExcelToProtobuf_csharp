@@ -96,8 +96,9 @@ namespace HiProtobuf.Lib
             {
                 OnFinish.Invoke(className, infos);
             }
-            excelApp.Workbooks.Close();
+            workbooks.Close();
             excelApp.Quit();
+            //System.Runtime.InteropServices.Marshal.ReleaseComObject(excelApp);
         }
     }
 }
