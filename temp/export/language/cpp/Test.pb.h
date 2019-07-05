@@ -61,16 +61,16 @@ namespace HiProtobuf {
 class Excel_Test;
 class Excel_TestDefaultTypeInternal;
 extern Excel_TestDefaultTypeInternal _Excel_Test_default_instance_;
-class Excel_Test_TestsEntry_DoNotUse;
-class Excel_Test_TestsEntry_DoNotUseDefaultTypeInternal;
-extern Excel_Test_TestsEntry_DoNotUseDefaultTypeInternal _Excel_Test_TestsEntry_DoNotUse_default_instance_;
+class Excel_Test_DataEntry_DoNotUse;
+class Excel_Test_DataEntry_DoNotUseDefaultTypeInternal;
+extern Excel_Test_DataEntry_DoNotUseDefaultTypeInternal _Excel_Test_DataEntry_DoNotUse_default_instance_;
 class Test;
 class TestDefaultTypeInternal;
 extern TestDefaultTypeInternal _Test_default_instance_;
 }  // namespace HiProtobuf
 PROTOBUF_NAMESPACE_OPEN
 template<> ::HiProtobuf::Excel_Test* Arena::CreateMaybeMessage<::HiProtobuf::Excel_Test>(Arena*);
-template<> ::HiProtobuf::Excel_Test_TestsEntry_DoNotUse* Arena::CreateMaybeMessage<::HiProtobuf::Excel_Test_TestsEntry_DoNotUse>(Arena*);
+template<> ::HiProtobuf::Excel_Test_DataEntry_DoNotUse* Arena::CreateMaybeMessage<::HiProtobuf::Excel_Test_DataEntry_DoNotUse>(Arena*);
 template<> ::HiProtobuf::Test* Arena::CreateMaybeMessage<::HiProtobuf::Test>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace HiProtobuf {
@@ -249,21 +249,21 @@ class Test :
 };
 // -------------------------------------------------------------------
 
-class Excel_Test_TestsEntry_DoNotUse : public ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<Excel_Test_TestsEntry_DoNotUse, 
+class Excel_Test_DataEntry_DoNotUse : public ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<Excel_Test_DataEntry_DoNotUse, 
     ::PROTOBUF_NAMESPACE_ID::int32, ::HiProtobuf::Test,
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_INT32,
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_MESSAGE,
     0 > {
 public:
-  typedef ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<Excel_Test_TestsEntry_DoNotUse, 
+  typedef ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<Excel_Test_DataEntry_DoNotUse, 
     ::PROTOBUF_NAMESPACE_ID::int32, ::HiProtobuf::Test,
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_INT32,
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_MESSAGE,
     0 > SuperType;
-  Excel_Test_TestsEntry_DoNotUse();
-  Excel_Test_TestsEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  void MergeFrom(const Excel_Test_TestsEntry_DoNotUse& other);
-  static const Excel_Test_TestsEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const Excel_Test_TestsEntry_DoNotUse*>(&_Excel_Test_TestsEntry_DoNotUse_default_instance_); }
+  Excel_Test_DataEntry_DoNotUse();
+  Excel_Test_DataEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  void MergeFrom(const Excel_Test_DataEntry_DoNotUse& other);
+  static const Excel_Test_DataEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const Excel_Test_DataEntry_DoNotUse*>(&_Excel_Test_DataEntry_DoNotUse_default_instance_); }
   static bool ValidateKey(void*) { return true; }
   static bool ValidateValue(void*) { return true; }
   void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& other) final;
@@ -389,14 +389,14 @@ class Excel_Test :
 
   // accessors -------------------------------------------------------
 
-  // map<int32, .HiProtobuf.Test> Tests = 1;
-  int tests_size() const;
-  void clear_tests();
-  static const int kTestsFieldNumber = 1;
+  // map<int32, .HiProtobuf.Test> Data = 1;
+  int data_size() const;
+  void clear_data();
+  static const int kDataFieldNumber = 1;
   const ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::int32, ::HiProtobuf::Test >&
-      tests() const;
+      data() const;
   ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::int32, ::HiProtobuf::Test >*
-      mutable_tests();
+      mutable_data();
 
   // @@protoc_insertion_point(class_scope:HiProtobuf.Excel_Test)
  private:
@@ -404,11 +404,11 @@ class Excel_Test :
 
   ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
   ::PROTOBUF_NAMESPACE_ID::internal::MapField<
-      Excel_Test_TestsEntry_DoNotUse,
+      Excel_Test_DataEntry_DoNotUse,
       ::PROTOBUF_NAMESPACE_ID::int32, ::HiProtobuf::Test,
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_INT32,
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_MESSAGE,
-      0 > tests_;
+      0 > data_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_Test_2eproto;
 };
@@ -587,22 +587,22 @@ Test::mutable_infos() {
 
 // Excel_Test
 
-// map<int32, .HiProtobuf.Test> Tests = 1;
-inline int Excel_Test::tests_size() const {
-  return tests_.size();
+// map<int32, .HiProtobuf.Test> Data = 1;
+inline int Excel_Test::data_size() const {
+  return data_.size();
 }
-inline void Excel_Test::clear_tests() {
-  tests_.Clear();
+inline void Excel_Test::clear_data() {
+  data_.Clear();
 }
 inline const ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::int32, ::HiProtobuf::Test >&
-Excel_Test::tests() const {
-  // @@protoc_insertion_point(field_map:HiProtobuf.Excel_Test.Tests)
-  return tests_.GetMap();
+Excel_Test::data() const {
+  // @@protoc_insertion_point(field_map:HiProtobuf.Excel_Test.Data)
+  return data_.GetMap();
 }
 inline ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::int32, ::HiProtobuf::Test >*
-Excel_Test::mutable_tests() {
-  // @@protoc_insertion_point(field_mutable_map:HiProtobuf.Excel_Test.Tests)
-  return tests_.MutableMap();
+Excel_Test::mutable_data() {
+  // @@protoc_insertion_point(field_mutable_map:HiProtobuf.Excel_Test.Data)
+  return data_.MutableMap();
 }
 
 #ifdef __GNUC__

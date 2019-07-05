@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='HiProtobuf',
   syntax='proto3',
   serialized_options=_b('\n\031com.HiProtobuf.HiProtobufB\016Next_classname\252\002\nHiProtobuf'),
-  serialized_pb=_b('\n\nNext.proto\x12\nHiProtobuf\"K\n\x04Next\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\n\n\x02hp\x18\x03 \x01(\x05\x12\x0e\n\x06\x61ttack\x18\x04 \x01(\x05\x12\r\n\x05infos\x18\x05 \x03(\t\"~\n\nExcel_Next\x12\x30\n\x05Nexts\x18\x01 \x03(\x0b\x32!.HiProtobuf.Excel_Next.NextsEntry\x1a>\n\nNextsEntry\x12\x0b\n\x03key\x18\x01 \x01(\x05\x12\x1f\n\x05value\x18\x02 \x01(\x0b\x32\x10.HiProtobuf.Next:\x02\x38\x01\x42\x38\n\x19\x63om.HiProtobuf.HiProtobufB\x0eNext_classname\xaa\x02\nHiProtobufb\x06proto3')
+  serialized_pb=_b('\n\nNext.proto\x12\nHiProtobuf\"K\n\x04Next\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\n\n\x02hp\x18\x03 \x01(\x05\x12\x0e\n\x06\x61ttack\x18\x04 \x01(\x05\x12\r\n\x05infos\x18\x05 \x03(\t\"{\n\nExcel_Next\x12.\n\x04\x44\x61ta\x18\x01 \x03(\x0b\x32 .HiProtobuf.Excel_Next.DataEntry\x1a=\n\tDataEntry\x12\x0b\n\x03key\x18\x01 \x01(\x05\x12\x1f\n\x05value\x18\x02 \x01(\x0b\x32\x10.HiProtobuf.Next:\x02\x38\x01\x42\x38\n\x19\x63om.HiProtobuf.HiProtobufB\x0eNext_classname\xaa\x02\nHiProtobufb\x06proto3')
 )
 
 
@@ -85,22 +85,22 @@ _NEXT = _descriptor.Descriptor(
 )
 
 
-_EXCEL_NEXT_NEXTSENTRY = _descriptor.Descriptor(
-  name='NextsEntry',
-  full_name='HiProtobuf.Excel_Next.NextsEntry',
+_EXCEL_NEXT_DATAENTRY = _descriptor.Descriptor(
+  name='DataEntry',
+  full_name='HiProtobuf.Excel_Next.DataEntry',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='key', full_name='HiProtobuf.Excel_Next.NextsEntry.key', index=0,
+      name='key', full_name='HiProtobuf.Excel_Next.DataEntry.key', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='value', full_name='HiProtobuf.Excel_Next.NextsEntry.value', index=1,
+      name='value', full_name='HiProtobuf.Excel_Next.DataEntry.value', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -118,8 +118,8 @@ _EXCEL_NEXT_NEXTSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=167,
-  serialized_end=229,
+  serialized_start=165,
+  serialized_end=226,
 )
 
 _EXCEL_NEXT = _descriptor.Descriptor(
@@ -130,7 +130,7 @@ _EXCEL_NEXT = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='Nexts', full_name='HiProtobuf.Excel_Next.Nexts', index=0,
+      name='Data', full_name='HiProtobuf.Excel_Next.Data', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -139,7 +139,7 @@ _EXCEL_NEXT = _descriptor.Descriptor(
   ],
   extensions=[
   ],
-  nested_types=[_EXCEL_NEXT_NEXTSENTRY, ],
+  nested_types=[_EXCEL_NEXT_DATAENTRY, ],
   enum_types=[
   ],
   serialized_options=None,
@@ -149,12 +149,12 @@ _EXCEL_NEXT = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=103,
-  serialized_end=229,
+  serialized_end=226,
 )
 
-_EXCEL_NEXT_NEXTSENTRY.fields_by_name['value'].message_type = _NEXT
-_EXCEL_NEXT_NEXTSENTRY.containing_type = _EXCEL_NEXT
-_EXCEL_NEXT.fields_by_name['Nexts'].message_type = _EXCEL_NEXT_NEXTSENTRY
+_EXCEL_NEXT_DATAENTRY.fields_by_name['value'].message_type = _NEXT
+_EXCEL_NEXT_DATAENTRY.containing_type = _EXCEL_NEXT
+_EXCEL_NEXT.fields_by_name['Data'].message_type = _EXCEL_NEXT_DATAENTRY
 DESCRIPTOR.message_types_by_name['Next'] = _NEXT
 DESCRIPTOR.message_types_by_name['Excel_Next'] = _EXCEL_NEXT
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
@@ -168,10 +168,10 @@ _sym_db.RegisterMessage(Next)
 
 Excel_Next = _reflection.GeneratedProtocolMessageType('Excel_Next', (_message.Message,), {
 
-  'NextsEntry' : _reflection.GeneratedProtocolMessageType('NextsEntry', (_message.Message,), {
-    'DESCRIPTOR' : _EXCEL_NEXT_NEXTSENTRY,
+  'DataEntry' : _reflection.GeneratedProtocolMessageType('DataEntry', (_message.Message,), {
+    'DESCRIPTOR' : _EXCEL_NEXT_DATAENTRY,
     '__module__' : 'Next_pb2'
-    # @@protoc_insertion_point(class_scope:HiProtobuf.Excel_Next.NextsEntry)
+    # @@protoc_insertion_point(class_scope:HiProtobuf.Excel_Next.DataEntry)
     })
   ,
   'DESCRIPTOR' : _EXCEL_NEXT,
@@ -179,9 +179,9 @@ Excel_Next = _reflection.GeneratedProtocolMessageType('Excel_Next', (_message.Me
   # @@protoc_insertion_point(class_scope:HiProtobuf.Excel_Next)
   })
 _sym_db.RegisterMessage(Excel_Next)
-_sym_db.RegisterMessage(Excel_Next.NextsEntry)
+_sym_db.RegisterMessage(Excel_Next.DataEntry)
 
 
 DESCRIPTOR._options = None
-_EXCEL_NEXT_NEXTSENTRY._options = None
+_EXCEL_NEXT_DATAENTRY._options = None
 # @@protoc_insertion_point(module_scope)

@@ -63,10 +63,6 @@ public final class Next_classname {
         getInfosBytes(int index);
   }
   /**
-   * <pre>
-   * [END csharp_declaration]
-   * </pre>
-   *
    * Protobuf type {@code HiProtobuf.Next}
    */
   public  static final class Next extends
@@ -474,10 +470,6 @@ public final class Next_classname {
       return builder;
     }
     /**
-     * <pre>
-     * [END csharp_declaration]
-     * </pre>
-     *
      * Protobuf type {@code HiProtobuf.Next}
      */
     public static final class Builder extends
@@ -960,37 +952,37 @@ public final class Next_classname {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>map&lt;int32, .HiProtobuf.Next&gt; Nexts = 1;</code>
+     * <code>map&lt;int32, .HiProtobuf.Next&gt; Data = 1;</code>
      */
-    int getNextsCount();
+    int getDataCount();
     /**
-     * <code>map&lt;int32, .HiProtobuf.Next&gt; Nexts = 1;</code>
+     * <code>map&lt;int32, .HiProtobuf.Next&gt; Data = 1;</code>
      */
-    boolean containsNexts(
+    boolean containsData(
         int key);
     /**
-     * Use {@link #getNextsMap()} instead.
+     * Use {@link #getDataMap()} instead.
      */
     @java.lang.Deprecated
     java.util.Map<java.lang.Integer, com.HiProtobuf.HiProtobuf.Next_classname.Next>
-    getNexts();
+    getData();
     /**
-     * <code>map&lt;int32, .HiProtobuf.Next&gt; Nexts = 1;</code>
+     * <code>map&lt;int32, .HiProtobuf.Next&gt; Data = 1;</code>
      */
     java.util.Map<java.lang.Integer, com.HiProtobuf.HiProtobuf.Next_classname.Next>
-    getNextsMap();
+    getDataMap();
     /**
-     * <code>map&lt;int32, .HiProtobuf.Next&gt; Nexts = 1;</code>
+     * <code>map&lt;int32, .HiProtobuf.Next&gt; Data = 1;</code>
      */
 
-    com.HiProtobuf.HiProtobuf.Next_classname.Next getNextsOrDefault(
+    com.HiProtobuf.HiProtobuf.Next_classname.Next getDataOrDefault(
         int key,
         com.HiProtobuf.HiProtobuf.Next_classname.Next defaultValue);
     /**
-     * <code>map&lt;int32, .HiProtobuf.Next&gt; Nexts = 1;</code>
+     * <code>map&lt;int32, .HiProtobuf.Next&gt; Data = 1;</code>
      */
 
-    com.HiProtobuf.HiProtobuf.Next_classname.Next getNextsOrThrow(
+    com.HiProtobuf.HiProtobuf.Next_classname.Next getDataOrThrow(
         int key);
   }
   /**
@@ -1041,15 +1033,15 @@ public final class Next_classname {
               break;
             case 10: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                nexts_ = com.google.protobuf.MapField.newMapField(
-                    NextsDefaultEntryHolder.defaultEntry);
+                data_ = com.google.protobuf.MapField.newMapField(
+                    DataDefaultEntryHolder.defaultEntry);
                 mutable_bitField0_ |= 0x00000001;
               }
               com.google.protobuf.MapEntry<java.lang.Integer, com.HiProtobuf.HiProtobuf.Next_classname.Next>
-              nexts__ = input.readMessage(
-                  NextsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              nexts_.getMutableMap().put(
-                  nexts__.getKey(), nexts__.getValue());
+              data__ = input.readMessage(
+                  DataDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              data_.getMutableMap().put(
+                  data__.getKey(), data__.getValue());
               break;
             }
             default: {
@@ -1082,7 +1074,7 @@ public final class Next_classname {
         int number) {
       switch (number) {
         case 1:
-          return internalGetNexts();
+          return internalGetData();
         default:
           throw new RuntimeException(
               "Invalid map field number: " + number);
@@ -1096,76 +1088,76 @@ public final class Next_classname {
               com.HiProtobuf.HiProtobuf.Next_classname.Excel_Next.class, com.HiProtobuf.HiProtobuf.Next_classname.Excel_Next.Builder.class);
     }
 
-    public static final int NEXTS_FIELD_NUMBER = 1;
-    private static final class NextsDefaultEntryHolder {
+    public static final int DATA_FIELD_NUMBER = 1;
+    private static final class DataDefaultEntryHolder {
       static final com.google.protobuf.MapEntry<
           java.lang.Integer, com.HiProtobuf.HiProtobuf.Next_classname.Next> defaultEntry =
               com.google.protobuf.MapEntry
               .<java.lang.Integer, com.HiProtobuf.HiProtobuf.Next_classname.Next>newDefaultInstance(
-                  com.HiProtobuf.HiProtobuf.Next_classname.internal_static_HiProtobuf_Excel_Next_NextsEntry_descriptor, 
+                  com.HiProtobuf.HiProtobuf.Next_classname.internal_static_HiProtobuf_Excel_Next_DataEntry_descriptor, 
                   com.google.protobuf.WireFormat.FieldType.INT32,
                   0,
                   com.google.protobuf.WireFormat.FieldType.MESSAGE,
                   com.HiProtobuf.HiProtobuf.Next_classname.Next.getDefaultInstance());
     }
     private com.google.protobuf.MapField<
-        java.lang.Integer, com.HiProtobuf.HiProtobuf.Next_classname.Next> nexts_;
+        java.lang.Integer, com.HiProtobuf.HiProtobuf.Next_classname.Next> data_;
     private com.google.protobuf.MapField<java.lang.Integer, com.HiProtobuf.HiProtobuf.Next_classname.Next>
-    internalGetNexts() {
-      if (nexts_ == null) {
+    internalGetData() {
+      if (data_ == null) {
         return com.google.protobuf.MapField.emptyMapField(
-            NextsDefaultEntryHolder.defaultEntry);
+            DataDefaultEntryHolder.defaultEntry);
       }
-      return nexts_;
+      return data_;
     }
 
-    public int getNextsCount() {
-      return internalGetNexts().getMap().size();
+    public int getDataCount() {
+      return internalGetData().getMap().size();
     }
     /**
-     * <code>map&lt;int32, .HiProtobuf.Next&gt; Nexts = 1;</code>
+     * <code>map&lt;int32, .HiProtobuf.Next&gt; Data = 1;</code>
      */
 
-    public boolean containsNexts(
+    public boolean containsData(
         int key) {
       
-      return internalGetNexts().getMap().containsKey(key);
+      return internalGetData().getMap().containsKey(key);
     }
     /**
-     * Use {@link #getNextsMap()} instead.
+     * Use {@link #getDataMap()} instead.
      */
     @java.lang.Deprecated
-    public java.util.Map<java.lang.Integer, com.HiProtobuf.HiProtobuf.Next_classname.Next> getNexts() {
-      return getNextsMap();
+    public java.util.Map<java.lang.Integer, com.HiProtobuf.HiProtobuf.Next_classname.Next> getData() {
+      return getDataMap();
     }
     /**
-     * <code>map&lt;int32, .HiProtobuf.Next&gt; Nexts = 1;</code>
+     * <code>map&lt;int32, .HiProtobuf.Next&gt; Data = 1;</code>
      */
 
-    public java.util.Map<java.lang.Integer, com.HiProtobuf.HiProtobuf.Next_classname.Next> getNextsMap() {
-      return internalGetNexts().getMap();
+    public java.util.Map<java.lang.Integer, com.HiProtobuf.HiProtobuf.Next_classname.Next> getDataMap() {
+      return internalGetData().getMap();
     }
     /**
-     * <code>map&lt;int32, .HiProtobuf.Next&gt; Nexts = 1;</code>
+     * <code>map&lt;int32, .HiProtobuf.Next&gt; Data = 1;</code>
      */
 
-    public com.HiProtobuf.HiProtobuf.Next_classname.Next getNextsOrDefault(
+    public com.HiProtobuf.HiProtobuf.Next_classname.Next getDataOrDefault(
         int key,
         com.HiProtobuf.HiProtobuf.Next_classname.Next defaultValue) {
       
       java.util.Map<java.lang.Integer, com.HiProtobuf.HiProtobuf.Next_classname.Next> map =
-          internalGetNexts().getMap();
+          internalGetData().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
-     * <code>map&lt;int32, .HiProtobuf.Next&gt; Nexts = 1;</code>
+     * <code>map&lt;int32, .HiProtobuf.Next&gt; Data = 1;</code>
      */
 
-    public com.HiProtobuf.HiProtobuf.Next_classname.Next getNextsOrThrow(
+    public com.HiProtobuf.HiProtobuf.Next_classname.Next getDataOrThrow(
         int key) {
       
       java.util.Map<java.lang.Integer, com.HiProtobuf.HiProtobuf.Next_classname.Next> map =
-          internalGetNexts().getMap();
+          internalGetData().getMap();
       if (!map.containsKey(key)) {
         throw new java.lang.IllegalArgumentException();
       }
@@ -1189,8 +1181,8 @@ public final class Next_classname {
       com.google.protobuf.GeneratedMessageV3
         .serializeIntegerMapTo(
           output,
-          internalGetNexts(),
-          NextsDefaultEntryHolder.defaultEntry,
+          internalGetData(),
+          DataDefaultEntryHolder.defaultEntry,
           1);
       unknownFields.writeTo(output);
     }
@@ -1202,14 +1194,14 @@ public final class Next_classname {
 
       size = 0;
       for (java.util.Map.Entry<java.lang.Integer, com.HiProtobuf.HiProtobuf.Next_classname.Next> entry
-           : internalGetNexts().getMap().entrySet()) {
+           : internalGetData().getMap().entrySet()) {
         com.google.protobuf.MapEntry<java.lang.Integer, com.HiProtobuf.HiProtobuf.Next_classname.Next>
-        nexts__ = NextsDefaultEntryHolder.defaultEntry.newBuilderForType()
+        data__ = DataDefaultEntryHolder.defaultEntry.newBuilderForType()
             .setKey(entry.getKey())
             .setValue(entry.getValue())
             .build();
         size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(1, nexts__);
+            .computeMessageSize(1, data__);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1226,8 +1218,8 @@ public final class Next_classname {
       }
       com.HiProtobuf.HiProtobuf.Next_classname.Excel_Next other = (com.HiProtobuf.HiProtobuf.Next_classname.Excel_Next) obj;
 
-      if (!internalGetNexts().equals(
-          other.internalGetNexts())) return false;
+      if (!internalGetData().equals(
+          other.internalGetData())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -1239,9 +1231,9 @@ public final class Next_classname {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (!internalGetNexts().getMap().isEmpty()) {
-        hash = (37 * hash) + NEXTS_FIELD_NUMBER;
-        hash = (53 * hash) + internalGetNexts().hashCode();
+      if (!internalGetData().getMap().isEmpty()) {
+        hash = (37 * hash) + DATA_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetData().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -1355,7 +1347,7 @@ public final class Next_classname {
           int number) {
         switch (number) {
           case 1:
-            return internalGetNexts();
+            return internalGetData();
           default:
             throw new RuntimeException(
                 "Invalid map field number: " + number);
@@ -1366,7 +1358,7 @@ public final class Next_classname {
           int number) {
         switch (number) {
           case 1:
-            return internalGetMutableNexts();
+            return internalGetMutableData();
           default:
             throw new RuntimeException(
                 "Invalid map field number: " + number);
@@ -1398,7 +1390,7 @@ public final class Next_classname {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        internalGetMutableNexts().clear();
+        internalGetMutableData().clear();
         return this;
       }
 
@@ -1426,8 +1418,8 @@ public final class Next_classname {
       public com.HiProtobuf.HiProtobuf.Next_classname.Excel_Next buildPartial() {
         com.HiProtobuf.HiProtobuf.Next_classname.Excel_Next result = new com.HiProtobuf.HiProtobuf.Next_classname.Excel_Next(this);
         int from_bitField0_ = bitField0_;
-        result.nexts_ = internalGetNexts();
-        result.nexts_.makeImmutable();
+        result.data_ = internalGetData();
+        result.data_.makeImmutable();
         onBuilt();
         return result;
       }
@@ -1476,8 +1468,8 @@ public final class Next_classname {
 
       public Builder mergeFrom(com.HiProtobuf.HiProtobuf.Next_classname.Excel_Next other) {
         if (other == com.HiProtobuf.HiProtobuf.Next_classname.Excel_Next.getDefaultInstance()) return this;
-        internalGetMutableNexts().mergeFrom(
-            other.internalGetNexts());
+        internalGetMutableData().mergeFrom(
+            other.internalGetData());
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -1509,94 +1501,94 @@ public final class Next_classname {
       private int bitField0_;
 
       private com.google.protobuf.MapField<
-          java.lang.Integer, com.HiProtobuf.HiProtobuf.Next_classname.Next> nexts_;
+          java.lang.Integer, com.HiProtobuf.HiProtobuf.Next_classname.Next> data_;
       private com.google.protobuf.MapField<java.lang.Integer, com.HiProtobuf.HiProtobuf.Next_classname.Next>
-      internalGetNexts() {
-        if (nexts_ == null) {
+      internalGetData() {
+        if (data_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
-              NextsDefaultEntryHolder.defaultEntry);
+              DataDefaultEntryHolder.defaultEntry);
         }
-        return nexts_;
+        return data_;
       }
       private com.google.protobuf.MapField<java.lang.Integer, com.HiProtobuf.HiProtobuf.Next_classname.Next>
-      internalGetMutableNexts() {
+      internalGetMutableData() {
         onChanged();;
-        if (nexts_ == null) {
-          nexts_ = com.google.protobuf.MapField.newMapField(
-              NextsDefaultEntryHolder.defaultEntry);
+        if (data_ == null) {
+          data_ = com.google.protobuf.MapField.newMapField(
+              DataDefaultEntryHolder.defaultEntry);
         }
-        if (!nexts_.isMutable()) {
-          nexts_ = nexts_.copy();
+        if (!data_.isMutable()) {
+          data_ = data_.copy();
         }
-        return nexts_;
+        return data_;
       }
 
-      public int getNextsCount() {
-        return internalGetNexts().getMap().size();
+      public int getDataCount() {
+        return internalGetData().getMap().size();
       }
       /**
-       * <code>map&lt;int32, .HiProtobuf.Next&gt; Nexts = 1;</code>
+       * <code>map&lt;int32, .HiProtobuf.Next&gt; Data = 1;</code>
        */
 
-      public boolean containsNexts(
+      public boolean containsData(
           int key) {
         
-        return internalGetNexts().getMap().containsKey(key);
+        return internalGetData().getMap().containsKey(key);
       }
       /**
-       * Use {@link #getNextsMap()} instead.
+       * Use {@link #getDataMap()} instead.
        */
       @java.lang.Deprecated
-      public java.util.Map<java.lang.Integer, com.HiProtobuf.HiProtobuf.Next_classname.Next> getNexts() {
-        return getNextsMap();
+      public java.util.Map<java.lang.Integer, com.HiProtobuf.HiProtobuf.Next_classname.Next> getData() {
+        return getDataMap();
       }
       /**
-       * <code>map&lt;int32, .HiProtobuf.Next&gt; Nexts = 1;</code>
+       * <code>map&lt;int32, .HiProtobuf.Next&gt; Data = 1;</code>
        */
 
-      public java.util.Map<java.lang.Integer, com.HiProtobuf.HiProtobuf.Next_classname.Next> getNextsMap() {
-        return internalGetNexts().getMap();
+      public java.util.Map<java.lang.Integer, com.HiProtobuf.HiProtobuf.Next_classname.Next> getDataMap() {
+        return internalGetData().getMap();
       }
       /**
-       * <code>map&lt;int32, .HiProtobuf.Next&gt; Nexts = 1;</code>
+       * <code>map&lt;int32, .HiProtobuf.Next&gt; Data = 1;</code>
        */
 
-      public com.HiProtobuf.HiProtobuf.Next_classname.Next getNextsOrDefault(
+      public com.HiProtobuf.HiProtobuf.Next_classname.Next getDataOrDefault(
           int key,
           com.HiProtobuf.HiProtobuf.Next_classname.Next defaultValue) {
         
         java.util.Map<java.lang.Integer, com.HiProtobuf.HiProtobuf.Next_classname.Next> map =
-            internalGetNexts().getMap();
+            internalGetData().getMap();
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
       /**
-       * <code>map&lt;int32, .HiProtobuf.Next&gt; Nexts = 1;</code>
+       * <code>map&lt;int32, .HiProtobuf.Next&gt; Data = 1;</code>
        */
 
-      public com.HiProtobuf.HiProtobuf.Next_classname.Next getNextsOrThrow(
+      public com.HiProtobuf.HiProtobuf.Next_classname.Next getDataOrThrow(
           int key) {
         
         java.util.Map<java.lang.Integer, com.HiProtobuf.HiProtobuf.Next_classname.Next> map =
-            internalGetNexts().getMap();
+            internalGetData().getMap();
         if (!map.containsKey(key)) {
           throw new java.lang.IllegalArgumentException();
         }
         return map.get(key);
       }
 
-      public Builder clearNexts() {
-        internalGetMutableNexts().getMutableMap()
+      public Builder clearData() {
+        internalGetMutableData().getMutableMap()
             .clear();
         return this;
       }
       /**
-       * <code>map&lt;int32, .HiProtobuf.Next&gt; Nexts = 1;</code>
+       * <code>map&lt;int32, .HiProtobuf.Next&gt; Data = 1;</code>
        */
 
-      public Builder removeNexts(
+      public Builder removeData(
           int key) {
         
-        internalGetMutableNexts().getMutableMap()
+        internalGetMutableData().getMutableMap()
             .remove(key);
         return this;
       }
@@ -1605,28 +1597,28 @@ public final class Next_classname {
        */
       @java.lang.Deprecated
       public java.util.Map<java.lang.Integer, com.HiProtobuf.HiProtobuf.Next_classname.Next>
-      getMutableNexts() {
-        return internalGetMutableNexts().getMutableMap();
+      getMutableData() {
+        return internalGetMutableData().getMutableMap();
       }
       /**
-       * <code>map&lt;int32, .HiProtobuf.Next&gt; Nexts = 1;</code>
+       * <code>map&lt;int32, .HiProtobuf.Next&gt; Data = 1;</code>
        */
-      public Builder putNexts(
+      public Builder putData(
           int key,
           com.HiProtobuf.HiProtobuf.Next_classname.Next value) {
         
         if (value == null) { throw new java.lang.NullPointerException(); }
-        internalGetMutableNexts().getMutableMap()
+        internalGetMutableData().getMutableMap()
             .put(key, value);
         return this;
       }
       /**
-       * <code>map&lt;int32, .HiProtobuf.Next&gt; Nexts = 1;</code>
+       * <code>map&lt;int32, .HiProtobuf.Next&gt; Data = 1;</code>
        */
 
-      public Builder putAllNexts(
+      public Builder putAllData(
           java.util.Map<java.lang.Integer, com.HiProtobuf.HiProtobuf.Next_classname.Next> values) {
-        internalGetMutableNexts().getMutableMap()
+        internalGetMutableData().getMutableMap()
             .putAll(values);
         return this;
       }
@@ -1694,10 +1686,10 @@ public final class Next_classname {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_HiProtobuf_Excel_Next_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_HiProtobuf_Excel_Next_NextsEntry_descriptor;
+    internal_static_HiProtobuf_Excel_Next_DataEntry_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_HiProtobuf_Excel_Next_NextsEntry_fieldAccessorTable;
+      internal_static_HiProtobuf_Excel_Next_DataEntry_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -1709,12 +1701,12 @@ public final class Next_classname {
     java.lang.String[] descriptorData = {
       "\n\nNext.proto\022\nHiProtobuf\"K\n\004Next\022\n\n\002id\030\001" +
       " \001(\005\022\014\n\004name\030\002 \001(\t\022\n\n\002hp\030\003 \001(\005\022\016\n\006attack" +
-      "\030\004 \001(\005\022\r\n\005infos\030\005 \003(\t\"~\n\nExcel_Next\0220\n\005N" +
-      "exts\030\001 \003(\0132!.HiProtobuf.Excel_Next.Nexts" +
-      "Entry\032>\n\nNextsEntry\022\013\n\003key\030\001 \001(\005\022\037\n\005valu" +
-      "e\030\002 \001(\0132\020.HiProtobuf.Next:\0028\001B8\n\031com.HiP" +
-      "rotobuf.HiProtobufB\016Next_classname\252\002\nHiP" +
-      "rotobufb\006proto3"
+      "\030\004 \001(\005\022\r\n\005infos\030\005 \003(\t\"{\n\nExcel_Next\022.\n\004D" +
+      "ata\030\001 \003(\0132 .HiProtobuf.Excel_Next.DataEn" +
+      "try\032=\n\tDataEntry\022\013\n\003key\030\001 \001(\005\022\037\n\005value\030\002" +
+      " \001(\0132\020.HiProtobuf.Next:\0028\001B8\n\031com.HiProt" +
+      "obuf.HiProtobufB\016Next_classname\252\002\nHiProt" +
+      "obufb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1731,12 +1723,12 @@ public final class Next_classname {
     internal_static_HiProtobuf_Excel_Next_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_HiProtobuf_Excel_Next_descriptor,
-        new java.lang.String[] { "Nexts", });
-    internal_static_HiProtobuf_Excel_Next_NextsEntry_descriptor =
+        new java.lang.String[] { "Data", });
+    internal_static_HiProtobuf_Excel_Next_DataEntry_descriptor =
       internal_static_HiProtobuf_Excel_Next_descriptor.getNestedTypes().get(0);
-    internal_static_HiProtobuf_Excel_Next_NextsEntry_fieldAccessorTable = new
+    internal_static_HiProtobuf_Excel_Next_DataEntry_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_HiProtobuf_Excel_Next_NextsEntry_descriptor,
+        internal_static_HiProtobuf_Excel_Next_DataEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
   }
 

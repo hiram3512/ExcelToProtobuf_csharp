@@ -4,32 +4,33 @@
  * Document: https://github.com/hiramtan/HiProtobuf
  * Author: hiramtan@live.com
  ****************************************************************************/
-using HiFramework.Assert;
 using System.IO;
 
 namespace HiProtobuf.Lib
 {
     internal class LanguageGenerater
     {
+        private string _languageFolder;
         public void Process()
         {
-            var path_language = Settings.Export_Folder + Settings.language_folder;
-            if (Directory.Exists(path_language))
+            _languageFolder = Settings.Export_Folder + Settings.language_folder;
+            if (Directory.Exists(_languageFolder))
             {
-                Directory.Delete(path_language, true);
+                Directory.Delete(_languageFolder, true);
             }
-            Directory.CreateDirectory(path_language);
+            Directory.CreateDirectory(_languageFolder);
 
-            Process_csharp(Settings.Export_Folder + Settings.proto_folder);
-            Process_cpp(Settings.Export_Folder + Settings.proto_folder);
-            Process_go(Settings.Export_Folder + Settings.proto_folder);
-            Process_java(Settings.Export_Folder + Settings.proto_folder);
-            Process_python(Settings.Export_Folder + Settings.proto_folder);
+            var protoFolder = Settings.Export_Folder + Settings.proto_folder;
+            Process_csharp(protoFolder);
+            Process_cpp(protoFolder);
+            Process_go(protoFolder);
+            Process_java(protoFolder);
+            Process_python(protoFolder);
         }
 
         private void Process_csharp(string protoPath)
         {
-            var outFolder = Settings.Export_Folder + Settings.language_folder + Settings.csharp_folder;
+            var outFolder = _languageFolder + Settings.csharp_folder;
             Directory.CreateDirectory(outFolder);
             //递归查询
             string[] files = Directory.GetFiles(protoPath, "*.proto", SearchOption.AllDirectories);
@@ -43,7 +44,7 @@ namespace HiProtobuf.Lib
 
         private void Process_cpp(string protoPath)
         {
-            var outFolder = Settings.Export_Folder + Settings.language_folder + Settings.cpp_folder;
+            var outFolder = _languageFolder + Settings.cpp_folder;
             Directory.CreateDirectory(outFolder);
             //递归查询
             string[] files = Directory.GetFiles(protoPath, "*.proto", SearchOption.AllDirectories);
@@ -57,7 +58,7 @@ namespace HiProtobuf.Lib
 
         private void Process_go(string protoPath)
         {
-            var outFolder = Settings.Export_Folder + Settings.language_folder + Settings.go_folder;
+            var outFolder = _languageFolder + Settings.go_folder;
             Directory.CreateDirectory(outFolder);
             //递归查询
             string[] files = Directory.GetFiles(protoPath, "*.proto", SearchOption.AllDirectories);
@@ -71,7 +72,7 @@ namespace HiProtobuf.Lib
 
         private void Process_java(string protoPath)
         {
-            var outFolder = Settings.Export_Folder + Settings.language_folder + Settings.java_folder;
+            var outFolder = _languageFolder + Settings.java_folder;
             Directory.CreateDirectory(outFolder);
             //递归查询
             string[] files = Directory.GetFiles(protoPath, "*.proto", SearchOption.AllDirectories);
@@ -85,7 +86,7 @@ namespace HiProtobuf.Lib
 
         private void Process_python(string protoPath)
         {
-            var outFolder = Settings.Export_Folder + Settings.language_folder + Settings.python_folder;
+            var outFolder = _languageFolder + Settings.python_folder;
             Directory.CreateDirectory(outFolder);
             //递归查询
             string[] files = Directory.GetFiles(protoPath, "*.proto", SearchOption.AllDirectories);

@@ -63,10 +63,6 @@ public final class Test_classname {
         getInfosBytes(int index);
   }
   /**
-   * <pre>
-   * [END csharp_declaration]
-   * </pre>
-   *
    * Protobuf type {@code HiProtobuf.Test}
    */
   public  static final class Test extends
@@ -474,10 +470,6 @@ public final class Test_classname {
       return builder;
     }
     /**
-     * <pre>
-     * [END csharp_declaration]
-     * </pre>
-     *
      * Protobuf type {@code HiProtobuf.Test}
      */
     public static final class Builder extends
@@ -960,37 +952,37 @@ public final class Test_classname {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>map&lt;int32, .HiProtobuf.Test&gt; Tests = 1;</code>
+     * <code>map&lt;int32, .HiProtobuf.Test&gt; Data = 1;</code>
      */
-    int getTestsCount();
+    int getDataCount();
     /**
-     * <code>map&lt;int32, .HiProtobuf.Test&gt; Tests = 1;</code>
+     * <code>map&lt;int32, .HiProtobuf.Test&gt; Data = 1;</code>
      */
-    boolean containsTests(
+    boolean containsData(
         int key);
     /**
-     * Use {@link #getTestsMap()} instead.
+     * Use {@link #getDataMap()} instead.
      */
     @java.lang.Deprecated
     java.util.Map<java.lang.Integer, com.HiProtobuf.HiProtobuf.Test_classname.Test>
-    getTests();
+    getData();
     /**
-     * <code>map&lt;int32, .HiProtobuf.Test&gt; Tests = 1;</code>
+     * <code>map&lt;int32, .HiProtobuf.Test&gt; Data = 1;</code>
      */
     java.util.Map<java.lang.Integer, com.HiProtobuf.HiProtobuf.Test_classname.Test>
-    getTestsMap();
+    getDataMap();
     /**
-     * <code>map&lt;int32, .HiProtobuf.Test&gt; Tests = 1;</code>
+     * <code>map&lt;int32, .HiProtobuf.Test&gt; Data = 1;</code>
      */
 
-    com.HiProtobuf.HiProtobuf.Test_classname.Test getTestsOrDefault(
+    com.HiProtobuf.HiProtobuf.Test_classname.Test getDataOrDefault(
         int key,
         com.HiProtobuf.HiProtobuf.Test_classname.Test defaultValue);
     /**
-     * <code>map&lt;int32, .HiProtobuf.Test&gt; Tests = 1;</code>
+     * <code>map&lt;int32, .HiProtobuf.Test&gt; Data = 1;</code>
      */
 
-    com.HiProtobuf.HiProtobuf.Test_classname.Test getTestsOrThrow(
+    com.HiProtobuf.HiProtobuf.Test_classname.Test getDataOrThrow(
         int key);
   }
   /**
@@ -1041,15 +1033,15 @@ public final class Test_classname {
               break;
             case 10: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                tests_ = com.google.protobuf.MapField.newMapField(
-                    TestsDefaultEntryHolder.defaultEntry);
+                data_ = com.google.protobuf.MapField.newMapField(
+                    DataDefaultEntryHolder.defaultEntry);
                 mutable_bitField0_ |= 0x00000001;
               }
               com.google.protobuf.MapEntry<java.lang.Integer, com.HiProtobuf.HiProtobuf.Test_classname.Test>
-              tests__ = input.readMessage(
-                  TestsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              tests_.getMutableMap().put(
-                  tests__.getKey(), tests__.getValue());
+              data__ = input.readMessage(
+                  DataDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              data_.getMutableMap().put(
+                  data__.getKey(), data__.getValue());
               break;
             }
             default: {
@@ -1082,7 +1074,7 @@ public final class Test_classname {
         int number) {
       switch (number) {
         case 1:
-          return internalGetTests();
+          return internalGetData();
         default:
           throw new RuntimeException(
               "Invalid map field number: " + number);
@@ -1096,76 +1088,76 @@ public final class Test_classname {
               com.HiProtobuf.HiProtobuf.Test_classname.Excel_Test.class, com.HiProtobuf.HiProtobuf.Test_classname.Excel_Test.Builder.class);
     }
 
-    public static final int TESTS_FIELD_NUMBER = 1;
-    private static final class TestsDefaultEntryHolder {
+    public static final int DATA_FIELD_NUMBER = 1;
+    private static final class DataDefaultEntryHolder {
       static final com.google.protobuf.MapEntry<
           java.lang.Integer, com.HiProtobuf.HiProtobuf.Test_classname.Test> defaultEntry =
               com.google.protobuf.MapEntry
               .<java.lang.Integer, com.HiProtobuf.HiProtobuf.Test_classname.Test>newDefaultInstance(
-                  com.HiProtobuf.HiProtobuf.Test_classname.internal_static_HiProtobuf_Excel_Test_TestsEntry_descriptor, 
+                  com.HiProtobuf.HiProtobuf.Test_classname.internal_static_HiProtobuf_Excel_Test_DataEntry_descriptor, 
                   com.google.protobuf.WireFormat.FieldType.INT32,
                   0,
                   com.google.protobuf.WireFormat.FieldType.MESSAGE,
                   com.HiProtobuf.HiProtobuf.Test_classname.Test.getDefaultInstance());
     }
     private com.google.protobuf.MapField<
-        java.lang.Integer, com.HiProtobuf.HiProtobuf.Test_classname.Test> tests_;
+        java.lang.Integer, com.HiProtobuf.HiProtobuf.Test_classname.Test> data_;
     private com.google.protobuf.MapField<java.lang.Integer, com.HiProtobuf.HiProtobuf.Test_classname.Test>
-    internalGetTests() {
-      if (tests_ == null) {
+    internalGetData() {
+      if (data_ == null) {
         return com.google.protobuf.MapField.emptyMapField(
-            TestsDefaultEntryHolder.defaultEntry);
+            DataDefaultEntryHolder.defaultEntry);
       }
-      return tests_;
+      return data_;
     }
 
-    public int getTestsCount() {
-      return internalGetTests().getMap().size();
+    public int getDataCount() {
+      return internalGetData().getMap().size();
     }
     /**
-     * <code>map&lt;int32, .HiProtobuf.Test&gt; Tests = 1;</code>
+     * <code>map&lt;int32, .HiProtobuf.Test&gt; Data = 1;</code>
      */
 
-    public boolean containsTests(
+    public boolean containsData(
         int key) {
       
-      return internalGetTests().getMap().containsKey(key);
+      return internalGetData().getMap().containsKey(key);
     }
     /**
-     * Use {@link #getTestsMap()} instead.
+     * Use {@link #getDataMap()} instead.
      */
     @java.lang.Deprecated
-    public java.util.Map<java.lang.Integer, com.HiProtobuf.HiProtobuf.Test_classname.Test> getTests() {
-      return getTestsMap();
+    public java.util.Map<java.lang.Integer, com.HiProtobuf.HiProtobuf.Test_classname.Test> getData() {
+      return getDataMap();
     }
     /**
-     * <code>map&lt;int32, .HiProtobuf.Test&gt; Tests = 1;</code>
+     * <code>map&lt;int32, .HiProtobuf.Test&gt; Data = 1;</code>
      */
 
-    public java.util.Map<java.lang.Integer, com.HiProtobuf.HiProtobuf.Test_classname.Test> getTestsMap() {
-      return internalGetTests().getMap();
+    public java.util.Map<java.lang.Integer, com.HiProtobuf.HiProtobuf.Test_classname.Test> getDataMap() {
+      return internalGetData().getMap();
     }
     /**
-     * <code>map&lt;int32, .HiProtobuf.Test&gt; Tests = 1;</code>
+     * <code>map&lt;int32, .HiProtobuf.Test&gt; Data = 1;</code>
      */
 
-    public com.HiProtobuf.HiProtobuf.Test_classname.Test getTestsOrDefault(
+    public com.HiProtobuf.HiProtobuf.Test_classname.Test getDataOrDefault(
         int key,
         com.HiProtobuf.HiProtobuf.Test_classname.Test defaultValue) {
       
       java.util.Map<java.lang.Integer, com.HiProtobuf.HiProtobuf.Test_classname.Test> map =
-          internalGetTests().getMap();
+          internalGetData().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
-     * <code>map&lt;int32, .HiProtobuf.Test&gt; Tests = 1;</code>
+     * <code>map&lt;int32, .HiProtobuf.Test&gt; Data = 1;</code>
      */
 
-    public com.HiProtobuf.HiProtobuf.Test_classname.Test getTestsOrThrow(
+    public com.HiProtobuf.HiProtobuf.Test_classname.Test getDataOrThrow(
         int key) {
       
       java.util.Map<java.lang.Integer, com.HiProtobuf.HiProtobuf.Test_classname.Test> map =
-          internalGetTests().getMap();
+          internalGetData().getMap();
       if (!map.containsKey(key)) {
         throw new java.lang.IllegalArgumentException();
       }
@@ -1189,8 +1181,8 @@ public final class Test_classname {
       com.google.protobuf.GeneratedMessageV3
         .serializeIntegerMapTo(
           output,
-          internalGetTests(),
-          TestsDefaultEntryHolder.defaultEntry,
+          internalGetData(),
+          DataDefaultEntryHolder.defaultEntry,
           1);
       unknownFields.writeTo(output);
     }
@@ -1202,14 +1194,14 @@ public final class Test_classname {
 
       size = 0;
       for (java.util.Map.Entry<java.lang.Integer, com.HiProtobuf.HiProtobuf.Test_classname.Test> entry
-           : internalGetTests().getMap().entrySet()) {
+           : internalGetData().getMap().entrySet()) {
         com.google.protobuf.MapEntry<java.lang.Integer, com.HiProtobuf.HiProtobuf.Test_classname.Test>
-        tests__ = TestsDefaultEntryHolder.defaultEntry.newBuilderForType()
+        data__ = DataDefaultEntryHolder.defaultEntry.newBuilderForType()
             .setKey(entry.getKey())
             .setValue(entry.getValue())
             .build();
         size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(1, tests__);
+            .computeMessageSize(1, data__);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1226,8 +1218,8 @@ public final class Test_classname {
       }
       com.HiProtobuf.HiProtobuf.Test_classname.Excel_Test other = (com.HiProtobuf.HiProtobuf.Test_classname.Excel_Test) obj;
 
-      if (!internalGetTests().equals(
-          other.internalGetTests())) return false;
+      if (!internalGetData().equals(
+          other.internalGetData())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -1239,9 +1231,9 @@ public final class Test_classname {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (!internalGetTests().getMap().isEmpty()) {
-        hash = (37 * hash) + TESTS_FIELD_NUMBER;
-        hash = (53 * hash) + internalGetTests().hashCode();
+      if (!internalGetData().getMap().isEmpty()) {
+        hash = (37 * hash) + DATA_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetData().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -1355,7 +1347,7 @@ public final class Test_classname {
           int number) {
         switch (number) {
           case 1:
-            return internalGetTests();
+            return internalGetData();
           default:
             throw new RuntimeException(
                 "Invalid map field number: " + number);
@@ -1366,7 +1358,7 @@ public final class Test_classname {
           int number) {
         switch (number) {
           case 1:
-            return internalGetMutableTests();
+            return internalGetMutableData();
           default:
             throw new RuntimeException(
                 "Invalid map field number: " + number);
@@ -1398,7 +1390,7 @@ public final class Test_classname {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        internalGetMutableTests().clear();
+        internalGetMutableData().clear();
         return this;
       }
 
@@ -1426,8 +1418,8 @@ public final class Test_classname {
       public com.HiProtobuf.HiProtobuf.Test_classname.Excel_Test buildPartial() {
         com.HiProtobuf.HiProtobuf.Test_classname.Excel_Test result = new com.HiProtobuf.HiProtobuf.Test_classname.Excel_Test(this);
         int from_bitField0_ = bitField0_;
-        result.tests_ = internalGetTests();
-        result.tests_.makeImmutable();
+        result.data_ = internalGetData();
+        result.data_.makeImmutable();
         onBuilt();
         return result;
       }
@@ -1476,8 +1468,8 @@ public final class Test_classname {
 
       public Builder mergeFrom(com.HiProtobuf.HiProtobuf.Test_classname.Excel_Test other) {
         if (other == com.HiProtobuf.HiProtobuf.Test_classname.Excel_Test.getDefaultInstance()) return this;
-        internalGetMutableTests().mergeFrom(
-            other.internalGetTests());
+        internalGetMutableData().mergeFrom(
+            other.internalGetData());
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -1509,94 +1501,94 @@ public final class Test_classname {
       private int bitField0_;
 
       private com.google.protobuf.MapField<
-          java.lang.Integer, com.HiProtobuf.HiProtobuf.Test_classname.Test> tests_;
+          java.lang.Integer, com.HiProtobuf.HiProtobuf.Test_classname.Test> data_;
       private com.google.protobuf.MapField<java.lang.Integer, com.HiProtobuf.HiProtobuf.Test_classname.Test>
-      internalGetTests() {
-        if (tests_ == null) {
+      internalGetData() {
+        if (data_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
-              TestsDefaultEntryHolder.defaultEntry);
+              DataDefaultEntryHolder.defaultEntry);
         }
-        return tests_;
+        return data_;
       }
       private com.google.protobuf.MapField<java.lang.Integer, com.HiProtobuf.HiProtobuf.Test_classname.Test>
-      internalGetMutableTests() {
+      internalGetMutableData() {
         onChanged();;
-        if (tests_ == null) {
-          tests_ = com.google.protobuf.MapField.newMapField(
-              TestsDefaultEntryHolder.defaultEntry);
+        if (data_ == null) {
+          data_ = com.google.protobuf.MapField.newMapField(
+              DataDefaultEntryHolder.defaultEntry);
         }
-        if (!tests_.isMutable()) {
-          tests_ = tests_.copy();
+        if (!data_.isMutable()) {
+          data_ = data_.copy();
         }
-        return tests_;
+        return data_;
       }
 
-      public int getTestsCount() {
-        return internalGetTests().getMap().size();
+      public int getDataCount() {
+        return internalGetData().getMap().size();
       }
       /**
-       * <code>map&lt;int32, .HiProtobuf.Test&gt; Tests = 1;</code>
+       * <code>map&lt;int32, .HiProtobuf.Test&gt; Data = 1;</code>
        */
 
-      public boolean containsTests(
+      public boolean containsData(
           int key) {
         
-        return internalGetTests().getMap().containsKey(key);
+        return internalGetData().getMap().containsKey(key);
       }
       /**
-       * Use {@link #getTestsMap()} instead.
+       * Use {@link #getDataMap()} instead.
        */
       @java.lang.Deprecated
-      public java.util.Map<java.lang.Integer, com.HiProtobuf.HiProtobuf.Test_classname.Test> getTests() {
-        return getTestsMap();
+      public java.util.Map<java.lang.Integer, com.HiProtobuf.HiProtobuf.Test_classname.Test> getData() {
+        return getDataMap();
       }
       /**
-       * <code>map&lt;int32, .HiProtobuf.Test&gt; Tests = 1;</code>
+       * <code>map&lt;int32, .HiProtobuf.Test&gt; Data = 1;</code>
        */
 
-      public java.util.Map<java.lang.Integer, com.HiProtobuf.HiProtobuf.Test_classname.Test> getTestsMap() {
-        return internalGetTests().getMap();
+      public java.util.Map<java.lang.Integer, com.HiProtobuf.HiProtobuf.Test_classname.Test> getDataMap() {
+        return internalGetData().getMap();
       }
       /**
-       * <code>map&lt;int32, .HiProtobuf.Test&gt; Tests = 1;</code>
+       * <code>map&lt;int32, .HiProtobuf.Test&gt; Data = 1;</code>
        */
 
-      public com.HiProtobuf.HiProtobuf.Test_classname.Test getTestsOrDefault(
+      public com.HiProtobuf.HiProtobuf.Test_classname.Test getDataOrDefault(
           int key,
           com.HiProtobuf.HiProtobuf.Test_classname.Test defaultValue) {
         
         java.util.Map<java.lang.Integer, com.HiProtobuf.HiProtobuf.Test_classname.Test> map =
-            internalGetTests().getMap();
+            internalGetData().getMap();
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
       /**
-       * <code>map&lt;int32, .HiProtobuf.Test&gt; Tests = 1;</code>
+       * <code>map&lt;int32, .HiProtobuf.Test&gt; Data = 1;</code>
        */
 
-      public com.HiProtobuf.HiProtobuf.Test_classname.Test getTestsOrThrow(
+      public com.HiProtobuf.HiProtobuf.Test_classname.Test getDataOrThrow(
           int key) {
         
         java.util.Map<java.lang.Integer, com.HiProtobuf.HiProtobuf.Test_classname.Test> map =
-            internalGetTests().getMap();
+            internalGetData().getMap();
         if (!map.containsKey(key)) {
           throw new java.lang.IllegalArgumentException();
         }
         return map.get(key);
       }
 
-      public Builder clearTests() {
-        internalGetMutableTests().getMutableMap()
+      public Builder clearData() {
+        internalGetMutableData().getMutableMap()
             .clear();
         return this;
       }
       /**
-       * <code>map&lt;int32, .HiProtobuf.Test&gt; Tests = 1;</code>
+       * <code>map&lt;int32, .HiProtobuf.Test&gt; Data = 1;</code>
        */
 
-      public Builder removeTests(
+      public Builder removeData(
           int key) {
         
-        internalGetMutableTests().getMutableMap()
+        internalGetMutableData().getMutableMap()
             .remove(key);
         return this;
       }
@@ -1605,28 +1597,28 @@ public final class Test_classname {
        */
       @java.lang.Deprecated
       public java.util.Map<java.lang.Integer, com.HiProtobuf.HiProtobuf.Test_classname.Test>
-      getMutableTests() {
-        return internalGetMutableTests().getMutableMap();
+      getMutableData() {
+        return internalGetMutableData().getMutableMap();
       }
       /**
-       * <code>map&lt;int32, .HiProtobuf.Test&gt; Tests = 1;</code>
+       * <code>map&lt;int32, .HiProtobuf.Test&gt; Data = 1;</code>
        */
-      public Builder putTests(
+      public Builder putData(
           int key,
           com.HiProtobuf.HiProtobuf.Test_classname.Test value) {
         
         if (value == null) { throw new java.lang.NullPointerException(); }
-        internalGetMutableTests().getMutableMap()
+        internalGetMutableData().getMutableMap()
             .put(key, value);
         return this;
       }
       /**
-       * <code>map&lt;int32, .HiProtobuf.Test&gt; Tests = 1;</code>
+       * <code>map&lt;int32, .HiProtobuf.Test&gt; Data = 1;</code>
        */
 
-      public Builder putAllTests(
+      public Builder putAllData(
           java.util.Map<java.lang.Integer, com.HiProtobuf.HiProtobuf.Test_classname.Test> values) {
-        internalGetMutableTests().getMutableMap()
+        internalGetMutableData().getMutableMap()
             .putAll(values);
         return this;
       }
@@ -1694,10 +1686,10 @@ public final class Test_classname {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_HiProtobuf_Excel_Test_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_HiProtobuf_Excel_Test_TestsEntry_descriptor;
+    internal_static_HiProtobuf_Excel_Test_DataEntry_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_HiProtobuf_Excel_Test_TestsEntry_fieldAccessorTable;
+      internal_static_HiProtobuf_Excel_Test_DataEntry_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -1709,12 +1701,12 @@ public final class Test_classname {
     java.lang.String[] descriptorData = {
       "\n\nTest.proto\022\nHiProtobuf\"K\n\004Test\022\n\n\002id\030\001" +
       " \001(\005\022\014\n\004name\030\002 \001(\t\022\n\n\002hp\030\003 \001(\005\022\016\n\006attack" +
-      "\030\004 \001(\005\022\r\n\005infos\030\005 \003(\t\"~\n\nExcel_Test\0220\n\005T" +
-      "ests\030\001 \003(\0132!.HiProtobuf.Excel_Test.Tests" +
-      "Entry\032>\n\nTestsEntry\022\013\n\003key\030\001 \001(\005\022\037\n\005valu" +
-      "e\030\002 \001(\0132\020.HiProtobuf.Test:\0028\001B8\n\031com.HiP" +
-      "rotobuf.HiProtobufB\016Test_classname\252\002\nHiP" +
-      "rotobufb\006proto3"
+      "\030\004 \001(\005\022\r\n\005infos\030\005 \003(\t\"{\n\nExcel_Test\022.\n\004D" +
+      "ata\030\001 \003(\0132 .HiProtobuf.Excel_Test.DataEn" +
+      "try\032=\n\tDataEntry\022\013\n\003key\030\001 \001(\005\022\037\n\005value\030\002" +
+      " \001(\0132\020.HiProtobuf.Test:\0028\001B8\n\031com.HiProt" +
+      "obuf.HiProtobufB\016Test_classname\252\002\nHiProt" +
+      "obufb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1731,12 +1723,12 @@ public final class Test_classname {
     internal_static_HiProtobuf_Excel_Test_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_HiProtobuf_Excel_Test_descriptor,
-        new java.lang.String[] { "Tests", });
-    internal_static_HiProtobuf_Excel_Test_TestsEntry_descriptor =
+        new java.lang.String[] { "Data", });
+    internal_static_HiProtobuf_Excel_Test_DataEntry_descriptor =
       internal_static_HiProtobuf_Excel_Test_descriptor.getNestedTypes().get(0);
-    internal_static_HiProtobuf_Excel_Test_TestsEntry_fieldAccessorTable = new
+    internal_static_HiProtobuf_Excel_Test_DataEntry_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_HiProtobuf_Excel_Test_TestsEntry_descriptor,
+        internal_static_HiProtobuf_Excel_Test_DataEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
   }
 

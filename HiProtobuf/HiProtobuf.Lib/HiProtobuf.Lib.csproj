@@ -56,20 +56,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BinaryHandler.cs" />
     <Compile Include="Common.cs" />
     <Compile Include="DataHandler.cs" />
-    <Compile Include="ExcelInfo.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="LanguageGenerater.cs" />
     <Compile Include="Manager.cs" />
-    <Compile Include="ExcelHandler.cs" />
     <Compile Include="LogHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ProtoGenerater.cs" />
     <Compile Include="ProtoHandler.cs" />
     <Compile Include="Compiler.cs" />
-    <Compile Include="VariableInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

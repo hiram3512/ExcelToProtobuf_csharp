@@ -27,51 +27,44 @@ namespace HiProtobuf.Lib
 
         public void Process()
         {
-            //double
-            //float
-            //int32
-            //int64
-            //uint32
-            //uint64
-            //sint32
-            //sint64
-            //fixed32
-            //fixed64
-            //sfixed32
-            //sfixed64
-            //bool
-            //string
-            //bytes
-
-            string[] all = new[] {
-                "double", "float", "int32", "int64", "uint32", "uint64", "sint32", "sint64", "fixed32", "fixed64","sfixed32", "sfixed64", "bool", "string", "bytes",
-                "double[]", "float[]", "int32[]", "int64[]", "uint32[]", "uint64[]", "sint32[]", "sint64[]", "fixed32[]", "fixed64[]","sfixed32[]", "sfixed64[]", "bool[]", "string[]", "bytes[]"
-            };
-
-
-            var data = ExcelHandler.ExcelInfos.Values.ToList();
-            for (int i = 0; i < data.Count; i++)
+            //递归查询
+            string[] files = Directory.GetFiles(Settings.Excel_Folder, "*.xlsx", SearchOption.AllDirectories);
+            for (int i = 0; i < files.Length; i++)
             {
-                ExcelInfo info = data[i];
-                List<VariableInfo> variableInfos = new List<VariableInfo>();
-                for (int j = 1; j <= info.ColCount; j++)
+                var path = files[i];
+                if (path.Contains("~$"))//已打开的表格格式
                 {
-
-                    var test = info.Range.Cells[2, j];
-                    var test2 = (Range) info.Range.Cells[2, j];
-                    var test3 = ((Range) info.Range.Cells[2, j]).Value2;
-
-
-
-
-                    var type = ((Range)info.Range.Cells[2, j]).Value2.ToString();
-                    var name = ((Range)info.Range.Cells[3, j]).Value2.ToString();
-                    var variableInfo = new VariableInfo(type, name);
-                    AssertThat.IsTrue(all.Contains(variableInfo.Type), "Excel proto type define error:" + info.Name);
-                    variableInfos.Add(variableInfo);
+                    continue;
                 }
-                new ProtoGenerater(info.Name,variableInfos).Process();
+                ProcessExcel(path);
             }
+        }
+
+        void ProcessExcel(string path)
+        {
+            AssertThat.IsNotNullOrEmpty(path);
+            var excelApp = new Application();
+            var workbooks = excelApp.Workbooks.Open(path);
+            var sheet = workbooks.Sheets[1];
+            AssertThat.IsNotNull(sheet, "Excel's sheet is null");
+            Worksheet worksheet = sheet as Worksheet;
+            AssertThat.IsNotNull(sheet, "Excel's worksheet is null");
+            var usedRange = worksheet.UsedRange;
+            int rowCount = usedRange.Rows.Count;
+            int colCount = usedRange.Columns.Count;
+            //for (int i = 1; i <= rowCount; i++)
+            //{
+            //    for (int j = 1; j <= colCount; j++)
+            //    {
+            //        var value = ((Range)usedRange.Cells[i, j]).Value2;
+            //        var str = value.ToString();
+            //    }
+            //}
+            var name = Path.GetFileNameWithoutExtension(path);
+            new ProtoGenerater(name, rowCount, colCount, usedRange).Process();
+            workbooks.Close();
+            excelApp.Quit();
+            System.Runtime.InteropServices.Marshal.ReleaseComObject(excelApp);
         }
     }
 }

@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='HiProtobuf',
   syntax='proto3',
   serialized_options=_b('\n\031com.HiProtobuf.HiProtobufB\016Test_classname\252\002\nHiProtobuf'),
-  serialized_pb=_b('\n\nTest.proto\x12\nHiProtobuf\"K\n\x04Test\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\n\n\x02hp\x18\x03 \x01(\x05\x12\x0e\n\x06\x61ttack\x18\x04 \x01(\x05\x12\r\n\x05infos\x18\x05 \x03(\t\"~\n\nExcel_Test\x12\x30\n\x05Tests\x18\x01 \x03(\x0b\x32!.HiProtobuf.Excel_Test.TestsEntry\x1a>\n\nTestsEntry\x12\x0b\n\x03key\x18\x01 \x01(\x05\x12\x1f\n\x05value\x18\x02 \x01(\x0b\x32\x10.HiProtobuf.Test:\x02\x38\x01\x42\x38\n\x19\x63om.HiProtobuf.HiProtobufB\x0eTest_classname\xaa\x02\nHiProtobufb\x06proto3')
+  serialized_pb=_b('\n\nTest.proto\x12\nHiProtobuf\"K\n\x04Test\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\n\n\x02hp\x18\x03 \x01(\x05\x12\x0e\n\x06\x61ttack\x18\x04 \x01(\x05\x12\r\n\x05infos\x18\x05 \x03(\t\"{\n\nExcel_Test\x12.\n\x04\x44\x61ta\x18\x01 \x03(\x0b\x32 .HiProtobuf.Excel_Test.DataEntry\x1a=\n\tDataEntry\x12\x0b\n\x03key\x18\x01 \x01(\x05\x12\x1f\n\x05value\x18\x02 \x01(\x0b\x32\x10.HiProtobuf.Test:\x02\x38\x01\x42\x38\n\x19\x63om.HiProtobuf.HiProtobufB\x0eTest_classname\xaa\x02\nHiProtobufb\x06proto3')
 )
 
 
@@ -85,22 +85,22 @@ _TEST = _descriptor.Descriptor(
 )
 
 
-_EXCEL_TEST_TESTSENTRY = _descriptor.Descriptor(
-  name='TestsEntry',
-  full_name='HiProtobuf.Excel_Test.TestsEntry',
+_EXCEL_TEST_DATAENTRY = _descriptor.Descriptor(
+  name='DataEntry',
+  full_name='HiProtobuf.Excel_Test.DataEntry',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='key', full_name='HiProtobuf.Excel_Test.TestsEntry.key', index=0,
+      name='key', full_name='HiProtobuf.Excel_Test.DataEntry.key', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='value', full_name='HiProtobuf.Excel_Test.TestsEntry.value', index=1,
+      name='value', full_name='HiProtobuf.Excel_Test.DataEntry.value', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -118,8 +118,8 @@ _EXCEL_TEST_TESTSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=167,
-  serialized_end=229,
+  serialized_start=165,
+  serialized_end=226,
 )
 
 _EXCEL_TEST = _descriptor.Descriptor(
@@ -130,7 +130,7 @@ _EXCEL_TEST = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='Tests', full_name='HiProtobuf.Excel_Test.Tests', index=0,
+      name='Data', full_name='HiProtobuf.Excel_Test.Data', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -139,7 +139,7 @@ _EXCEL_TEST = _descriptor.Descriptor(
   ],
   extensions=[
   ],
-  nested_types=[_EXCEL_TEST_TESTSENTRY, ],
+  nested_types=[_EXCEL_TEST_DATAENTRY, ],
   enum_types=[
   ],
   serialized_options=None,
@@ -149,12 +149,12 @@ _EXCEL_TEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=103,
-  serialized_end=229,
+  serialized_end=226,
 )
 
-_EXCEL_TEST_TESTSENTRY.fields_by_name['value'].message_type = _TEST
-_EXCEL_TEST_TESTSENTRY.containing_type = _EXCEL_TEST
-_EXCEL_TEST.fields_by_name['Tests'].message_type = _EXCEL_TEST_TESTSENTRY
+_EXCEL_TEST_DATAENTRY.fields_by_name['value'].message_type = _TEST
+_EXCEL_TEST_DATAENTRY.containing_type = _EXCEL_TEST
+_EXCEL_TEST.fields_by_name['Data'].message_type = _EXCEL_TEST_DATAENTRY
 DESCRIPTOR.message_types_by_name['Test'] = _TEST
 DESCRIPTOR.message_types_by_name['Excel_Test'] = _EXCEL_TEST
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
@@ -168,10 +168,10 @@ _sym_db.RegisterMessage(Test)
 
 Excel_Test = _reflection.GeneratedProtocolMessageType('Excel_Test', (_message.Message,), {
 
-  'TestsEntry' : _reflection.GeneratedProtocolMessageType('TestsEntry', (_message.Message,), {
-    'DESCRIPTOR' : _EXCEL_TEST_TESTSENTRY,
+  'DataEntry' : _reflection.GeneratedProtocolMessageType('DataEntry', (_message.Message,), {
+    'DESCRIPTOR' : _EXCEL_TEST_DATAENTRY,
     '__module__' : 'Test_pb2'
-    # @@protoc_insertion_point(class_scope:HiProtobuf.Excel_Test.TestsEntry)
+    # @@protoc_insertion_point(class_scope:HiProtobuf.Excel_Test.DataEntry)
     })
   ,
   'DESCRIPTOR' : _EXCEL_TEST,
@@ -179,9 +179,9 @@ Excel_Test = _reflection.GeneratedProtocolMessageType('Excel_Test', (_message.Me
   # @@protoc_insertion_point(class_scope:HiProtobuf.Excel_Test)
   })
 _sym_db.RegisterMessage(Excel_Test)
-_sym_db.RegisterMessage(Excel_Test.TestsEntry)
+_sym_db.RegisterMessage(Excel_Test.DataEntry)
 
 
 DESCRIPTOR._options = None
-_EXCEL_TEST_TESTSENTRY._options = None
+_EXCEL_TEST_DATAENTRY._options = None
 # @@protoc_insertion_point(module_scope)

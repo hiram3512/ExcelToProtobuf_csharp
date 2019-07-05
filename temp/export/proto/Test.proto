@@ -15,6 +15,7 @@ option java_outer_classname = "Test_classname";
 // [START csharp_declaration]
 option csharp_namespace = "HiProtobuf"; 
 // [END csharp_declaration]
+
 message Test {
   int32 id = 1;
   string name = 2;
@@ -25,5 +26,5 @@ message Test {
 
 message Excel_Test
 {
-    map<int32,Test> Tests = 1;
+    map<int32,Test> Data = 1;
 }

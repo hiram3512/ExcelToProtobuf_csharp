@@ -37,7 +37,7 @@ namespace HiProtobuf.Lib
 
         private void ProcessExcelData(string name)
         {
-            var data = ExcelHandler.ExcelInfos[name];
+            //var data = ExcelHandler.ExcelInfos[name];
             //int rowCount = ((Range)data).Rows.Count;
             //int colCount = ((Range)data).Columns.Count;
 

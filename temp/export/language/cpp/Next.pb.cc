@@ -15,17 +15,17 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
-extern PROTOBUF_INTERNAL_EXPORT_Next_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_Excel_Next_NextsEntry_DoNotUse_Next_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_Next_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_Excel_Next_DataEntry_DoNotUse_Next_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_Next_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Next_Next_2eproto;
 namespace HiProtobuf {
 class NextDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<Next> _instance;
 } _Next_default_instance_;
-class Excel_Next_NextsEntry_DoNotUseDefaultTypeInternal {
+class Excel_Next_DataEntry_DoNotUseDefaultTypeInternal {
  public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<Excel_Next_NextsEntry_DoNotUse> _instance;
-} _Excel_Next_NextsEntry_DoNotUse_default_instance_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<Excel_Next_DataEntry_DoNotUse> _instance;
+} _Excel_Next_DataEntry_DoNotUse_default_instance_;
 class Excel_NextDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<Excel_Next> _instance;
@@ -44,20 +44,20 @@ static void InitDefaultsscc_info_Excel_Next_Next_2eproto() {
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_Excel_Next_Next_2eproto =
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsscc_info_Excel_Next_Next_2eproto}, {
-      &scc_info_Excel_Next_NextsEntry_DoNotUse_Next_2eproto.base,}};
+      &scc_info_Excel_Next_DataEntry_DoNotUse_Next_2eproto.base,}};
 
-static void InitDefaultsscc_info_Excel_Next_NextsEntry_DoNotUse_Next_2eproto() {
+static void InitDefaultsscc_info_Excel_Next_DataEntry_DoNotUse_Next_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::HiProtobuf::_Excel_Next_NextsEntry_DoNotUse_default_instance_;
-    new (ptr) ::HiProtobuf::Excel_Next_NextsEntry_DoNotUse();
+    void* ptr = &::HiProtobuf::_Excel_Next_DataEntry_DoNotUse_default_instance_;
+    new (ptr) ::HiProtobuf::Excel_Next_DataEntry_DoNotUse();
   }
-  ::HiProtobuf::Excel_Next_NextsEntry_DoNotUse::InitAsDefaultInstance();
+  ::HiProtobuf::Excel_Next_DataEntry_DoNotUse::InitAsDefaultInstance();
 }
 
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_Excel_Next_NextsEntry_DoNotUse_Next_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsscc_info_Excel_Next_NextsEntry_DoNotUse_Next_2eproto}, {
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_Excel_Next_DataEntry_DoNotUse_Next_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsscc_info_Excel_Next_DataEntry_DoNotUse_Next_2eproto}, {
       &scc_info_Next_Next_2eproto.base,}};
 
 static void InitDefaultsscc_info_Next_Next_2eproto() {
@@ -89,13 +89,13 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_Next_2eproto::offsets[] PROTOB
   PROTOBUF_FIELD_OFFSET(::HiProtobuf::Next, hp_),
   PROTOBUF_FIELD_OFFSET(::HiProtobuf::Next, attack_),
   PROTOBUF_FIELD_OFFSET(::HiProtobuf::Next, infos_),
-  PROTOBUF_FIELD_OFFSET(::HiProtobuf::Excel_Next_NextsEntry_DoNotUse, _has_bits_),
-  PROTOBUF_FIELD_OFFSET(::HiProtobuf::Excel_Next_NextsEntry_DoNotUse, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::HiProtobuf::Excel_Next_DataEntry_DoNotUse, _has_bits_),
+  PROTOBUF_FIELD_OFFSET(::HiProtobuf::Excel_Next_DataEntry_DoNotUse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::HiProtobuf::Excel_Next_NextsEntry_DoNotUse, key_),
-  PROTOBUF_FIELD_OFFSET(::HiProtobuf::Excel_Next_NextsEntry_DoNotUse, value_),
+  PROTOBUF_FIELD_OFFSET(::HiProtobuf::Excel_Next_DataEntry_DoNotUse, key_),
+  PROTOBUF_FIELD_OFFSET(::HiProtobuf::Excel_Next_DataEntry_DoNotUse, value_),
   0,
   1,
   ~0u,  // no _has_bits_
@@ -103,41 +103,41 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_Next_2eproto::offsets[] PROTOB
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::HiProtobuf::Excel_Next, nexts_),
+  PROTOBUF_FIELD_OFFSET(::HiProtobuf::Excel_Next, data_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::HiProtobuf::Next)},
-  { 10, 17, sizeof(::HiProtobuf::Excel_Next_NextsEntry_DoNotUse)},
+  { 10, 17, sizeof(::HiProtobuf::Excel_Next_DataEntry_DoNotUse)},
   { 19, -1, sizeof(::HiProtobuf::Excel_Next)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::HiProtobuf::_Next_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::HiProtobuf::_Excel_Next_NextsEntry_DoNotUse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::HiProtobuf::_Excel_Next_DataEntry_DoNotUse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::HiProtobuf::_Excel_Next_default_instance_),
 };
 
 const char descriptor_table_protodef_Next_2eproto[] =
   "\n\nNext.proto\022\nHiProtobuf\"K\n\004Next\022\n\n\002id\030\001"
   " \001(\005\022\014\n\004name\030\002 \001(\t\022\n\n\002hp\030\003 \001(\005\022\016\n\006attack"
-  "\030\004 \001(\005\022\r\n\005infos\030\005 \003(\t\"~\n\nExcel_Next\0220\n\005N"
-  "exts\030\001 \003(\0132!.HiProtobuf.Excel_Next.Nexts"
-  "Entry\032>\n\nNextsEntry\022\013\n\003key\030\001 \001(\005\022\037\n\005valu"
-  "e\030\002 \001(\0132\020.HiProtobuf.Next:\0028\001B8\n\031com.HiP"
-  "rotobuf.HiProtobufB\016Next_classname\252\002\nHiP"
-  "rotobufb\006proto3"
+  "\030\004 \001(\005\022\r\n\005infos\030\005 \003(\t\"{\n\nExcel_Next\022.\n\004D"
+  "ata\030\001 \003(\0132 .HiProtobuf.Excel_Next.DataEn"
+  "try\032=\n\tDataEntry\022\013\n\003key\030\001 \001(\005\022\037\n\005value\030\002"
+  " \001(\0132\020.HiProtobuf.Next:\0028\001B8\n\031com.HiProt"
+  "obuf.HiProtobufB\016Next_classname\252\002\nHiProt"
+  "obufb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_Next_2eproto_deps[1] = {
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_Next_2eproto_sccs[3] = {
   &scc_info_Excel_Next_Next_2eproto.base,
-  &scc_info_Excel_Next_NextsEntry_DoNotUse_Next_2eproto.base,
+  &scc_info_Excel_Next_DataEntry_DoNotUse_Next_2eproto.base,
   &scc_info_Next_Next_2eproto.base,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_Next_2eproto_once;
 static bool descriptor_table_Next_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_Next_2eproto = {
-  &descriptor_table_Next_2eproto_initialized, descriptor_table_protodef_Next_2eproto, "Next.proto", 295,
+  &descriptor_table_Next_2eproto_initialized, descriptor_table_protodef_Next_2eproto, "Next.proto", 292,
   &descriptor_table_Next_2eproto_once, descriptor_table_Next_2eproto_sccs, descriptor_table_Next_2eproto_deps, 3, 0,
   schemas, file_default_instances, TableStruct_Next_2eproto::offsets,
   file_level_metadata_Next_2eproto, 3, file_level_enum_descriptors_Next_2eproto, file_level_service_descriptors_Next_2eproto,
@@ -622,16 +622,16 @@ void Next::InternalSwap(Next* other) {
 
 // ===================================================================
 
-Excel_Next_NextsEntry_DoNotUse::Excel_Next_NextsEntry_DoNotUse() {}
-Excel_Next_NextsEntry_DoNotUse::Excel_Next_NextsEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+Excel_Next_DataEntry_DoNotUse::Excel_Next_DataEntry_DoNotUse() {}
+Excel_Next_DataEntry_DoNotUse::Excel_Next_DataEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
     : SuperType(arena) {}
-void Excel_Next_NextsEntry_DoNotUse::MergeFrom(const Excel_Next_NextsEntry_DoNotUse& other) {
+void Excel_Next_DataEntry_DoNotUse::MergeFrom(const Excel_Next_DataEntry_DoNotUse& other) {
   MergeFromInternal(other);
 }
-::PROTOBUF_NAMESPACE_ID::Metadata Excel_Next_NextsEntry_DoNotUse::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata Excel_Next_DataEntry_DoNotUse::GetMetadata() const {
   return GetMetadataStatic();
 }
-void Excel_Next_NextsEntry_DoNotUse::MergeFrom(
+void Excel_Next_DataEntry_DoNotUse::MergeFrom(
     const ::PROTOBUF_NAMESPACE_ID::Message& other) {
   ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom(other);
 }
@@ -646,7 +646,7 @@ class Excel_Next::HasBitSetters {
 };
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int Excel_Next::kNextsFieldNumber;
+const int Excel_Next::kDataFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 Excel_Next::Excel_Next()
@@ -658,7 +658,7 @@ Excel_Next::Excel_Next(const Excel_Next& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  nexts_.MergeFrom(from.nexts_);
+  data_.MergeFrom(from.data_);
   // @@protoc_insertion_point(copy_constructor:HiProtobuf.Excel_Next)
 }
 
@@ -689,7 +689,7 @@ void Excel_Next::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  nexts_.Clear();
+  data_.Clear();
   _internal_metadata_.Clear();
 }
 
@@ -701,13 +701,13 @@ const char* Excel_Next::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID:
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // map<int32, .HiProtobuf.Next> Nexts = 1;
+      // map<int32, .HiProtobuf.Next> Data = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           ptr -= 1;
           do {
             ptr += 1;
-            ptr = ctx->ParseMessage(&nexts_, ptr);
+            ptr = ctx->ParseMessage(&data_, ptr);
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<::PROTOBUF_NAMESPACE_ID::uint8>(ptr) == 10);
@@ -743,16 +743,16 @@ bool Excel_Next::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // map<int32, .HiProtobuf.Next> Nexts = 1;
+      // map<int32, .HiProtobuf.Next> Data = 1;
       case 1: {
         if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (10 & 0xFF)) {
-          Excel_Next_NextsEntry_DoNotUse::Parser< ::PROTOBUF_NAMESPACE_ID::internal::MapField<
-              Excel_Next_NextsEntry_DoNotUse,
+          Excel_Next_DataEntry_DoNotUse::Parser< ::PROTOBUF_NAMESPACE_ID::internal::MapField<
+              Excel_Next_DataEntry_DoNotUse,
               ::PROTOBUF_NAMESPACE_ID::int32, ::HiProtobuf::Next,
               ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_INT32,
               ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_MESSAGE,
               0 >,
-            ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::int32, ::HiProtobuf::Next > > parser(&nexts_);
+            ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::int32, ::HiProtobuf::Next > > parser(&data_);
           DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadMessageNoVirtual(
               input, &parser));
         } else {
@@ -788,34 +788,34 @@ void Excel_Next::SerializeWithCachedSizes(
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // map<int32, .HiProtobuf.Next> Nexts = 1;
-  if (!this->nexts().empty()) {
+  // map<int32, .HiProtobuf.Next> Data = 1;
+  if (!this->data().empty()) {
     typedef ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::int32, ::HiProtobuf::Next >::const_pointer
         ConstPtr;
     typedef ::PROTOBUF_NAMESPACE_ID::internal::SortItem< ::PROTOBUF_NAMESPACE_ID::int32, ConstPtr > SortItem;
     typedef ::PROTOBUF_NAMESPACE_ID::internal::CompareByFirstField<SortItem> Less;
 
     if (output->IsSerializationDeterministic() &&
-        this->nexts().size() > 1) {
+        this->data().size() > 1) {
       ::std::unique_ptr<SortItem[]> items(
-          new SortItem[this->nexts().size()]);
+          new SortItem[this->data().size()]);
       typedef ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::int32, ::HiProtobuf::Next >::size_type size_type;
       size_type n = 0;
       for (::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::int32, ::HiProtobuf::Next >::const_iterator
-          it = this->nexts().begin();
-          it != this->nexts().end(); ++it, ++n) {
+          it = this->data().begin();
+          it != this->data().end(); ++it, ++n) {
         items[static_cast<ptrdiff_t>(n)] = SortItem(&*it);
       }
       ::std::sort(&items[0], &items[static_cast<ptrdiff_t>(n)], Less());
       for (size_type i = 0; i < n; i++) {
-        Excel_Next_NextsEntry_DoNotUse::MapEntryWrapper entry(nullptr, items[static_cast<ptrdiff_t>(i)].second->first, items[static_cast<ptrdiff_t>(i)].second->second);
+        Excel_Next_DataEntry_DoNotUse::MapEntryWrapper entry(nullptr, items[static_cast<ptrdiff_t>(i)].second->first, items[static_cast<ptrdiff_t>(i)].second->second);
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteMessageMaybeToArray(1, entry, output);
       }
     } else {
       for (::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::int32, ::HiProtobuf::Next >::const_iterator
-          it = this->nexts().begin();
-          it != this->nexts().end(); ++it) {
-        Excel_Next_NextsEntry_DoNotUse::MapEntryWrapper entry(nullptr, it->first, it->second);
+          it = this->data().begin();
+          it != this->data().end(); ++it) {
+        Excel_Next_DataEntry_DoNotUse::MapEntryWrapper entry(nullptr, it->first, it->second);
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteMessageMaybeToArray(1, entry, output);
       }
     }
@@ -834,34 +834,34 @@ void Excel_Next::SerializeWithCachedSizes(
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // map<int32, .HiProtobuf.Next> Nexts = 1;
-  if (!this->nexts().empty()) {
+  // map<int32, .HiProtobuf.Next> Data = 1;
+  if (!this->data().empty()) {
     typedef ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::int32, ::HiProtobuf::Next >::const_pointer
         ConstPtr;
     typedef ::PROTOBUF_NAMESPACE_ID::internal::SortItem< ::PROTOBUF_NAMESPACE_ID::int32, ConstPtr > SortItem;
     typedef ::PROTOBUF_NAMESPACE_ID::internal::CompareByFirstField<SortItem> Less;
 
     if (false &&
-        this->nexts().size() > 1) {
+        this->data().size() > 1) {
       ::std::unique_ptr<SortItem[]> items(
-          new SortItem[this->nexts().size()]);
+          new SortItem[this->data().size()]);
       typedef ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::int32, ::HiProtobuf::Next >::size_type size_type;
       size_type n = 0;
       for (::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::int32, ::HiProtobuf::Next >::const_iterator
-          it = this->nexts().begin();
-          it != this->nexts().end(); ++it, ++n) {
+          it = this->data().begin();
+          it != this->data().end(); ++it, ++n) {
         items[static_cast<ptrdiff_t>(n)] = SortItem(&*it);
       }
       ::std::sort(&items[0], &items[static_cast<ptrdiff_t>(n)], Less());
       for (size_type i = 0; i < n; i++) {
-        Excel_Next_NextsEntry_DoNotUse::MapEntryWrapper entry(nullptr, items[static_cast<ptrdiff_t>(i)].second->first, items[static_cast<ptrdiff_t>(i)].second->second);
+        Excel_Next_DataEntry_DoNotUse::MapEntryWrapper entry(nullptr, items[static_cast<ptrdiff_t>(i)].second->first, items[static_cast<ptrdiff_t>(i)].second->second);
         target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::InternalWriteMessageNoVirtualToArray(1, entry, target);
       }
     } else {
       for (::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::int32, ::HiProtobuf::Next >::const_iterator
-          it = this->nexts().begin();
-          it != this->nexts().end(); ++it) {
-        Excel_Next_NextsEntry_DoNotUse::MapEntryWrapper entry(nullptr, it->first, it->second);
+          it = this->data().begin();
+          it != this->data().end(); ++it) {
+        Excel_Next_DataEntry_DoNotUse::MapEntryWrapper entry(nullptr, it->first, it->second);
         target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::InternalWriteMessageNoVirtualToArray(1, entry, target);
       }
     }
@@ -888,13 +888,13 @@ size_t Excel_Next::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // map<int32, .HiProtobuf.Next> Nexts = 1;
+  // map<int32, .HiProtobuf.Next> Data = 1;
   total_size += 1 *
-      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(this->nexts_size());
+      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(this->data_size());
   for (::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::int32, ::HiProtobuf::Next >::const_iterator
-      it = this->nexts().begin();
-      it != this->nexts().end(); ++it) {
-    Excel_Next_NextsEntry_DoNotUse::MapEntryWrapper entry(nullptr, it->first, it->second);
+      it = this->data().begin();
+      it != this->data().end(); ++it) {
+    Excel_Next_DataEntry_DoNotUse::MapEntryWrapper entry(nullptr, it->first, it->second);
     total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
         MessageSizeNoVirtual(entry);
   }
@@ -926,7 +926,7 @@ void Excel_Next::MergeFrom(const Excel_Next& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  nexts_.MergeFrom(from.nexts_);
+  data_.MergeFrom(from.data_);
 }
 
 void Excel_Next::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
@@ -954,7 +954,7 @@ void Excel_Next::Swap(Excel_Next* other) {
 void Excel_Next::InternalSwap(Excel_Next* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
-  nexts_.Swap(&other->nexts_);
+  data_.Swap(&other->data_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata Excel_Next::GetMetadata() const {
@@ -968,8 +968,8 @@ PROTOBUF_NAMESPACE_OPEN
 template<> PROTOBUF_NOINLINE ::HiProtobuf::Next* Arena::CreateMaybeMessage< ::HiProtobuf::Next >(Arena* arena) {
   return Arena::CreateInternal< ::HiProtobuf::Next >(arena);
 }
-template<> PROTOBUF_NOINLINE ::HiProtobuf::Excel_Next_NextsEntry_DoNotUse* Arena::CreateMaybeMessage< ::HiProtobuf::Excel_Next_NextsEntry_DoNotUse >(Arena* arena) {
-  return Arena::CreateInternal< ::HiProtobuf::Excel_Next_NextsEntry_DoNotUse >(arena);
+template<> PROTOBUF_NOINLINE ::HiProtobuf::Excel_Next_DataEntry_DoNotUse* Arena::CreateMaybeMessage< ::HiProtobuf::Excel_Next_DataEntry_DoNotUse >(Arena* arena) {
+  return Arena::CreateInternal< ::HiProtobuf::Excel_Next_DataEntry_DoNotUse >(arena);
 }
 template<> PROTOBUF_NOINLINE ::HiProtobuf::Excel_Next* Arena::CreateMaybeMessage< ::HiProtobuf::Excel_Next >(Arena* arena) {
   return Arena::CreateInternal< ::HiProtobuf::Excel_Next >(arena);

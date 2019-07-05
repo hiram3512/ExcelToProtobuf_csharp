@@ -15,17 +15,17 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
-extern PROTOBUF_INTERNAL_EXPORT_Test_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_Excel_Test_TestsEntry_DoNotUse_Test_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_Test_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_Excel_Test_DataEntry_DoNotUse_Test_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_Test_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Test_Test_2eproto;
 namespace HiProtobuf {
 class TestDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<Test> _instance;
 } _Test_default_instance_;
-class Excel_Test_TestsEntry_DoNotUseDefaultTypeInternal {
+class Excel_Test_DataEntry_DoNotUseDefaultTypeInternal {
  public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<Excel_Test_TestsEntry_DoNotUse> _instance;
-} _Excel_Test_TestsEntry_DoNotUse_default_instance_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<Excel_Test_DataEntry_DoNotUse> _instance;
+} _Excel_Test_DataEntry_DoNotUse_default_instance_;
 class Excel_TestDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<Excel_Test> _instance;
@@ -44,20 +44,20 @@ static void InitDefaultsscc_info_Excel_Test_Test_2eproto() {
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_Excel_Test_Test_2eproto =
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsscc_info_Excel_Test_Test_2eproto}, {
-      &scc_info_Excel_Test_TestsEntry_DoNotUse_Test_2eproto.base,}};
+      &scc_info_Excel_Test_DataEntry_DoNotUse_Test_2eproto.base,}};
 
-static void InitDefaultsscc_info_Excel_Test_TestsEntry_DoNotUse_Test_2eproto() {
+static void InitDefaultsscc_info_Excel_Test_DataEntry_DoNotUse_Test_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::HiProtobuf::_Excel_Test_TestsEntry_DoNotUse_default_instance_;
-    new (ptr) ::HiProtobuf::Excel_Test_TestsEntry_DoNotUse();
+    void* ptr = &::HiProtobuf::_Excel_Test_DataEntry_DoNotUse_default_instance_;
+    new (ptr) ::HiProtobuf::Excel_Test_DataEntry_DoNotUse();
   }
-  ::HiProtobuf::Excel_Test_TestsEntry_DoNotUse::InitAsDefaultInstance();
+  ::HiProtobuf::Excel_Test_DataEntry_DoNotUse::InitAsDefaultInstance();
 }
 
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_Excel_Test_TestsEntry_DoNotUse_Test_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsscc_info_Excel_Test_TestsEntry_DoNotUse_Test_2eproto}, {
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_Excel_Test_DataEntry_DoNotUse_Test_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsscc_info_Excel_Test_DataEntry_DoNotUse_Test_2eproto}, {
       &scc_info_Test_Test_2eproto.base,}};
 
 static void InitDefaultsscc_info_Test_Test_2eproto() {
@@ -89,13 +89,13 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_Test_2eproto::offsets[] PROTOB
   PROTOBUF_FIELD_OFFSET(::HiProtobuf::Test, hp_),
   PROTOBUF_FIELD_OFFSET(::HiProtobuf::Test, attack_),
   PROTOBUF_FIELD_OFFSET(::HiProtobuf::Test, infos_),
-  PROTOBUF_FIELD_OFFSET(::HiProtobuf::Excel_Test_TestsEntry_DoNotUse, _has_bits_),
-  PROTOBUF_FIELD_OFFSET(::HiProtobuf::Excel_Test_TestsEntry_DoNotUse, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::HiProtobuf::Excel_Test_DataEntry_DoNotUse, _has_bits_),
+  PROTOBUF_FIELD_OFFSET(::HiProtobuf::Excel_Test_DataEntry_DoNotUse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::HiProtobuf::Excel_Test_TestsEntry_DoNotUse, key_),
-  PROTOBUF_FIELD_OFFSET(::HiProtobuf::Excel_Test_TestsEntry_DoNotUse, value_),
+  PROTOBUF_FIELD_OFFSET(::HiProtobuf::Excel_Test_DataEntry_DoNotUse, key_),
+  PROTOBUF_FIELD_OFFSET(::HiProtobuf::Excel_Test_DataEntry_DoNotUse, value_),
   0,
   1,
   ~0u,  // no _has_bits_
@@ -103,41 +103,41 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_Test_2eproto::offsets[] PROTOB
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::HiProtobuf::Excel_Test, tests_),
+  PROTOBUF_FIELD_OFFSET(::HiProtobuf::Excel_Test, data_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::HiProtobuf::Test)},
-  { 10, 17, sizeof(::HiProtobuf::Excel_Test_TestsEntry_DoNotUse)},
+  { 10, 17, sizeof(::HiProtobuf::Excel_Test_DataEntry_DoNotUse)},
   { 19, -1, sizeof(::HiProtobuf::Excel_Test)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::HiProtobuf::_Test_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::HiProtobuf::_Excel_Test_TestsEntry_DoNotUse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::HiProtobuf::_Excel_Test_DataEntry_DoNotUse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::HiProtobuf::_Excel_Test_default_instance_),
 };
 
 const char descriptor_table_protodef_Test_2eproto[] =
   "\n\nTest.proto\022\nHiProtobuf\"K\n\004Test\022\n\n\002id\030\001"
   " \001(\005\022\014\n\004name\030\002 \001(\t\022\n\n\002hp\030\003 \001(\005\022\016\n\006attack"
-  "\030\004 \001(\005\022\r\n\005infos\030\005 \003(\t\"~\n\nExcel_Test\0220\n\005T"
-  "ests\030\001 \003(\0132!.HiProtobuf.Excel_Test.Tests"
-  "Entry\032>\n\nTestsEntry\022\013\n\003key\030\001 \001(\005\022\037\n\005valu"
-  "e\030\002 \001(\0132\020.HiProtobuf.Test:\0028\001B8\n\031com.HiP"
-  "rotobuf.HiProtobufB\016Test_classname\252\002\nHiP"
-  "rotobufb\006proto3"
+  "\030\004 \001(\005\022\r\n\005infos\030\005 \003(\t\"{\n\nExcel_Test\022.\n\004D"
+  "ata\030\001 \003(\0132 .HiProtobuf.Excel_Test.DataEn"
+  "try\032=\n\tDataEntry\022\013\n\003key\030\001 \001(\005\022\037\n\005value\030\002"
+  " \001(\0132\020.HiProtobuf.Test:\0028\001B8\n\031com.HiProt"
+  "obuf.HiProtobufB\016Test_classname\252\002\nHiProt"
+  "obufb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_Test_2eproto_deps[1] = {
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_Test_2eproto_sccs[3] = {
   &scc_info_Excel_Test_Test_2eproto.base,
-  &scc_info_Excel_Test_TestsEntry_DoNotUse_Test_2eproto.base,
+  &scc_info_Excel_Test_DataEntry_DoNotUse_Test_2eproto.base,
   &scc_info_Test_Test_2eproto.base,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_Test_2eproto_once;
 static bool descriptor_table_Test_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_Test_2eproto = {
-  &descriptor_table_Test_2eproto_initialized, descriptor_table_protodef_Test_2eproto, "Test.proto", 295,
+  &descriptor_table_Test_2eproto_initialized, descriptor_table_protodef_Test_2eproto, "Test.proto", 292,
   &descriptor_table_Test_2eproto_once, descriptor_table_Test_2eproto_sccs, descriptor_table_Test_2eproto_deps, 3, 0,
   schemas, file_default_instances, TableStruct_Test_2eproto::offsets,
   file_level_metadata_Test_2eproto, 3, file_level_enum_descriptors_Test_2eproto, file_level_service_descriptors_Test_2eproto,
@@ -622,16 +622,16 @@ void Test::InternalSwap(Test* other) {
 
 // ===================================================================
 
-Excel_Test_TestsEntry_DoNotUse::Excel_Test_TestsEntry_DoNotUse() {}
-Excel_Test_TestsEntry_DoNotUse::Excel_Test_TestsEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+Excel_Test_DataEntry_DoNotUse::Excel_Test_DataEntry_DoNotUse() {}
+Excel_Test_DataEntry_DoNotUse::Excel_Test_DataEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
     : SuperType(arena) {}
-void Excel_Test_TestsEntry_DoNotUse::MergeFrom(const Excel_Test_TestsEntry_DoNotUse& other) {
+void Excel_Test_DataEntry_DoNotUse::MergeFrom(const Excel_Test_DataEntry_DoNotUse& other) {
   MergeFromInternal(other);
 }
-::PROTOBUF_NAMESPACE_ID::Metadata Excel_Test_TestsEntry_DoNotUse::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata Excel_Test_DataEntry_DoNotUse::GetMetadata() const {
   return GetMetadataStatic();
 }
-void Excel_Test_TestsEntry_DoNotUse::MergeFrom(
+void Excel_Test_DataEntry_DoNotUse::MergeFrom(
     const ::PROTOBUF_NAMESPACE_ID::Message& other) {
   ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom(other);
 }
@@ -646,7 +646,7 @@ class Excel_Test::HasBitSetters {
 };
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int Excel_Test::kTestsFieldNumber;
+const int Excel_Test::kDataFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 Excel_Test::Excel_Test()
@@ -658,7 +658,7 @@ Excel_Test::Excel_Test(const Excel_Test& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  tests_.MergeFrom(from.tests_);
+  data_.MergeFrom(from.data_);
   // @@protoc_insertion_point(copy_constructor:HiProtobuf.Excel_Test)
 }
 
@@ -689,7 +689,7 @@ void Excel_Test::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  tests_.Clear();
+  data_.Clear();
   _internal_metadata_.Clear();
 }
 
@@ -701,13 +701,13 @@ const char* Excel_Test::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID:
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // map<int32, .HiProtobuf.Test> Tests = 1;
+      // map<int32, .HiProtobuf.Test> Data = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           ptr -= 1;
           do {
             ptr += 1;
-            ptr = ctx->ParseMessage(&tests_, ptr);
+            ptr = ctx->ParseMessage(&data_, ptr);
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<::PROTOBUF_NAMESPACE_ID::uint8>(ptr) == 10);
@@ -743,16 +743,16 @@ bool Excel_Test::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // map<int32, .HiProtobuf.Test> Tests = 1;
+      // map<int32, .HiProtobuf.Test> Data = 1;
       case 1: {
         if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (10 & 0xFF)) {
-          Excel_Test_TestsEntry_DoNotUse::Parser< ::PROTOBUF_NAMESPACE_ID::internal::MapField<
-              Excel_Test_TestsEntry_DoNotUse,
+          Excel_Test_DataEntry_DoNotUse::Parser< ::PROTOBUF_NAMESPACE_ID::internal::MapField<
+              Excel_Test_DataEntry_DoNotUse,
               ::PROTOBUF_NAMESPACE_ID::int32, ::HiProtobuf::Test,
               ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_INT32,
               ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_MESSAGE,
               0 >,
-            ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::int32, ::HiProtobuf::Test > > parser(&tests_);
+            ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::int32, ::HiProtobuf::Test > > parser(&data_);
           DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadMessageNoVirtual(
               input, &parser));
         } else {
@@ -788,34 +788,34 @@ void Excel_Test::SerializeWithCachedSizes(
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // map<int32, .HiProtobuf.Test> Tests = 1;
-  if (!this->tests().empty()) {
+  // map<int32, .HiProtobuf.Test> Data = 1;
+  if (!this->data().empty()) {
     typedef ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::int32, ::HiProtobuf::Test >::const_pointer
         ConstPtr;
     typedef ::PROTOBUF_NAMESPACE_ID::internal::SortItem< ::PROTOBUF_NAMESPACE_ID::int32, ConstPtr > SortItem;
     typedef ::PROTOBUF_NAMESPACE_ID::internal::CompareByFirstField<SortItem> Less;
 
     if (output->IsSerializationDeterministic() &&
-        this->tests().size() > 1) {
+        this->data().size() > 1) {
       ::std::unique_ptr<SortItem[]> items(
-          new SortItem[this->tests().size()]);
+          new SortItem[this->data().size()]);
       typedef ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::int32, ::HiProtobuf::Test >::size_type size_type;
       size_type n = 0;
       for (::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::int32, ::HiProtobuf::Test >::const_iterator
-          it = this->tests().begin();
-          it != this->tests().end(); ++it, ++n) {
+          it = this->data().begin();
+          it != this->data().end(); ++it, ++n) {
         items[static_cast<ptrdiff_t>(n)] = SortItem(&*it);
       }
       ::std::sort(&items[0], &items[static_cast<ptrdiff_t>(n)], Less());
       for (size_type i = 0; i < n; i++) {
-        Excel_Test_TestsEntry_DoNotUse::MapEntryWrapper entry(nullptr, items[static_cast<ptrdiff_t>(i)].second->first, items[static_cast<ptrdiff_t>(i)].second->second);
+        Excel_Test_DataEntry_DoNotUse::MapEntryWrapper entry(nullptr, items[static_cast<ptrdiff_t>(i)].second->first, items[static_cast<ptrdiff_t>(i)].second->second);
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteMessageMaybeToArray(1, entry, output);
       }
     } else {
       for (::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::int32, ::HiProtobuf::Test >::const_iterator
-          it = this->tests().begin();
-          it != this->tests().end(); ++it) {
-        Excel_Test_TestsEntry_DoNotUse::MapEntryWrapper entry(nullptr, it->first, it->second);
+          it = this->data().begin();
+          it != this->data().end(); ++it) {
+        Excel_Test_DataEntry_DoNotUse::MapEntryWrapper entry(nullptr, it->first, it->second);
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteMessageMaybeToArray(1, entry, output);
       }
     }
@@ -834,34 +834,34 @@ void Excel_Test::SerializeWithCachedSizes(
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // map<int32, .HiProtobuf.Test> Tests = 1;
-  if (!this->tests().empty()) {
+  // map<int32, .HiProtobuf.Test> Data = 1;
+  if (!this->data().empty()) {
     typedef ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::int32, ::HiProtobuf::Test >::const_pointer
         ConstPtr;
     typedef ::PROTOBUF_NAMESPACE_ID::internal::SortItem< ::PROTOBUF_NAMESPACE_ID::int32, ConstPtr > SortItem;
     typedef ::PROTOBUF_NAMESPACE_ID::internal::CompareByFirstField<SortItem> Less;
 
     if (false &&
-        this->tests().size() > 1) {
+        this->data().size() > 1) {
       ::std::unique_ptr<SortItem[]> items(
-          new SortItem[this->tests().size()]);
+          new SortItem[this->data().size()]);
       typedef ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::int32, ::HiProtobuf::Test >::size_type size_type;
       size_type n = 0;
       for (::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::int32, ::HiProtobuf::Test >::const_iterator
-          it = this->tests().begin();
-          it != this->tests().end(); ++it, ++n) {
+          it = this->data().begin();
+          it != this->data().end(); ++it, ++n) {
         items[static_cast<ptrdiff_t>(n)] = SortItem(&*it);
       }
       ::std::sort(&items[0], &items[static_cast<ptrdiff_t>(n)], Less());
       for (size_type i = 0; i < n; i++) {
-        Excel_Test_TestsEntry_DoNotUse::MapEntryWrapper entry(nullptr, items[static_cast<ptrdiff_t>(i)].second->first, items[static_cast<ptrdiff_t>(i)].second->second);
+        Excel_Test_DataEntry_DoNotUse::MapEntryWrapper entry(nullptr, items[static_cast<ptrdiff_t>(i)].second->first, items[static_cast<ptrdiff_t>(i)].second->second);
         target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::InternalWriteMessageNoVirtualToArray(1, entry, target);
       }
     } else {
       for (::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::int32, ::HiProtobuf::Test >::const_iterator
-          it = this->tests().begin();
-          it != this->tests().end(); ++it) {
-        Excel_Test_TestsEntry_DoNotUse::MapEntryWrapper entry(nullptr, it->first, it->second);
+          it = this->data().begin();
+          it != this->data().end(); ++it) {
+        Excel_Test_DataEntry_DoNotUse::MapEntryWrapper entry(nullptr, it->first, it->second);
         target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::InternalWriteMessageNoVirtualToArray(1, entry, target);
       }
     }
@@ -888,13 +888,13 @@ size_t Excel_Test::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // map<int32, .HiProtobuf.Test> Tests = 1;
+  // map<int32, .HiProtobuf.Test> Data = 1;
   total_size += 1 *
-      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(this->tests_size());
+      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(this->data_size());
   for (::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::int32, ::HiProtobuf::Test >::const_iterator
-      it = this->tests().begin();
-      it != this->tests().end(); ++it) {
-    Excel_Test_TestsEntry_DoNotUse::MapEntryWrapper entry(nullptr, it->first, it->second);
+      it = this->data().begin();
+      it != this->data().end(); ++it) {
+    Excel_Test_DataEntry_DoNotUse::MapEntryWrapper entry(nullptr, it->first, it->second);
     total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
         MessageSizeNoVirtual(entry);
   }
@@ -926,7 +926,7 @@ void Excel_Test::MergeFrom(const Excel_Test& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  tests_.MergeFrom(from.tests_);
+  data_.MergeFrom(from.data_);
 }
 
 void Excel_Test::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
@@ -954,7 +954,7 @@ void Excel_Test::Swap(Excel_Test* other) {
 void Excel_Test::InternalSwap(Excel_Test* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
-  tests_.Swap(&other->tests_);
+  data_.Swap(&other->data_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata Excel_Test::GetMetadata() const {
@@ -968,8 +968,8 @@ PROTOBUF_NAMESPACE_OPEN
 template<> PROTOBUF_NOINLINE ::HiProtobuf::Test* Arena::CreateMaybeMessage< ::HiProtobuf::Test >(Arena* arena) {
   return Arena::CreateInternal< ::HiProtobuf::Test >(arena);
 }
-template<> PROTOBUF_NOINLINE ::HiProtobuf::Excel_Test_TestsEntry_DoNotUse* Arena::CreateMaybeMessage< ::HiProtobuf::Excel_Test_TestsEntry_DoNotUse >(Arena* arena) {
-  return Arena::CreateInternal< ::HiProtobuf::Excel_Test_TestsEntry_DoNotUse >(arena);
+template<> PROTOBUF_NOINLINE ::HiProtobuf::Excel_Test_DataEntry_DoNotUse* Arena::CreateMaybeMessage< ::HiProtobuf::Excel_Test_DataEntry_DoNotUse >(Arena* arena) {
+  return Arena::CreateInternal< ::HiProtobuf::Excel_Test_DataEntry_DoNotUse >(arena);
 }
 template<> PROTOBUF_NOINLINE ::HiProtobuf::Excel_Test* Arena::CreateMaybeMessage< ::HiProtobuf::Excel_Test >(Arena* arena) {
   return Arena::CreateInternal< ::HiProtobuf::Excel_Test >(arena);
