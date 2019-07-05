@@ -33,7 +33,7 @@ namespace HiProtobuf.Lib
                 string name = Path.GetFileNameWithoutExtension(protoPath);
                 string excelInsName = "HiProtobuf.Excel_" + name;
                 _excelIns = _assembly.CreateInstance(excelInsName);
-                string excelPath = protoPath.Replace(".proto", ".xlsx");
+                string excelPath = Settings.Excel_Folder + "/" + name + ".xlsx";
                 ProcessData(excelPath);
             }
         }
@@ -56,9 +56,11 @@ namespace HiProtobuf.Lib
             for (int i = 4; i <= rowCount; i++)
             {
                 var ins = _assembly.CreateInstance("HiProtobuf." + name);
-                int id = ((Range)usedRange.Cells[i, 1]).Value2;
+                int id = (int)((Range)usedRange.Cells[i, 1]).Value2;
                 var excelInsType = _excelIns.GetType();
-                var addMethod = excelInsType.GetMethod("Add");
+                var data = excelInsType.GetProperty("Data");
+                var dataType = data.PropertyType;
+                var addMethod = dataType.GetMethod("Add", new Type[] { typeof(Int32),ins.GetType() });
                 addMethod.Invoke(_excelIns, new[] { id, ins });
             }
 
