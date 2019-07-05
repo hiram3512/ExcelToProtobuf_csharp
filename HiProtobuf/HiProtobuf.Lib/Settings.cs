@@ -6,7 +6,7 @@
  ****************************************************************************/
 namespace HiProtobuf.Lib
 {
-    public static class Settings
+    internal static class Settings
     {
         /// <summary>
         /// protoc路径
@@ -42,6 +42,11 @@ namespace HiProtobuf.Lib
         /// </summary>
         public static readonly string language_folder = "/language";
 
+        /// <summary>
+        /// 数据存放目录
+        /// </summary>
+        public static readonly string dat_folder = "/dat";
+
         //导出语言文件夹
         public static readonly string csharp_folder = "/csharp";
         public static readonly string csharp_dll_folder = "/csharp_dll";
@@ -49,10 +54,5 @@ namespace HiProtobuf.Lib
         public static readonly string go_folder = "/go";
         public static readonly string java_folder = "/java";
         public static readonly string python_folder = "/python";
-
-        /// <summary>
-        /// 数据目录
-        /// </summary>
-        public static readonly string bin_folder = "/bin";
     }
 }

@@ -20,8 +20,8 @@ namespace HiProtobuf.Lib
         {
             Name = name;
             VariableInfos = infos;
-            Directory.CreateDirectory(Common.Export_Folder + Common.proto_folder);
-            Path = Common.Export_Folder + Common.proto_folder + "/" + name + ".proto";
+            Directory.CreateDirectory(Settings.Export_Folder + Settings.proto_folder);
+            Path = Settings.Export_Folder + Settings.proto_folder + "/" + name + ".proto";
         }
 
         public void Process()
@@ -37,14 +37,14 @@ package HiProtobuf;
 
 // [START java_declaration]
 option java_package = ""com.HiProtobuf.HiProtobuf"";
-option java_outer_classname = ""java_outer_classname_wait_replace"";
+option java_outer_classname = ""WaitReplace1111111111111"";
 // [END java_declaration]
 
 // [START csharp_declaration]
 option csharp_namespace = ""HiProtobuf""; 
 // [END csharp_declaration]
 ";
-            header = header.Replace("java_outer_classname_wait_replace", Name + "_classname");
+            header = header.Replace("WaitReplace1111111111111", Name + "_classname");
             header += "message " + Name + " {";
             var sw = File.AppendText(Path);
             sw.WriteLine(header);
@@ -59,6 +59,8 @@ option csharp_namespace = ""HiProtobuf"";
             sw = File.AppendText(Path);
             sw.WriteLine(str);
             sw.Close();
+
+            ProcessMap();
         }
 
         /// <summary>
@@ -76,6 +78,21 @@ option csharp_namespace = ""HiProtobuf"";
             str += "  " + type + " " + info.Name + " = " + index + ";";
             str += "\n";
             return str;
+        }
+
+        private void ProcessMap()
+        {
+            string str = @"
+message Excel_WaitReplace1111111111111
+{
+    map<int32,WaitReplace22222222222222> WaitReplace3333333333333333 = 1;
+}";
+            str = str.Replace("WaitReplace1111111111111", Name);
+            str = str.Replace("WaitReplace22222222222222", Name);
+            str = str.Replace("WaitReplace3333333333333333", "Data");
+            var sw = File.AppendText(Path);
+            sw.WriteLine(str);
+            sw.Close();
         }
     }
 }

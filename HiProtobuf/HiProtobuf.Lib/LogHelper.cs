@@ -8,7 +8,7 @@
 
 namespace HiProtobuf.Lib
 {
-    class LogHelper:HiFramework.Log.ILogProxy
+    internal class LogHelper:HiFramework.Log.ILogProxy
     {
         public void Print(params object[] args)
         {

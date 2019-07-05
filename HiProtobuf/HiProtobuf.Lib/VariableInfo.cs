@@ -6,7 +6,7 @@
  ****************************************************************************/
 namespace HiProtobuf.Lib
 {
-    public class VariableInfo
+    internal class VariableInfo
     {
         public string Type { get; private set; }
         public string Name { get; private set; }

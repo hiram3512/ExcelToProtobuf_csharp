@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace HiProtobuf.Lib
 {
-    public class Compiler
+    internal class Compiler
     {
-        private string _dllName = "/HiProtobuf.Excel.csharp.dll";
+        public static readonly string DllName = "/HiProtobuf.Excel.csharp.dll";
 
         public Compiler()
         {
@@ -24,7 +24,7 @@ namespace HiProtobuf.Lib
         public void Porcess()
         {
             var commond = @"-target:library -out:WaitReplace1111111111111 -reference:WaitReplace222222222222 -recurse:WaitReplace3333333\*.cs";
-            var dllPath = Settings.Export_Folder + Settings.language_folder + Settings.csharp_dll_folder + _dllName;
+            var dllPath = Settings.Export_Folder + Settings.language_folder + Settings.csharp_dll_folder + DllName;
             var csharpFolder = Settings.Export_Folder + Settings.language_folder + Settings.csharp_folder;
             commond = commond.Replace("WaitReplace1111111111111", dllPath);
             commond = commond.Replace("WaitReplace222222222222", Settings.Protobuf_Net_Path);

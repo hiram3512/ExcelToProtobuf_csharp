@@ -19,3 +19,4 @@ D:\MyGit\github\HiProtobuf\HiProtobuf\HiProtobuf.Test\bin\Debug\HiProtobuf.Lib.d
 D:\MyGit\github\HiProtobuf\HiProtobuf\HiProtobuf.Test\bin\Debug\HiFramework.Log.dll
 D:\MyGit\github\HiProtobuf\HiProtobuf\HiProtobuf.Test\bin\Debug\HiFramework.Assert.dll
 D:\MyGit\github\HiProtobuf\HiProtobuf\HiProtobuf.Test\bin\Debug\HiProtobuf.Lib.pdb
+D:\MyGit\github\HiProtobuf\HiProtobuf\HiProtobuf.Test\bin\Debug\Google.Protobuf.dll

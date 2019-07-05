@@ -5,24 +5,27 @@
  * Author: hiramtan@live.com
  ****************************************************************************/
 
-using System;
 using HiFramework.Assert;
 using HiFramework.Log;
 using Microsoft.Office.Interop.Excel;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 
 namespace HiProtobuf.Lib
 {
-    public class ExcelHandler
+    internal class ExcelHandler
     {
-        public Action<string, List<VariableInfo>> OnFinish;
+        public static Dictionary<string, ExcelInfo> ExcelInfos { get; private set; }
+
+        public ExcelHandler()
+        {
+            ExcelInfos = new Dictionary<string, ExcelInfo>();
+        }
 
         public void Process()
         {
             //递归查询
-            string[] files = Directory.GetFiles(Common.Excel_Folder, "*.xlsx", SearchOption.AllDirectories);
+            string[] files = Directory.GetFiles(Settings.Excel_Folder, "*.xlsx", SearchOption.AllDirectories);
             for (int i = 0; i < files.Length; i++)
             {
                 var filePath = files[i];
@@ -44,27 +47,6 @@ namespace HiProtobuf.Lib
 
         private void ProcessExcleFile(string path)
         {
-            //double
-            //float
-            //int32
-            //int64
-            //uint32
-            //uint64
-            //sint32
-            //sint64
-            //fixed32
-            //fixed64
-            //sfixed32
-            //sfixed64
-            //bool
-            //string
-            //bytes
-
-            string[] all = new[] {
-                "double", "float", "int32", "int64", "uint32", "uint64", "sint32", "sint64", "fixed32", "fixed64","sfixed32", "sfixed64", "bool", "string", "bytes",
-                "double[]", "float[]", "int32[]", "int64[]", "uint32[]", "uint64[]", "sint32[]", "sint64[]", "fixed32[]", "fixed64[]","sfixed32[]", "sfixed64[]", "bool[]", "string[]", "bytes[]"
-            };
-
             var excelApp = new Microsoft.Office.Interop.Excel.Application();
             var workbooks = excelApp.Workbooks.Open(path);
             var sheet = workbooks.Sheets[1];
@@ -82,23 +64,13 @@ namespace HiProtobuf.Lib
             //        var str = value.ToString();
             //    }
             //}
-            List<VariableInfo> infos = new List<VariableInfo>();
-            for (int j = 1; j <= colCount; j++)
-            {
-                var type = ((Range)usedRange.Cells[2, j]).Value2.ToString();
-                var name = ((Range)usedRange.Cells[3, j]).Value2.ToString();
-                var info = new VariableInfo(type, name);
-                AssertThat.IsTrue(all.Contains(info.Type), "Excel proto type define error:" + workbooks.Name);
-                infos.Add(info);
-            }
-            var className = workbooks.Name.Split('.')[0]; ;
-            if (OnFinish != null)
-            {
-                OnFinish.Invoke(className, infos);
-            }
+            var name = Path.GetFileNameWithoutExtension(path);
+            AssertThat.IsFalse(ExcelInfos.ContainsKey(name), "Excel name are same");
+            var info = new ExcelInfo(name, rowCount, colCount, usedRange);
+            ExcelInfos.Add(name, info);
             workbooks.Close();
             excelApp.Quit();
-            System.Runtime.InteropServices.Marshal.ReleaseComObject(excelApp);
+            //System.Runtime.InteropServices.Marshal.ReleaseComObject(excelApp);
         }
     }
 }

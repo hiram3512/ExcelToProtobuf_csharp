@@ -13,18 +13,16 @@ namespace HiProtobuf.Lib
 
         public static void Export()
         {
-            AssertThat.IsNotNullOrEmpty(Common.Protoc_Path, "protoc.exe path error");
-            AssertThat.IsNotNullOrEmpty(Common.Excel_Folder, "Excel's folder is null or empty");
-            AssertThat.IsNotNullOrEmpty(Common.Export_Folder, "Out folder is null or empty");
+            AssertThat.IsNotNullOrEmpty(Settings.Protoc_Path, "protoc.exe path error");
+            AssertThat.IsNotNullOrEmpty(Settings.Excel_Folder, "Excel's folder is null or empty");
+            AssertThat.IsNotNullOrEmpty(Settings.Export_Folder, "Out folder is null or empty");
+            AssertThat.IsNotNullOrEmpty(Settings.Compiler_Path, "Compiler path is null or empty");
 
-            var excelHandler = new ExcelHandler();
-            var protoHandler = new ProtoHandler();
-            excelHandler.OnFinish = (x, y) =>
-            {
-                protoHandler.Process(x, y);
-            };
-            excelHandler.Process();
+            new ExcelHandler().Process();
+            new ProtoHandler().Process();
             new LanguageGenerater().Process();
+            new Compiler().Porcess();
+            //new DataHandler().Process();
         }
     }
 }
