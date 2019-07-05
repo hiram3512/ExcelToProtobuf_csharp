@@ -42,8 +42,8 @@ namespace HiProtobuf.Lib
         {
             AssertThat.IsTrue(File.Exists(path), "Excel file can not find");
             var name = Path.GetFileNameWithoutExtension(path);
-            var valueType = _assembly.GetType("HiProtobuf." + name);
-            var dataIns = typeof(Dictionary<,>).MakeGenericType(typeof(Int32), valueType);
+            //var valueType = _assembly.GetType("HiProtobuf." + name);
+            //var dataIns = typeof(Dictionary<,>).MakeGenericType(typeof(Int32), valueType);
             var excelApp = new Application();
             var workbooks = excelApp.Workbooks.Open(path);
             var sheet = workbooks.Sheets[1];
@@ -56,12 +56,14 @@ namespace HiProtobuf.Lib
             for (int i = 4; i <= rowCount; i++)
             {
                 var ins = _assembly.CreateInstance("HiProtobuf." + name);
-                int id = (int)((Range)usedRange.Cells[i, 1]).Value2;
+                Int32 id = (Int32)((Range)usedRange.Cells[i, 1]).Value2;
                 var excelInsType = _excelIns.GetType();
                 var data = excelInsType.GetProperty("Data");
                 var dataType = data.PropertyType;
-                var addMethod = dataType.GetMethod("Add", new Type[] { typeof(Int32),ins.GetType() });
-                addMethod.Invoke(_excelIns, new[] { id, ins });
+                var addMethod = dataType.GetMethod("Add", new Type[] { typeof(Int32), ins.GetType() });
+                var test = addMethod.MemberType;
+                var tt = addMethod.GetParameters();
+                addMethod.Invoke(_excelIns, new object[] { id, ins });
             }
 
 
