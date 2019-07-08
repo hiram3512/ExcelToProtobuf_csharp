@@ -55,15 +55,14 @@ namespace HiProtobuf.Lib
             int colCount = usedRange.Columns.Count;
             for (int i = 4; i <= rowCount; i++)
             {
-                var ins = _assembly.CreateInstance("HiProtobuf." + name);
-                Int32 id = (Int32)((Range)usedRange.Cells[i, 1]).Value2;
                 var excelInsType = _excelIns.GetType();
-                var data = excelInsType.GetProperty("Data");
-                var dataType = data.PropertyType;
-                var addMethod = dataType.GetMethod("Add", new Type[] { typeof(Int32), ins.GetType() });
-                var test = addMethod.MemberType;
-                var tt = addMethod.GetParameters();
-                addMethod.Invoke(_excelIns, new object[] { id, ins });
+                var dataProp = excelInsType.GetProperty("Data");
+                var dataIns = dataProp.GetValue(_excelIns);
+                var dataType = dataProp.PropertyType;
+                var ins = _assembly.CreateInstance("HiProtobuf." + name);
+                var addMethod = dataType.GetMethod("Add", new Type[] { typeof(int), ins.GetType() });
+                int id = (int)((Range)usedRange.Cells[i, 1]).Value2;
+                addMethod.Invoke(dataIns, new[] {id, ins});
             }
 
 
