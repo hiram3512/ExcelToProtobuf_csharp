@@ -1,9 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Reflection;
+﻿/****************************************************************************
+ * Description: 
+ * 
+ * Document: https://github.com/hiramtan/HiProtobuf
+ * Author: hiramtan@live.com
+ ****************************************************************************/
+
 using HiFramework.Assert;
 using Microsoft.Office.Interop.Excel;
+using System;
+using System.IO;
+using System.Reflection;
 
 namespace HiProtobuf.Lib
 {
@@ -55,14 +61,24 @@ namespace HiProtobuf.Lib
             int colCount = usedRange.Columns.Count;
             for (int i = 4; i <= rowCount; i++)
             {
-                var excelInsType = _excelIns.GetType();
-                var dataProp = excelInsType.GetProperty("Data");
+                var excel_Type = _excelIns.GetType();
+                var dataProp = excel_Type.GetProperty("Data");
                 var dataIns = dataProp.GetValue(_excelIns);
                 var dataType = dataProp.PropertyType;
                 var ins = _assembly.CreateInstance("HiProtobuf." + name);
                 var addMethod = dataType.GetMethod("Add", new Type[] { typeof(int), ins.GetType() });
                 int id = (int)((Range)usedRange.Cells[i, 1]).Value2;
-                addMethod.Invoke(dataIns, new[] {id, ins});
+                addMethod.Invoke(dataIns, new[] { id, ins });
+                for (int j = 1; j <= colCount; j++)
+                {
+                    var variableName = ((Range)usedRange.Cells[3, j]).Value2.ToString();
+                    var variableValue = ((Range)usedRange.Cells[i, j]).Value2;
+                    var insType = ins.GetType();
+                    var fieldName = variableName + "_";
+                    FieldInfo insField = insType.GetField(fieldName, BindingFlags.NonPublic | BindingFlags.Instance);
+                    insField.SetValue(ins, variableValue);
+                    //insField.SetValue(ins, 1);
+                }
             }
 
 
