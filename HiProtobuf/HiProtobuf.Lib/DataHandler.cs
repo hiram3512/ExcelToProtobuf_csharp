@@ -14,6 +14,7 @@ using System.Reflection;
 using Google.Protobuf;
 using Google.Protobuf.Collections;
 using HiFramework.Log;
+using Google.Protobuf;
 
 namespace HiProtobuf.Lib
 {
@@ -85,6 +86,7 @@ namespace HiProtobuf.Lib
                         insField.SetValue(ins, value);
                     }
                 }
+                Serialize(_excelIns);
                 workbooks.Close();
                 excelApp.Quit();
                 System.Runtime.InteropServices.Marshal.ReleaseComObject(excelApp);
@@ -287,6 +289,17 @@ namespace HiProtobuf.Lib
             }
             AssertThat.Fail("Type error");
             return null;
+        }
+
+        void Serialize(object obj)
+        {
+            var type = obj.GetType();
+            var path = Settings.Export_Folder + Settings.dat_folder + "/" + type.Name + ".dat";
+            MethodInfo method = type.GetMethod("WriteTo");
+            using (var output = File.Create(path))
+            {
+                method.Invoke(obj, new[] { output });
+            }
         }
     }
 }
