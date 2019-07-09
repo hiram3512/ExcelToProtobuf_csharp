@@ -89,26 +89,7 @@ option csharp_namespace = ""HiProtobuf"";
         /// <param name="infos"></param>
         private string GetVariableString(string type, string name)
         {
-            //double
-            //float
-            //int32
-            //int64
-            //uint32
-            //uint64
-            //sint32
-            //sint64
-            //fixed32
-            //fixed64
-            //sfixed32
-            //sfixed64
-            //bool
-            //string
-            //bytes
-            string[] all = new[] {
-                "double", "float", "int32", "int64", "uint32", "uint64", "sint32", "sint64", "fixed32", "fixed64","sfixed32", "sfixed64", "bool", "string", "bytes",
-                "double[]", "float[]", "int32[]", "int64[]", "uint32[]", "uint64[]", "sint32[]", "sint64[]", "fixed32[]", "fixed64[]","sfixed32[]", "sfixed64[]", "bool[]", "string[]", "bytes[]"
-            };
-            AssertThat.IsTrue(all.Contains(type), "Type define error");
+            AssertThat.IsTrue(Common.VariableType.Contains(type), "Type define error");
 
             _index++;//从1开始定义
             string str = "";
