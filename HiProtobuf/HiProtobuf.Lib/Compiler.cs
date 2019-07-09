@@ -34,7 +34,7 @@ namespace HiProtobuf.Lib
             var dllPath = Settings.Export_Folder + Settings.language_folder + Settings.csharp_dll_folder + DllName;
             var csharpFolder = Settings.Export_Folder + Settings.language_folder + Settings.csharp_folder;
             commond = commond.Replace("WaitReplace1111111111111", dllPath);
-            commond = commond.Replace("WaitReplace222222222222", Settings.Protobuf_Net_Path);
+            commond = commond.Replace("WaitReplace222222222222", Settings.Protobuf_Dll_Path);
             commond = commond.Replace("WaitReplace3333333", csharpFolder);
             commond = Settings.Compiler_Path + " " + commond;
             Common.Cmd(commond);
