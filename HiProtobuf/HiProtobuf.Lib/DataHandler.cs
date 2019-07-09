@@ -8,9 +8,11 @@
 using HiFramework.Assert;
 using Microsoft.Office.Interop.Excel;
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
 using Google.Protobuf;
+using Google.Protobuf.Collections;
 using HiFramework.Log;
 
 namespace HiProtobuf.Lib
@@ -50,228 +52,236 @@ namespace HiProtobuf.Lib
         {
             AssertThat.IsTrue(File.Exists(path), "Excel file can not find");
             var name = Path.GetFileNameWithoutExtension(path);
-            //var valueType = _assembly.GetType("HiProtobuf." + name);
-            //var dataIns = typeof(Dictionary<,>).MakeGenericType(typeof(Int32), valueType);
             var excelApp = new Application();
             var workbooks = excelApp.Workbooks.Open(path);
-            var sheet = workbooks.Sheets[1];
-            AssertThat.IsNotNull(sheet, "Excel's sheet is null");
-            Worksheet worksheet = sheet as Worksheet;
-            AssertThat.IsNotNull(sheet, "Excel's worksheet is null");
-            var usedRange = worksheet.UsedRange;
-            int rowCount = usedRange.Rows.Count;
-            int colCount = usedRange.Columns.Count;
-            for (int i = 4; i <= rowCount; i++)
+            try
             {
-                var excel_Type = _excelIns.GetType();
-                var dataProp = excel_Type.GetProperty("Data");
-                var dataIns = dataProp.GetValue(_excelIns);
-                var dataType = dataProp.PropertyType;
-                var ins = _assembly.CreateInstance("HiProtobuf." + name);
-                var addMethod = dataType.GetMethod("Add", new Type[] { typeof(int), ins.GetType() });
-                int id = (int)((Range)usedRange.Cells[i, 1]).Value2;
-                addMethod.Invoke(dataIns, new[] { id, ins });
-                for (int j = 1; j <= colCount; j++)
+                var sheet = workbooks.Sheets[1];
+                AssertThat.IsNotNull(sheet, "Excel's sheet is null");
+                Worksheet worksheet = sheet as Worksheet;
+                AssertThat.IsNotNull(sheet, "Excel's worksheet is null");
+                var usedRange = worksheet.UsedRange;
+                int rowCount = usedRange.Rows.Count;
+                int colCount = usedRange.Columns.Count;
+                for (int i = 4; i <= rowCount; i++)
                 {
-                    var variableType = ((Range)usedRange.Cells[2, j]).Value2.ToString();
-                    var variableName = ((Range)usedRange.Cells[3, j]).Value2.ToString();
-                    var variableValue = ((Range)usedRange.Cells[i, j]).Value2;
-                    var insType = ins.GetType();
-                    var fieldName = variableName + "_";
-                    FieldInfo insField = insType.GetField(fieldName, BindingFlags.NonPublic | BindingFlags.Instance);
-                    var value = GetVariableValue(variableType, variableValue);
-                    insField.SetValue(ins, value);
+                    var excel_Type = _excelIns.GetType();
+                    var dataProp = excel_Type.GetProperty("Data");
+                    var dataIns = dataProp.GetValue(_excelIns);
+                    var dataType = dataProp.PropertyType;
+                    var ins = _assembly.CreateInstance("HiProtobuf." + name);
+                    var addMethod = dataType.GetMethod("Add", new Type[] { typeof(int), ins.GetType() });
+                    int id = (int)((Range)usedRange.Cells[i, 1]).Value2;
+                    addMethod.Invoke(dataIns, new[] { id, ins });
+                    for (int j = 1; j <= colCount; j++)
+                    {
+                        var variableType = ((Range)usedRange.Cells[2, j]).Text.ToString();
+                        var variableName = ((Range)usedRange.Cells[3, j]).Text.ToString();
+                        var variableValue = ((Range)usedRange.Cells[i, j]).Text.ToString();
+                        var insType = ins.GetType();
+                        var fieldName = variableName + "_";
+                        FieldInfo insField = insType.GetField(fieldName, BindingFlags.NonPublic | BindingFlags.Instance);
+                        var value = GetVariableValue(variableType, variableValue);
+                        insField.SetValue(ins, value);
+                    }
                 }
+                workbooks.Close();
+                excelApp.Quit();
+                System.Runtime.InteropServices.Marshal.ReleaseComObject(excelApp);
             }
-            workbooks.Close();
-            excelApp.Quit();
-            System.Runtime.InteropServices.Marshal.ReleaseComObject(excelApp);
+            catch (Exception e)
+            {
+                workbooks.Close();
+                excelApp.Quit();
+                System.Runtime.InteropServices.Marshal.ReleaseComObject(excelApp);
+                Console.WriteLine(e);
+                throw;
+            }
         }
 
-        object GetVariableValue(string type, dynamic value)
+        object GetVariableValue(string type, string value)
         {
             if (type == Common.double_)
-                return (double)value;
+                return double.Parse(value);
             if (type == Common.float_)
-                return (float)value;
+                return float.Parse(value);
             if (type == Common.int32_)
-                return (int)value;
+                return int.Parse(value);
             if (type == Common.int64_)
-                return (long)value;
+                return long.Parse(value);
             if (type == Common.uint32_)
-                return (uint)value;
+                return uint.Parse(value);
             if (type == Common.uint64_)
-                return (ulong)value;
+                return ulong.Parse(value);
             if (type == Common.sint32_)
-                return (int)value;
+                return int.Parse(value);
             if (type == Common.sint64_)
-                return (long)value;
+                return long.Parse(value);
             if (type == Common.fixed32_)
-                return (uint)value;
+                return uint.Parse(value);
             if (type == Common.fixed64_)
-                return (ulong)value;
+                return ulong.Parse(value);
             if (type == Common.sfixed32_)
-                return (int)value;
+                return int.Parse(value);
             if (type == Common.sfixed64_)
-                return (long)value;
+                return long.Parse(value);
             if (type == Common.bool_)
-                return value == 1;
+                return value == "1";
             if (type == Common.string_)
                 return value.ToString();
             if (type == Common.bytes_)
                 return ByteString.CopyFromUtf8(value.ToString());
             if (type == Common.double_s)
             {
-                string data = value.ToString().Trim('"');
+                string data = value.Trim('"');
                 string[] datas = data.Split('|');
-                double[] newValue = new double[datas.Length];
+                RepeatedField<double> newValue = new RepeatedField<double>();
                 for (int i = 0; i < datas.Length; i++)
                 {
-                    newValue[i] = double.Parse(datas[i]);
+                    newValue.Add(double.Parse(datas[i]));
                 }
                 return newValue;
             }
             if (type == Common.float_s)
             {
-                string data = value.ToString().Trim('"');
+                string data = value.Trim('"');
                 string[] datas = data.Split('|');
-                float[] newValue = new float[datas.Length];
+                RepeatedField<float> newValue = new RepeatedField<float>();
                 for (int i = 0; i < datas.Length; i++)
                 {
-                    newValue[i] = float.Parse(datas[i]);
+                    newValue.Add(float.Parse(datas[i]));
                 }
                 return newValue;
             }
             if (type == Common.int32_s)
             {
-                string data = value.ToString().Trim('"');
+                string data = value.Trim('"');
                 string[] datas = data.Split('|');
-                int[] newValue = new int[datas.Length];
+                RepeatedField<int> newValue = new RepeatedField<int>();
                 for (int i = 0; i < datas.Length; i++)
                 {
-                    newValue[i] = int.Parse(datas[i]);
+                    newValue.Add(int.Parse(datas[i]));
                 }
                 return newValue;
             }
             if (type == Common.int64_s)
             {
-                string data = value.ToString().Trim('"');
+                string data = value.Trim('"');
                 string[] datas = data.Split('|');
-                long[] newValue = new long[datas.Length];
+                RepeatedField<long> newValue = new RepeatedField<long>();
                 for (int i = 0; i < datas.Length; i++)
                 {
-                    newValue[i] = long.Parse(datas[i]);
+                    newValue.Add(long.Parse(datas[i]));
                 }
                 return newValue;
             }
             if (type == Common.uint32_s)
             {
-                string data = value.ToString().Trim('"');
+                string data = value.Trim('"');
                 string[] datas = data.Split('|');
-                uint[] newValue = new uint[datas.Length];
+                RepeatedField<uint> newValue = new RepeatedField<uint>();
                 for (int i = 0; i < datas.Length; i++)
                 {
-                    newValue[i] = uint.Parse(datas[i]);
+                    newValue.Add(uint.Parse(datas[i]));
                 }
                 return newValue;
             }
             if (type == Common.uint64_s)
             {
-                string data = value.ToString().Trim('"');
+                string data = value.Trim('"');
                 string[] datas = data.Split('|');
-                ulong[] newValue = new ulong[datas.Length];
+                RepeatedField<ulong> newValue = new RepeatedField<ulong>();
                 for (int i = 0; i < datas.Length; i++)
                 {
-                    newValue[i] = ulong.Parse(datas[i]);
+                    newValue.Add(ulong.Parse(datas[i]));
                 }
                 return newValue;
             }
             if (type == Common.sint32_s)
             {
-                string data = value.ToString().Trim('"');
+                string data = value.Trim('"');
                 string[] datas = data.Split('|');
-                int[] newValue = new int[datas.Length];
+                RepeatedField<int> newValue = new RepeatedField<int>();
                 for (int i = 0; i < datas.Length; i++)
                 {
-                    newValue[i] = int.Parse(datas[i]);
+                    newValue.Add(int.Parse(datas[i]));
                 }
                 return newValue;
             }
             if (type == Common.sint64_s)
             {
-                string data = value.ToString().Trim('"');
+                string data = value.Trim('"');
                 string[] datas = data.Split('|');
-                long[] newValue = new long[datas.Length];
+                RepeatedField<long> newValue = new RepeatedField<long>();
                 for (int i = 0; i < datas.Length; i++)
                 {
-                    newValue[i] = long.Parse(datas[i]);
+                    newValue.Add(long.Parse(datas[i]));
                 }
                 return newValue;
             }
             if (type == Common.fixed32_s)
             {
-                string data = value.ToString().Trim('"');
+                string data = value.Trim('"');
                 string[] datas = data.Split('|');
-                uint[] newValue = new uint[datas.Length];
+                RepeatedField<uint> newValue = new RepeatedField<uint>();
                 for (int i = 0; i < datas.Length; i++)
                 {
-                    newValue[i] = uint.Parse(datas[i]);
+                    newValue.Add(uint.Parse(datas[i]));
                 }
                 return newValue;
             }
             if (type == Common.fixed64_s)
             {
-                string data = value.ToString().Trim('"');
+                string data = value.Trim('"');
                 string[] datas = data.Split('|');
-                ulong[] newValue = new ulong[datas.Length];
+                RepeatedField<ulong> newValue = new RepeatedField<ulong>();
                 for (int i = 0; i < datas.Length; i++)
                 {
-                    newValue[i] = ulong.Parse(datas[i]);
+                    newValue.Add(ulong.Parse(datas[i]));
                 }
                 return newValue;
             }
             if (type == Common.sfixed32_s)
             {
-                string data = value.ToString().Trim('"');
+                string data = value.Trim('"');
                 string[] datas = data.Split('|');
-                int[] newValue = new int[datas.Length];
+                RepeatedField<int> newValue = new RepeatedField<int>();
                 for (int i = 0; i < datas.Length; i++)
                 {
-                    newValue[i] = int.Parse(datas[i]);
+                    newValue.Add(int.Parse(datas[i]));
                 }
                 return newValue;
             }
             if (type == Common.sfixed64_s)
             {
-                string data = value.ToString().Trim('"');
+                string data = value.Trim('"');
                 string[] datas = data.Split('|');
-                long[] newValue = new long[datas.Length];
+                RepeatedField<long> newValue = new RepeatedField<long>();
                 for (int i = 0; i < datas.Length; i++)
                 {
-                    newValue[i] = long.Parse(datas[i]);
+                    newValue.Add(long.Parse(datas[i]));
                 }
                 return newValue;
             }
             if (type == Common.bool_s)
             {
-                string data = value.ToString().Trim('"');
+                string data = value.Trim('"');
                 string[] datas = data.Split('|');
-                bool[] newValue = new bool[datas.Length];
+                RepeatedField<bool> newValue = new RepeatedField<bool>();
                 for (int i = 0; i < datas.Length; i++)
                 {
-                    newValue[i] = datas[i] == "1";
+                    newValue.Add(datas[i] == "1");
                 }
                 return newValue;
             }
             if (type == Common.string_s)
             {
-                //hello|world
-                string data = value.ToString().Trim('"');
+                string data = value.Trim('"');
                 string[] datas = data.Split('|');
-                string[] newValue = new string[data.Length];
+                RepeatedField<string> newValue = new RepeatedField<string>();
                 for (int i = 0; i < datas.Length; i++)
                 {
-                    newValue[i] = datas[i];
+                    newValue.Add(datas[i]);
                 }
                 return newValue;
             }

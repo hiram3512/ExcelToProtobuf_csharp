@@ -5,6 +5,7 @@
  * Author: hiramtan@live.com
  ****************************************************************************/
 
+using System;
 using HiFramework.Assert;
 using Microsoft.Office.Interop.Excel;
 using System.Collections.Generic;
@@ -45,26 +46,37 @@ namespace HiProtobuf.Lib
             AssertThat.IsNotNullOrEmpty(path);
             var excelApp = new Application();
             var workbooks = excelApp.Workbooks.Open(path);
-            var sheet = workbooks.Sheets[1];
-            AssertThat.IsNotNull(sheet, "Excel's sheet is null");
-            Worksheet worksheet = sheet as Worksheet;
-            AssertThat.IsNotNull(sheet, "Excel's worksheet is null");
-            var usedRange = worksheet.UsedRange;
-            int rowCount = usedRange.Rows.Count;
-            int colCount = usedRange.Columns.Count;
-            //for (int i = 1; i <= rowCount; i++)
-            //{
-            //    for (int j = 1; j <= colCount; j++)
-            //    {
-            //        var value = ((Range)usedRange.Cells[i, j]).Value2;
-            //        var str = value.ToString();
-            //    }
-            //}
-            var name = Path.GetFileNameWithoutExtension(path);
-            new ProtoGenerater(name, rowCount, colCount, usedRange).Process();
-            workbooks.Close();
-            excelApp.Quit();
-            System.Runtime.InteropServices.Marshal.ReleaseComObject(excelApp);
+            try
+            {
+                var sheet = workbooks.Sheets[1];
+                AssertThat.IsNotNull(sheet, "Excel's sheet is null");
+                Worksheet worksheet = sheet as Worksheet;
+                AssertThat.IsNotNull(sheet, "Excel's worksheet is null");
+                var usedRange = worksheet.UsedRange;
+                int rowCount = usedRange.Rows.Count;
+                int colCount = usedRange.Columns.Count;
+                //for (int i = 1; i <= rowCount; i++)
+                //{
+                //    for (int j = 1; j <= colCount; j++)
+                //    {
+                //        var value = ((Range)usedRange.Cells[i, j]).Value2;
+                //        var str = value.ToString();
+                //    }
+                //}
+                var name = Path.GetFileNameWithoutExtension(path);
+                new ProtoGenerater(name, rowCount, colCount, usedRange).Process();
+                workbooks.Close();
+                excelApp.Quit();
+                System.Runtime.InteropServices.Marshal.ReleaseComObject(excelApp);
+            }
+            catch (Exception e)
+            {
+                workbooks.Close();
+                excelApp.Quit();
+                System.Runtime.InteropServices.Marshal.ReleaseComObject(excelApp);
+                Console.WriteLine(e);
+                throw;
+            }
         }
     }
 }
