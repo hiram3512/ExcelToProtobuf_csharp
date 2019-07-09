@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using HiProtobuf.Lib;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Google.Protobuf;
@@ -15,10 +16,15 @@ namespace HiProtobuf.Test
         }
 
         [TestMethod]
-        public void TestSerilization()
+        public void TestRead()
         {
-            var path = @"D:\MyGit\github\HiProtobuf\temp\export\language\csharp\ExampleTest.cs";
-
+            //Excel_Example example;
+            //using (var input = File.OpenRead(path))
+            //{
+            //    example = Excel_Example.Parser.ParseFrom(input);
+            //    var data = example.Data;
+            //    var t1 = data[1];
+            //}
         }
     }
 }

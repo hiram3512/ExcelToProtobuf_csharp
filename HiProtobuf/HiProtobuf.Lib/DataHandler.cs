@@ -293,12 +293,10 @@ namespace HiProtobuf.Lib
 
         void Serialize(object obj)
         {
-            var type = obj.GetType();
             var path = Settings.Export_Folder + Settings.dat_folder + "/" + type.Name + ".dat";
-            MethodInfo method = type.GetMethod("WriteTo");
             using (var output = File.Create(path))
             {
-                method.Invoke(obj, new[] { output });
+                MessageExtensions.WriteTo((IMessage)obj, output);
             }
         }
     }
