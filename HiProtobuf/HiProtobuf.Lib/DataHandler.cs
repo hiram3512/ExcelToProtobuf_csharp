@@ -75,7 +75,7 @@ namespace HiProtobuf.Lib
                 {
                     var variableType = ((Range)usedRange.Cells[2, j]).Value2.ToString();
                     var variableName = ((Range)usedRange.Cells[3, j]).Value2.ToString();
-                    var variableValue = ((Range)usedRange.Cells[i, j]).Value2.ToString();
+                    var variableValue = ((Range)usedRange.Cells[i, j]).Value2;
                     var insType = ins.GetType();
                     var fieldName = variableName + "_";
                     FieldInfo insField = insType.GetField(fieldName, BindingFlags.NonPublic | BindingFlags.Instance);
@@ -88,182 +88,192 @@ namespace HiProtobuf.Lib
             System.Runtime.InteropServices.Marshal.ReleaseComObject(excelApp);
         }
 
-        object GetVariableValue(string type, string value)
+        object GetVariableValue(string type, dynamic value)
         {
             if (type == Common.double_)
-                return double.Parse(value);
+                return (double)value;
             if (type == Common.float_)
-                return float.Parse(value);
+                return (float)value;
             if (type == Common.int32_)
-                return int.Parse(value);
+                return (int)value;
             if (type == Common.int64_)
-                return long.Parse(value);
+                return (long)value;
             if (type == Common.uint32_)
-                return uint.Parse(value);
+                return (uint)value;
             if (type == Common.uint64_)
-                return ulong.Parse(value);
+                return (ulong)value;
             if (type == Common.sint32_)
-                return int.Parse(value);
+                return (int)value;
             if (type == Common.sint64_)
-                return long.Parse(value);
+                return (long)value;
             if (type == Common.fixed32_)
-                return uint.Parse(value);
+                return (uint)value;
             if (type == Common.fixed64_)
-                return ulong.Parse(value);
+                return (ulong)value;
             if (type == Common.sfixed32_)
-                return int.Parse(value);
+                return (int)value;
             if (type == Common.sfixed64_)
-                return long.Parse(value);
+                return (long)value;
             if (type == Common.bool_)
-                return bool.Parse(value);
+                return value == 1;
             if (type == Common.string_)
                 return value.ToString();
             if (type == Common.bytes_)
-                return ByteString.CopyFromUtf8(value);
+                return ByteString.CopyFromUtf8(value.ToString());
             if (type == Common.double_s)
             {
-                var data = value.Split(',');
-                double[] newValue = new double[data.Length];
-                for (int i = 0; i < data.Length; i++)
+                string data = value.ToString().Trim('"');
+                string[] datas = data.Split('|');
+                double[] newValue = new double[datas.Length];
+                for (int i = 0; i < datas.Length; i++)
                 {
-                    newValue[i] = double.Parse(data[i]);
+                    newValue[i] = double.Parse(datas[i]);
                 }
                 return newValue;
             }
             if (type == Common.float_s)
             {
-                var data = value.Split(',');
-                float[] newValue = new float[data.Length];
-                for (int i = 0; i < data.Length; i++)
+                string data = value.ToString().Trim('"');
+                string[] datas = data.Split('|');
+                float[] newValue = new float[datas.Length];
+                for (int i = 0; i < datas.Length; i++)
                 {
-                    newValue[i] = float.Parse(data[i]);
+                    newValue[i] = float.Parse(datas[i]);
                 }
                 return newValue;
             }
             if (type == Common.int32_s)
             {
-                var data = value.Split(',');
-                int[] newValue = new int[data.Length];
-                for (int i = 0; i < data.Length; i++)
+                string data = value.ToString().Trim('"');
+                string[] datas = data.Split('|');
+                int[] newValue = new int[datas.Length];
+                for (int i = 0; i < datas.Length; i++)
                 {
-                    newValue[i] = int.Parse(data[i]);
+                    newValue[i] = int.Parse(datas[i]);
                 }
                 return newValue;
             }
             if (type == Common.int64_s)
             {
-                var data = value.Split(',');
-                long[] newValue = new long[data.Length];
-                for (int i = 0; i < data.Length; i++)
+                string data = value.ToString().Trim('"');
+                string[] datas = data.Split('|');
+                long[] newValue = new long[datas.Length];
+                for (int i = 0; i < datas.Length; i++)
                 {
-                    newValue[i] = long.Parse(data[i]);
+                    newValue[i] = long.Parse(datas[i]);
                 }
                 return newValue;
             }
             if (type == Common.uint32_s)
             {
-                var data = value.Split(',');
-                uint[] newValue = new uint[data.Length];
-                for (int i = 0; i < data.Length; i++)
+                string data = value.ToString().Trim('"');
+                string[] datas = data.Split('|');
+                uint[] newValue = new uint[datas.Length];
+                for (int i = 0; i < datas.Length; i++)
                 {
-                    newValue[i] = uint.Parse(data[i]);
+                    newValue[i] = uint.Parse(datas[i]);
                 }
                 return newValue;
             }
             if (type == Common.uint64_s)
             {
-                var data = value.Split(',');
-                ulong[] newValue = new ulong[data.Length];
-                for (int i = 0; i < data.Length; i++)
+                string data = value.ToString().Trim('"');
+                string[] datas = data.Split('|');
+                ulong[] newValue = new ulong[datas.Length];
+                for (int i = 0; i < datas.Length; i++)
                 {
-                    newValue[i] = ulong.Parse(data[i]);
+                    newValue[i] = ulong.Parse(datas[i]);
                 }
                 return newValue;
             }
             if (type == Common.sint32_s)
             {
-                var data = value.Split(',');
-                int[] newValue = new int[data.Length];
-                for (int i = 0; i < data.Length; i++)
+                string data = value.ToString().Trim('"');
+                string[] datas = data.Split('|');
+                int[] newValue = new int[datas.Length];
+                for (int i = 0; i < datas.Length; i++)
                 {
-                    newValue[i] = int.Parse(data[i]);
+                    newValue[i] = int.Parse(datas[i]);
                 }
                 return newValue;
             }
             if (type == Common.sint64_s)
             {
-                var data = value.Split(',');
-                long[] newValue = new long[data.Length];
-                for (int i = 0; i < data.Length; i++)
+                string data = value.ToString().Trim('"');
+                string[] datas = data.Split('|');
+                long[] newValue = new long[datas.Length];
+                for (int i = 0; i < datas.Length; i++)
                 {
-                    newValue[i] = long.Parse(data[i]);
+                    newValue[i] = long.Parse(datas[i]);
                 }
                 return newValue;
             }
             if (type == Common.fixed32_s)
             {
-                var data = value.Split(',');
-                uint[] newValue = new uint[data.Length];
-                for (int i = 0; i < data.Length; i++)
+                string data = value.ToString().Trim('"');
+                string[] datas = data.Split('|');
+                uint[] newValue = new uint[datas.Length];
+                for (int i = 0; i < datas.Length; i++)
                 {
-                    newValue[i] = uint.Parse(data[i]);
+                    newValue[i] = uint.Parse(datas[i]);
                 }
                 return newValue;
             }
             if (type == Common.fixed64_s)
             {
-                var data = value.Split(',');
-                ulong[] newValue = new ulong[data.Length];
-                for (int i = 0; i < data.Length; i++)
+                string data = value.ToString().Trim('"');
+                string[] datas = data.Split('|');
+                ulong[] newValue = new ulong[datas.Length];
+                for (int i = 0; i < datas.Length; i++)
                 {
-                    newValue[i] = ulong.Parse(data[i]);
+                    newValue[i] = ulong.Parse(datas[i]);
                 }
                 return newValue;
             }
             if (type == Common.sfixed32_s)
             {
-                var data = value.Split(',');
-                int[] newValue = new int[data.Length];
-                for (int i = 0; i < data.Length; i++)
+                string data = value.ToString().Trim('"');
+                string[] datas = data.Split('|');
+                int[] newValue = new int[datas.Length];
+                for (int i = 0; i < datas.Length; i++)
                 {
-                    newValue[i] = int.Parse(data[i]);
+                    newValue[i] = int.Parse(datas[i]);
                 }
                 return newValue;
             }
             if (type == Common.sfixed64_s)
             {
-                var data = value.Split(',');
-                long[] newValue = new long[data.Length];
-                for (int i = 0; i < data.Length; i++)
+                string data = value.ToString().Trim('"');
+                string[] datas = data.Split('|');
+                long[] newValue = new long[datas.Length];
+                for (int i = 0; i < datas.Length; i++)
                 {
-                    newValue[i] = long.Parse(data[i]);
+                    newValue[i] = long.Parse(datas[i]);
                 }
                 return newValue;
             }
             if (type == Common.bool_s)
             {
-                var data = value.Split(',');
-                bool[] newValue = new bool[data.Length];
-                for (int i = 0; i < data.Length; i++)
+                string data = value.ToString().Trim('"');
+                string[] datas = data.Split('|');
+                bool[] newValue = new bool[datas.Length];
+                for (int i = 0; i < datas.Length; i++)
                 {
-                    newValue[i] = bool.Parse(data[i]);
+                    newValue[i] = datas[i] == "1";
                 }
                 return newValue;
             }
             if (type == Common.string_s)
             {
-                //"hello","world"
-                string[] separator1 = new[] { @""",""" };
-                var data1 = value.Split(separator1, StringSplitOptions.None);
-                string[] data = new string[data1.Length];
-                //"hello
-                //world"
-                for (int i = 0; i < data1.Length; i++)
+                //hello|world
+                string data = value.ToString().Trim('"');
+                string[] datas = data.Split('|');
+                string[] newValue = new string[data.Length];
+                for (int i = 0; i < datas.Length; i++)
                 {
-                    var data2 = data1[i].Trim('"');
-                    data[i] = data2;
+                    newValue[i] = datas[i];
                 }
-                return data;
+                return newValue;
             }
             AssertThat.Fail("Type error");
             return null;
