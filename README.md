@@ -26,13 +26,16 @@
   - dat 存放.dat protobuf序列化数据
 - 支持的数据类型有: "double", "float", "int32", "int64", "uint32", "uint64", "sint32", "sint64", "fixed32", "fixed64","sfixed32", "sfixed64", "bool", "string", "bytes"
 - 支持对应的数组类型,数据分割用|
+
   ![qAn9ZhK3fO](Others/qAn9ZhK3fO.png)
 - Excel配置格式如下:
   - 第一行为注释说明
   - 第二行为变量类型
   - 第三行为变量命名
+
   ![icZblwSnCx](Others/icZblwSnCx.png)
 - 运行时使用如下:
+
   ![7U7wQbS0FP](Others/7U7wQbS0FP.png)
 - 扩展:源码里面的对象很容易生成其他语言(Lua/Ruby/PHP...)和数据(Json/Xml/Bin...)
 
