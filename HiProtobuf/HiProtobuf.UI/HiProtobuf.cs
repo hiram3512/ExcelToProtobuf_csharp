@@ -84,10 +84,10 @@ namespace HiProtobuf.UI
 
         private void button6_Click(object sender, EventArgs e)
         {
-            Log.Print("开始导出...");
-            Config.Save();
+            Log.Print("开始导出");
             Manager.Export();
-            Log.Print("导出完成");
+            Log.Print("导出结束");
+            Config.Save();
         }
     }
 }

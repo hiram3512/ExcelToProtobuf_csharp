@@ -20,7 +20,6 @@ namespace HiProtobuf.UI
         {
             if (File.Exists(_path))
             {
-
                 XmlSerializer xs = new XmlSerializer(typeof(PathConfig));
                 Stream stream = new FileStream(_path, FileMode.Open, FileAccess.Read, FileShare.Read);
                 PathConfig pathCfg = xs.Deserialize(stream) as PathConfig;

@@ -17,7 +17,7 @@ namespace HiProtobuf.UI
             {
                 str += args[i].ToString();
             }
-            Log += "[Print]" + str.ToString();
+            Log += "[Print]" + str.ToString() + "\r\n";
         }
 
         public void Warnning(params object[] args)
@@ -27,7 +27,7 @@ namespace HiProtobuf.UI
             {
                 str += args[i].ToString();
             }
-            Log += "[Warnning]" + str.ToString();
+            Log += "[Warnning]" + str.ToString() + "\r\n";
         }
 
         public void Error(params object[] args)
@@ -37,7 +37,7 @@ namespace HiProtobuf.UI
             {
                 str += args[i].ToString();
             }
-            Log += "[Error]" + str.ToString();
+            Log += "[Error]" + str.ToString() + "\r\n";
         }
     }
 }

@@ -19,3 +19,4 @@ D:\MyGit\github\HiProtobuf\HiProtobuf\HiProtobuf.Test\obj\Debug\HiProtobuf.Test.
 D:\MyGit\github\HiProtobuf\HiProtobuf\HiProtobuf.Test\obj\Debug\HiProtobuf.Test.csproj.CopyComplete
 D:\MyGit\github\HiProtobuf\HiProtobuf\HiProtobuf.Test\obj\Debug\HiProtobuf.Test.dll
 D:\MyGit\github\HiProtobuf\HiProtobuf\HiProtobuf.Test\obj\Debug\HiProtobuf.Test.pdb
+D:\MyGit\github\HiProtobuf\HiProtobuf\HiProtobuf.Test\bin\Debug\HiFramework.Log.dll

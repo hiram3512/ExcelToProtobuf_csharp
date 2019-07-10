@@ -25,9 +25,6 @@ namespace HiProtobuf.UI
             Log.SetLogProxy(new Logger());
             Config.Load();
 
-
-
-
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new HiProtobuf());
