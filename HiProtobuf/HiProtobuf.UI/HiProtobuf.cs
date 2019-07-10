@@ -17,9 +17,9 @@ namespace HiProtobuf.UI
         public HiProtobuf()
         {
             InitializeComponent();
-            textBox1.Text = Settings.Export_Folder;
-            textBox2.Text = Settings.Excel_Folder;
-            textBox5.Text = Settings.Compiler_Path;
+            if (string.IsNullOrEmpty(Settings.Export_Folder)) textBox1.Text = Settings.Export_Folder;
+            if (string.IsNullOrEmpty(Settings.Excel_Folder)) textBox2.Text = Settings.Excel_Folder;
+            if (string.IsNullOrEmpty(Settings.Compiler_Path)) textBox5.Text = Settings.Compiler_Path;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -65,14 +65,15 @@ namespace HiProtobuf.UI
         {
             Settings.Excel_Folder = textBox2.Text;
         }
-        
+
 
         private void button5_Click(object sender, EventArgs e)
         {
-            FolderBrowserDialog dialog = new FolderBrowserDialog();
+            OpenFileDialog dialog = new OpenFileDialog();
+            dialog.Filter = "csc(*.exe)|*.exe";
             if (dialog.ShowDialog() == DialogResult.OK)
             {
-                textBox5.Text = dialog.SelectedPath;
+                textBox5.Text = dialog.FileName;
                 Settings.Compiler_Path = textBox5.Text;
             }
         }
