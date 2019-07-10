@@ -26,6 +26,7 @@ namespace HiProtobuf.UI
                 Settings.Export_Folder = pathCfg.Export_Folder;
                 Settings.Excel_Folder = pathCfg.Excel_Folder;
                 Settings.Compiler_Path = pathCfg.Compiler_Path;
+                stream.Close();
             }
         }
 

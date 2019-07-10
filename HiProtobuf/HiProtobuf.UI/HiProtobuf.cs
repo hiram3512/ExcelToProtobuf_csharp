@@ -17,9 +17,9 @@ namespace HiProtobuf.UI
         public HiProtobuf()
         {
             InitializeComponent();
-            if (string.IsNullOrEmpty(Settings.Export_Folder)) textBox1.Text = Settings.Export_Folder;
-            if (string.IsNullOrEmpty(Settings.Excel_Folder)) textBox2.Text = Settings.Excel_Folder;
-            if (string.IsNullOrEmpty(Settings.Compiler_Path)) textBox5.Text = Settings.Compiler_Path;
+            if (!string.IsNullOrEmpty(Settings.Export_Folder)) textBox1.Text = Settings.Export_Folder;
+            if (!string.IsNullOrEmpty(Settings.Excel_Folder)) textBox2.Text = Settings.Excel_Folder;
+            if (!string.IsNullOrEmpty(Settings.Compiler_Path)) textBox5.Text = Settings.Compiler_Path;
         }
 
         private void Form1_Load(object sender, EventArgs e)
