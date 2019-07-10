@@ -5,16 +5,13 @@
  * Author: hiramtan@live.com
  ****************************************************************************/
 
+using Google.Protobuf;
+using Google.Protobuf.Collections;
 using HiFramework.Assert;
 using Microsoft.Office.Interop.Excel;
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
-using Google.Protobuf;
-using Google.Protobuf.Collections;
-using HiFramework.Log;
-using Google.Protobuf;
 
 namespace HiProtobuf.Lib
 {

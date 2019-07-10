@@ -4,34 +4,37 @@
  * Document: https://github.com/hiramtan/HiProtobuf
  * Author: hiramtan@live.com
  ****************************************************************************/
+
+using System;
+
 namespace HiProtobuf.Lib
 {
     public static class Settings
     {
         /// <summary>
-        /// protoc路径
+        /// 导出文件夹
         /// </summary>
-        public static string Protoc_Path = @"D:\MyGit\github\HiProtobuf\protoc-3.8.0-win64\bin\protoc.exe";
+        public static string Export_Folder = string.Empty;
 
         /// <summary>
         /// Excel文件夹
         /// </summary>
-        public static string Excel_Folder = @"D:\MyGit\github\HiProtobuf\temp\excel";
+        public static string Excel_Folder = string.Empty;
 
         /// <summary>
-        /// 导出文件夹
+        /// 编译器路径
         /// </summary>
-        public static string Export_Folder = @"D:\MyGit\github\HiProtobuf\temp\export";
-
-        /// <summary>
-        /// 编译器地址
-        /// </summary>
-        public static string Compiler_Path = @"C:\Windows\Microsoft.NET\Framework64\v4.0.30319\csc.exe";
+        public static string Compiler_Path = string.Empty;
 
         /// <summary>
         /// protobuf dll
         /// </summary>
-        public static string Protobuf_Dll_Path = @"D:\MyGit\github\HiProtobuf\HiProtobuf\lib\Google.Protobuf.dll";
+        public static readonly string Protobuf_Dll_Path = Environment.CurrentDirectory + @"\Google.Protobuf.dll";
+
+        /// <summary>
+        /// protoc路径
+        /// </summary>
+        public static readonly string Protoc_Path = Environment.CurrentDirectory + @"\protoc-3.8.0-win64\bin\protoc.exe";
 
         /// <summary>
         /// Proto文件存放目录

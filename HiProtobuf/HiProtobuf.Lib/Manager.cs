@@ -10,7 +10,6 @@ namespace HiProtobuf.Lib
 {
     public static class Manager
     {
-
         public static void Export()
         {
             AssertThat.IsNotNullOrEmpty(Settings.Excel_Folder, "Excel's folder is null or empty");

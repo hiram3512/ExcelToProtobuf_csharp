@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using HiFramework.Log;
 using HiProtobuf.Lib;
 
 namespace HiProtobuf.UI
@@ -21,6 +22,12 @@ namespace HiProtobuf.UI
         [STAThread]
         static void Main()
         {
+            Log.SetLogProxy(new Logger());
+            Config.Load();
+
+
+
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new HiProtobuf());

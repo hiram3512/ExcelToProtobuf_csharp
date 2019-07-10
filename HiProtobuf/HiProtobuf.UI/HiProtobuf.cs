@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using HiProtobuf.Lib;
+using HiFramework.Log;
 
 namespace HiProtobuf.UI
 {
@@ -16,11 +17,25 @@ namespace HiProtobuf.UI
         public HiProtobuf()
         {
             InitializeComponent();
+            textBox1.Text = Settings.Export_Folder;
+            textBox2.Text = Settings.Excel_Folder;
+            textBox5.Text = Settings.Compiler_Path;
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            Log.OnPrint += (x) =>
+            {
+                textBox6.Text = Logger.Log;
+            };
+            Log.OnWarnning += (x) =>
+            {
+                textBox6.Text = Logger.Log;
+            };
+            Log.OnError += (x) =>
+            {
+                textBox6.Text = Logger.Log;
+            };
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -50,33 +65,7 @@ namespace HiProtobuf.UI
         {
             Settings.Excel_Folder = textBox2.Text;
         }
-        private void button3_Click(object sender, EventArgs e)
-        {
-            FolderBrowserDialog dialog = new FolderBrowserDialog();
-            if (dialog.ShowDialog() == DialogResult.OK)
-            {
-                textBox3.Text = dialog.SelectedPath;
-                Settings.Protoc_Path = textBox3.Text;
-            }
-        }
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-            Settings.Protoc_Path = textBox3.Text;
-        }
-        private void button4_Click(object sender, EventArgs e)
-        {
-            FolderBrowserDialog dialog = new FolderBrowserDialog();
-            if (dialog.ShowDialog() == DialogResult.OK)
-            {
-                textBox4.Text = dialog.SelectedPath;
-                Settings.Protobuf_Dll_Path = textBox4.Text;
-            }
-        }
-        private void textBox4_TextChanged(object sender, EventArgs e)
-        {
-            Settings.Protobuf_Dll_Path = textBox4.Text;
-        }
+        
 
         private void button5_Click(object sender, EventArgs e)
         {
@@ -95,7 +84,10 @@ namespace HiProtobuf.UI
 
         private void button6_Click(object sender, EventArgs e)
         {
+            Log.Print("开始导出...");
+            Config.Save();
             Manager.Export();
+            Log.Print("导出完成");
         }
     }
 }
