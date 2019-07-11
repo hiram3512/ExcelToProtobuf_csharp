@@ -15,6 +15,9 @@
 3. 选择编译器csc.exe
 4. 点击导出
 
+#### 类型对应关系
+![EXCEL_5u9BDIL5mX](Others/EXCEL_5u9BDIL5mX.png)
+
 #### 详细说明
 - 大多数Windows电脑上默认安装.Net Framework,编译器路径一般在C:\Windows\Microsoft.NET\Framework64.如果没有安装从此处下载安装 [https://dotnet.microsoft.com/download/dotnet-framework](https://dotnet.microsoft.com/download/dotnet-framework)
 - 如果希望导出.go文件,需要额外做一些操作,具体参照官方介绍: [https://developers.google.cn/protocol-buffers/docs/gotutorial](https://developers.google.cn/protocol-buffers/docs/gotutorial)
