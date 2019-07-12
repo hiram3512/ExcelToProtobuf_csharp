@@ -1,6 +1,6 @@
-# HiProtobuf 
+# HiProtobuf(Excel转Protobuf工具)
 
-## Excel转Protobuf
+#### 功能说明
 - 将Excel文件生成protobuf文件和protobuf数据
 - 目前支持生成五种语言C++(生成.cpp),C#(生成.cs和.dll),Golang(生成.go),Java(生成.java),Python(生成.py)
 
