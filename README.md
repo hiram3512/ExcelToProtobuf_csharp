@@ -1,6 +1,4 @@
-# HiProtobuf 
-
-## Excel转Protobuf
+# HiProtobuf(Excel转Protobuf工具)
 
 #### 功能说明
 - 将Excel文件生成protobuf文件和protobuf数据
