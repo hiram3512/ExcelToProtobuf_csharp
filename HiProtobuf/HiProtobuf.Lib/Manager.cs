@@ -34,18 +34,18 @@ namespace HiProtobuf.Lib
                 Log.Error("编译器路径未配置");
                 return;
             }
-            Log.Print("开始生成协议");
+            Log.Info("开始生成协议");
             new ProtoHandler().Process();
-            Log.Print("生成协议结束");
-            Log.Print("开始生成语言");
+            Log.Info("生成协议结束");
+            Log.Info("开始生成语言");
             new LanguageGenerater().Process();
-            Log.Print("生成语言结束");
-            Log.Print("开始编译语言");
+            Log.Info("生成语言结束");
+            Log.Info("开始编译语言");
             new Compiler().Porcess();
-            Log.Print("编译语言结束");
-            Log.Print("开始生成数据");
+            Log.Info("编译语言结束");
+            Log.Info("开始生成数据");
             new DataHandler().Process();
-            Log.Print("生成数据结束");
+            Log.Info("生成数据结束");
         }
     }
 }

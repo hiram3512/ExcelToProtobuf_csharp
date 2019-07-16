@@ -32,8 +32,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="HiFramework.Log, Version=1.0.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\HiFramework.Log.1.0.2\lib\net35\HiFramework.Log.dll</HintPath>
+    <Reference Include="HiFramework.Log, Version=1.0.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\HiFramework.Log.1.0.6\lib\net35\HiFramework.Log.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

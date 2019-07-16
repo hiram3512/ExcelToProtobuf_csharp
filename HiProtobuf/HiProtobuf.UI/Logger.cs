@@ -7,10 +7,10 @@ using HiFramework.Log;
 
 namespace HiProtobuf.UI
 {
-    internal class Logger : ILogProxy
+    internal class Logger : ILogHandler
     {
         public static string Log;
-        public void Print(params object[] args)
+        public void Info(params object[] args)
         {
             string str = "";
             for (int i = 0; i < args.Length; i++)
@@ -20,7 +20,7 @@ namespace HiProtobuf.UI
             Log += "[Print]" + str.ToString() + "\r\n";
         }
 
-        public void Warnning(params object[] args)
+        public void Warning(params object[] args)
         {
             string str = "";
             for (int i = 0; i < args.Length; i++)

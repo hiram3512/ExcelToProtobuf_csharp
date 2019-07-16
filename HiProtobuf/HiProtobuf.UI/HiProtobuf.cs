@@ -24,11 +24,11 @@ namespace HiProtobuf.UI
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            Log.OnPrint += (x) =>
+            Log.OnInfo += (x) =>
             {
                 textBox6.Text = Logger.Log;
             };
-            Log.OnWarnning += (x) =>
+            Log.OnWarning += (x) =>
             {
                 textBox6.Text = Logger.Log;
             };
@@ -85,9 +85,9 @@ namespace HiProtobuf.UI
 
         private void button6_Click(object sender, EventArgs e)
         {
-            Log.Print("开始导出");
+            Log.Info("开始导出");
             Manager.Export();
-            Log.Print("导出结束");
+            Log.Info("导出结束");
             Config.Save();
         }
     }
