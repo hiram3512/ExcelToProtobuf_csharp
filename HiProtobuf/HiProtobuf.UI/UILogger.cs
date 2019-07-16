@@ -7,7 +7,7 @@ using HiFramework.Log;
 
 namespace HiProtobuf.UI
 {
-    internal class Logger : ILogHandler
+    internal class UILogger : ILogHandler
     {
         public static string Log;
         public void Info(params object[] args)
