@@ -85,9 +85,6 @@ namespace HiProtobuf.Lib
                     }
                 }
                 Serialize(_excelIns);
-                //workbooks.Close();
-                //excelApp.Quit();
-                //System.Runtime.InteropServices.Marshal.ReleaseComObject(excelApp);
             }
             catch (Exception e)
             {

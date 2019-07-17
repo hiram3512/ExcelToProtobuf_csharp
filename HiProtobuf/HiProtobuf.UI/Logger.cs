@@ -35,7 +35,7 @@ namespace HiProtobuf.UI
             {
                 str += args[i].ToString();
             }
-            Log += "[Warnning]" + str.ToString() + "\r\n";
+            Log += "[Warning]" + str.ToString() + "\r\n";
         }
 
         public void Error(params object[] args)
