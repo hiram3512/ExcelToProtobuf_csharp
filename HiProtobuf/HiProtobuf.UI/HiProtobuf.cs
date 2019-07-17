@@ -26,15 +26,15 @@ namespace HiProtobuf.UI
         {
             Log.OnInfo += (x) =>
             {
-                textBox6.Text = UILogger.Log;
+                textBox6.Text = Logger.Log;
             };
             Log.OnWarning += (x) =>
             {
-                textBox6.Text = UILogger.Log;
+                textBox6.Text = Logger.Log;
             };
             Log.OnError += (x) =>
             {
-                textBox6.Text = UILogger.Log;
+                textBox6.Text = Logger.Log;
             };
         }
 

@@ -65,17 +65,20 @@ namespace HiProtobuf.Lib
                 //}
                 var name = Path.GetFileNameWithoutExtension(path);
                 new ProtoGenerater(name, rowCount, colCount, usedRange).Process();
-                workbooks.Close();
-                excelApp.Quit();
-                System.Runtime.InteropServices.Marshal.ReleaseComObject(excelApp);
+                //workbooks.Close();
+                //excelApp.Quit();
+                //System.Runtime.InteropServices.Marshal.ReleaseComObject(excelApp);
             }
             catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+            finally
             {
                 workbooks.Close();
                 excelApp.Quit();
                 System.Runtime.InteropServices.Marshal.ReleaseComObject(excelApp);
-                Console.WriteLine(e);
-                throw;
             }
         }
     }

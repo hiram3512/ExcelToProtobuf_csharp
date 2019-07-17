@@ -20,7 +20,7 @@ namespace HiProtobuf.UI
         {
             if (File.Exists(_path))
             {
-                XmlSerializer xs = new XmlSerializer(typeof(PathConfig));
+                XmlSerializer xs = XmlSerializer.FromTypes(new Type[] { typeof(PathConfig) })[0];
                 Stream stream = new FileStream(_path, FileMode.Open, FileAccess.Read, FileShare.Read);
                 PathConfig pathCfg = xs.Deserialize(stream) as PathConfig;
                 Settings.Export_Folder = pathCfg.Export_Folder;
@@ -37,7 +37,7 @@ namespace HiProtobuf.UI
             pathCfg.Export_Folder = Settings.Export_Folder;
             pathCfg.Excel_Folder = Settings.Excel_Folder;
             pathCfg.Compiler_Path = Settings.Compiler_Path;
-            XmlSerializer xs = new XmlSerializer(typeof(PathConfig));
+            XmlSerializer xs = XmlSerializer.FromTypes(new Type[] { typeof(PathConfig) })[0];
             Stream stream = new FileStream(_path, FileMode.Create, FileAccess.Write, FileShare.Read);
             xs.Serialize(stream, pathCfg);
             stream.Close();

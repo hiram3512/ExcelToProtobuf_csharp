@@ -3,7 +3,6 @@ D:\MyGit\github\HiProtobuf\HiProtobuf\HiProtobuf.Lib\bin\Debug\HiProtobuf.Lib.pd
 D:\MyGit\github\HiProtobuf\HiProtobuf\HiProtobuf.Lib\bin\Debug\Google.Protobuf.dll
 D:\MyGit\github\HiProtobuf\HiProtobuf\HiProtobuf.Lib\bin\Debug\HiFramework.Assert.dll
 D:\MyGit\github\HiProtobuf\HiProtobuf\HiProtobuf.Lib\bin\Debug\HiFramework.Log.dll
-D:\MyGit\github\HiProtobuf\HiProtobuf\HiProtobuf.Lib\obj\Debug\HiProtobuf.Lib.csprojAssemblyReference.cache
 D:\MyGit\github\HiProtobuf\HiProtobuf\HiProtobuf.Lib\obj\Debug\HiProtobuf.Lib.csproj.CoreCompileInputs.cache
 D:\MyGit\github\HiProtobuf\HiProtobuf\HiProtobuf.Lib\obj\Debug\HiProtobuf.Lib.csproj.CopyComplete
 D:\MyGit\github\HiProtobuf\HiProtobuf\HiProtobuf.Lib\obj\Debug\HiProtobuf.Lib.dll

@@ -22,7 +22,7 @@ namespace HiProtobuf.UI
         [STAThread]
         static void Main()
         {
-            Log.LogHandler = new UILogger();
+            Log.LogHandler = new Logger();
             Config.Load();
 
             Application.EnableVisualStyles();

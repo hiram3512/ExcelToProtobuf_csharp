@@ -68,33 +68,37 @@ namespace HiProtobuf.Lib
                     var dataIns = dataProp.GetValue(_excelIns);
                     var dataType = dataProp.PropertyType;
                     var ins = _assembly.CreateInstance("HiProtobuf." + name);
-                    var addMethod = dataType.GetMethod("Add", new Type[] { typeof(int), ins.GetType() });
-                    int id = (int)((Range)usedRange.Cells[i, 1]).Value2;
-                    addMethod.Invoke(dataIns, new[] { id, ins });
+                    var addMethod = dataType.GetMethod("Add", new Type[] {typeof(int), ins.GetType()});
+                    int id = (int) ((Range) usedRange.Cells[i, 1]).Value2;
+                    addMethod.Invoke(dataIns, new[] {id, ins});
                     for (int j = 1; j <= colCount; j++)
                     {
-                        var variableType = ((Range)usedRange.Cells[2, j]).Text.ToString();
-                        var variableName = ((Range)usedRange.Cells[3, j]).Text.ToString();
-                        var variableValue = ((Range)usedRange.Cells[i, j]).Text.ToString();
+                        var variableType = ((Range) usedRange.Cells[2, j]).Text.ToString();
+                        var variableName = ((Range) usedRange.Cells[3, j]).Text.ToString();
+                        var variableValue = ((Range) usedRange.Cells[i, j]).Text.ToString();
                         var insType = ins.GetType();
                         var fieldName = variableName + "_";
-                        FieldInfo insField = insType.GetField(fieldName, BindingFlags.NonPublic | BindingFlags.Instance);
+                        FieldInfo insField =
+                            insType.GetField(fieldName, BindingFlags.NonPublic | BindingFlags.Instance);
                         var value = GetVariableValue(variableType, variableValue);
                         insField.SetValue(ins, value);
                     }
                 }
                 Serialize(_excelIns);
-                workbooks.Close();
-                excelApp.Quit();
-                System.Runtime.InteropServices.Marshal.ReleaseComObject(excelApp);
+                //workbooks.Close();
+                //excelApp.Quit();
+                //System.Runtime.InteropServices.Marshal.ReleaseComObject(excelApp);
             }
             catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+            finally
             {
                 workbooks.Close();
                 excelApp.Quit();
                 System.Runtime.InteropServices.Marshal.ReleaseComObject(excelApp);
-                Console.WriteLine(e);
-                throw;
             }
         }
 

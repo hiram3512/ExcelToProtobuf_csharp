@@ -1,14 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using HiFramework.Log;
+﻿using HiFramework.Log;
+using System;
+using System.Runtime.ExceptionServices;
 
 namespace HiProtobuf.UI
 {
-    internal class UILogger : ILogHandler
+    internal class Logger : ILogHandler
     {
+        internal Logger()
+        {
+            AppDomain.CurrentDomain.FirstChanceException += OnException;
+        }
+
+        private void OnException(object sender, FirstChanceExceptionEventArgs e)
+        {
+            string str = e.Exception.ToString();
+            Log += "[Exception]" + str.ToString() + "\r\n";
+        }
+
         public static string Log;
         public void Info(params object[] args)
         {
