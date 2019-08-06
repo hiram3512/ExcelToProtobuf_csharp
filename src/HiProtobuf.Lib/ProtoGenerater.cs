@@ -55,14 +55,14 @@ package HiProtobuf;
 
 // [START java_declaration]
 option java_package = ""com.HiProtobuf.HiProtobuf"";
-option java_outer_classname = ""WaitReplace1111111111111"";
+option java_outer_classname = ""{0}"";
 // [END java_declaration]
 
 // [START csharp_declaration]
 option csharp_namespace = ""HiProtobuf""; 
 // [END csharp_declaration]
 ";
-            header = header.Replace("WaitReplace1111111111111", _name + "_classname");
+            header = string.Format(header, _name + "_classname");
             var sw = File.AppendText(_path);
             sw.WriteLine(header);
             sw.Close();
@@ -105,13 +105,11 @@ option csharp_namespace = ""HiProtobuf"";
         private void ProcessMap()
         {
             string str = @"
-message Excel_WaitReplace1111111111111
-{
-    map<int32,WaitReplace22222222222222> WaitReplace3333333333333333 = 1;
-}";
-            str = str.Replace("WaitReplace1111111111111", _name);
-            str = str.Replace("WaitReplace22222222222222", _name);
-            str = str.Replace("WaitReplace3333333333333333", "Data");
+message Excel_{0}
+{{
+    map<int32,{1}> {2} = 1;
+}}";
+            str = string.Format(str, _name, _name, "Data");
             var sw = File.AppendText(_path);
             sw.WriteLine(str);
             sw.Close();

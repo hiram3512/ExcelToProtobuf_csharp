@@ -20,10 +20,6 @@ namespace HiProtobuf.UI
             if (!string.IsNullOrEmpty(Settings.Export_Folder)) textBox1.Text = Settings.Export_Folder;
             if (!string.IsNullOrEmpty(Settings.Excel_Folder)) textBox2.Text = Settings.Excel_Folder;
             if (!string.IsNullOrEmpty(Settings.Compiler_Path)) textBox5.Text = Settings.Compiler_Path;
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
             Log.OnInfo += (x) =>
             {
                 textBox6.Text = Logger.Log;
@@ -36,6 +32,11 @@ namespace HiProtobuf.UI
             {
                 textBox6.Text = Logger.Log;
             };
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+           
         }
 
         private void button1_Click(object sender, EventArgs e)

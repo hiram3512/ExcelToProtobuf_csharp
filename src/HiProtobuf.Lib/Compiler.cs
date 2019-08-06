@@ -4,8 +4,8 @@
  * Document: https://github.com/hiramtan/HiProtobuf
  * Author: hiramtan@live.com
  ****************************************************************************/
- 
- using System;
+
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -30,13 +30,10 @@ namespace HiProtobuf.Lib
 
         public void Porcess()
         {
-            var commond = @"-target:library -out:WaitReplace1111111111111 -reference:WaitReplace222222222222 -recurse:WaitReplace3333333\*.cs";
+            var commond = @"-target:library -out:{0} -reference:{1} -recurse:{2}\*.cs";
             var dllPath = Settings.Export_Folder + Settings.language_folder + Settings.csharp_dll_folder + DllName;
             var csharpFolder = Settings.Export_Folder + Settings.language_folder + Settings.csharp_folder;
-            commond = commond.Replace("WaitReplace1111111111111", dllPath);
-            commond = commond.Replace("WaitReplace222222222222", Settings.Protobuf_Dll_Path);
-            commond = commond.Replace("WaitReplace3333333", csharpFolder);
-            commond = Settings.Compiler_Path + " " + commond;
+            commond = Settings.Compiler_Path + " " + string.Format(commond, dllPath, Settings.Protobuf_Dll_Path, csharpFolder);
             Common.Cmd(commond);
         }
     }
