@@ -53,6 +53,7 @@ namespace HiProtobuf.Lib
 
         //导出语言文件夹
         internal static readonly string csharp_folder = "/csharp";
+        internal static readonly string csharpForILRumtime_folder = "/csharpForILRumtime";
         internal static readonly string csharp_dll_folder = "/csharp_dll";
         internal static readonly string cpp_folder = "/cpp";
         internal static readonly string go_folder = "/go";

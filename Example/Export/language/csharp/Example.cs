@@ -9,7 +9,7 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-namespace HiProtobuf {
+namespace TableTool {
 
   /// <summary>Holder for reflection information generated from Example.proto</summary>
   public static partial class ExampleReflection {
@@ -25,22 +25,20 @@ namespace HiProtobuf {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Cg1FeGFtcGxlLnByb3RvEgpIaVByb3RvYnVmIowCCgdFeGFtcGxlEgoKAmlk",
-            "GAEgASgFEg0KBW5hbWUxGAIgASgBEg0KBW5hbWUyGAMgASgCEg0KBW5hbWUz",
+            "GAEgASgJEg0KBW5hbWUxGAIgASgBEg0KBW5hbWUyGAMgASgCEg0KBW5hbWUz",
             "GAQgASgFEg0KBW5hbWU0GAUgASgDEg0KBW5hbWU1GAYgASgNEg0KBW5hbWU2",
             "GAcgASgEEg0KBW5hbWU3GAggASgIEg0KBW5hbWU4GAkgASgJEg0KBW5hbWU5",
             "GAogAygBEg4KBm5hbWUxMBgLIAMoAhIOCgZuYW1lMTEYDCADKAUSDgoGbmFt",
             "ZTEyGA0gAygDEg4KBm5hbWUxMxgOIAMoDRIOCgZuYW1lMTQYDyADKAQSDgoG",
-            "bmFtZTE1GBAgAygIEg4KBm5hbWUxNhgRIAMoCSKEAQoNRXhjZWxfRXhhbXBs",
-            "ZRIxCgREYXRhGAEgAygLMiMuSGlQcm90b2J1Zi5FeGNlbF9FeGFtcGxlLkRh",
-            "dGFFbnRyeRpACglEYXRhRW50cnkSCwoDa2V5GAEgASgFEiIKBXZhbHVlGAIg",
-            "ASgLMhMuSGlQcm90b2J1Zi5FeGFtcGxlOgI4AUI7Chljb20uSGlQcm90b2J1",
-            "Zi5IaVByb3RvYnVmQhFFeGFtcGxlX2NsYXNzbmFtZaoCCkhpUHJvdG9idWZi",
-            "BnByb3RvMw=="));
+            "bmFtZTE1GBAgAygIEg4KBm5hbWUxNhgRIAMoCSIyCg1FeGNlbF9FeGFtcGxl",
+            "EiEKBERhdGEYASADKAsyEy5IaVByb3RvYnVmLkV4YW1wbGVCOgoZY29tLkhp",
+            "UHJvdG9idWYuSGlQcm90b2J1ZkIRRXhhbXBsZV9jbGFzc25hbWWqAglUYWJs",
+            "ZVRvb2xiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::HiProtobuf.Example), global::HiProtobuf.Example.Parser, new[]{ "Id", "Name1", "Name2", "Name3", "Name4", "Name5", "Name6", "Name7", "Name8", "Name9", "Name10", "Name11", "Name12", "Name13", "Name14", "Name15", "Name16" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::HiProtobuf.Excel_Example), global::HiProtobuf.Excel_Example.Parser, new[]{ "Data" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
+            new pbr::GeneratedClrTypeInfo(typeof(global::TableTool.Example), global::TableTool.Example.Parser, new[]{ "Id", "Name1", "Name2", "Name3", "Name4", "Name5", "Name6", "Name7", "Name8", "Name9", "Name10", "Name11", "Name12", "Name13", "Name14", "Name15", "Name16" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TableTool.Excel_Example), global::TableTool.Excel_Example.Parser, new[]{ "Data" }, null, null, null)
           }));
     }
     #endregion
@@ -55,7 +53,7 @@ namespace HiProtobuf {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::HiProtobuf.ExampleReflection.Descriptor.MessageTypes[0]; }
+      get { return global::TableTool.ExampleReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -99,12 +97,12 @@ namespace HiProtobuf {
 
     /// <summary>Field number for the "id" field.</summary>
     public const int IdFieldNumber = 1;
-    private int id_;
+    private string id_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int Id {
+    public string Id {
       get { return id_; }
       set {
-        id_ = value;
+        id_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -312,7 +310,7 @@ namespace HiProtobuf {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (Id != 0) hash ^= Id.GetHashCode();
+      if (Id.Length != 0) hash ^= Id.GetHashCode();
       if (Name1 != 0D) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(Name1);
       if (Name2 != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Name2);
       if (Name3 != 0) hash ^= Name3.GetHashCode();
@@ -342,9 +340,9 @@ namespace HiProtobuf {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (Id != 0) {
-        output.WriteRawTag(8);
-        output.WriteInt32(Id);
+      if (Id.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Id);
       }
       if (Name1 != 0D) {
         output.WriteRawTag(17);
@@ -394,8 +392,8 @@ namespace HiProtobuf {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (Id != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Id);
+      if (Id.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Id);
       }
       if (Name1 != 0D) {
         size += 1 + 8;
@@ -440,7 +438,7 @@ namespace HiProtobuf {
       if (other == null) {
         return;
       }
-      if (other.Id != 0) {
+      if (other.Id.Length != 0) {
         Id = other.Id;
       }
       if (other.Name1 != 0D) {
@@ -486,8 +484,8 @@ namespace HiProtobuf {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 8: {
-            Id = input.ReadInt32();
+          case 10: {
+            Id = input.ReadString();
             break;
           }
           case 17: {
@@ -575,7 +573,7 @@ namespace HiProtobuf {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::HiProtobuf.ExampleReflection.Descriptor.MessageTypes[1]; }
+      get { return global::TableTool.ExampleReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -603,11 +601,11 @@ namespace HiProtobuf {
 
     /// <summary>Field number for the "Data" field.</summary>
     public const int DataFieldNumber = 1;
-    private static readonly pbc::MapField<int, global::HiProtobuf.Example>.Codec _map_data_codec
-        = new pbc::MapField<int, global::HiProtobuf.Example>.Codec(pb::FieldCodec.ForInt32(8), pb::FieldCodec.ForMessage(18, global::HiProtobuf.Example.Parser), 10);
-    private readonly pbc::MapField<int, global::HiProtobuf.Example> data_ = new pbc::MapField<int, global::HiProtobuf.Example>();
+    private static readonly pb::FieldCodec<global::TableTool.Example> _repeated_data_codec
+        = pb::FieldCodec.ForMessage(10, global::TableTool.Example.Parser);
+    private readonly pbc::RepeatedField<global::TableTool.Example> data_ = new pbc::RepeatedField<global::TableTool.Example>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::MapField<int, global::HiProtobuf.Example> Data {
+    public pbc::RepeatedField<global::TableTool.Example> Data {
       get { return data_; }
     }
 
@@ -624,14 +622,14 @@ namespace HiProtobuf {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (!Data.Equals(other.Data)) return false;
+      if(!data_.Equals(other.data_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= Data.GetHashCode();
+      hash ^= data_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -645,7 +643,7 @@ namespace HiProtobuf {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      data_.WriteTo(output, _map_data_codec);
+      data_.WriteTo(output, _repeated_data_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -654,7 +652,7 @@ namespace HiProtobuf {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      size += data_.CalculateSize(_map_data_codec);
+      size += data_.CalculateSize(_repeated_data_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -679,7 +677,7 @@ namespace HiProtobuf {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 10: {
-            data_.AddEntriesFrom(input, _map_data_codec);
+            data_.AddEntriesFrom(input, _repeated_data_codec);
             break;
           }
         }

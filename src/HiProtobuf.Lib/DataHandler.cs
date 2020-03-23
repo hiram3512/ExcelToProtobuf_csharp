@@ -8,15 +8,18 @@
 using Google.Protobuf;
 using Google.Protobuf.Collections;
 using HiFramework.Assert;
-using Microsoft.Office.Interop.Excel;
 using System;
 using System.IO;
+using System.Linq;
 using System.Reflection;
+using OfficeOpenXml;
+using HiFramework.Log;
 
 namespace HiProtobuf.Lib
 {
     internal class DataHandler
     {
+        public const string NameSpace = "TableTool";
         private Assembly _assembly;
         private object _excelIns;
         public DataHandler()
@@ -39,7 +42,7 @@ namespace HiProtobuf.Lib
             {
                 string protoPath = files[i];
                 string name = Path.GetFileNameWithoutExtension(protoPath);
-                string excelInsName = "HiProtobuf.Excel_" + name;
+                string excelInsName = $"{NameSpace}.Excel_" + name;
                 _excelIns = _assembly.CreateInstance(excelInsName);
                 string excelPath = Settings.Excel_Folder + "/" + name + ".xlsx";
                 ProcessData(excelPath);
@@ -50,242 +53,291 @@ namespace HiProtobuf.Lib
         {
             AssertThat.IsTrue(File.Exists(path), "Excel file can not find");
             var name = Path.GetFileNameWithoutExtension(path);
-            var excelApp = new Application();
-            var workbooks = excelApp.Workbooks.Open(path);
-            try
+            var fileInfo = new FileInfo(path);
+            using (ExcelPackage excelPackage = new ExcelPackage(fileInfo))
             {
-                var sheet = workbooks.Sheets[1];
-                AssertThat.IsNotNull(sheet, "Excel's sheet is null");
-                Worksheet worksheet = sheet as Worksheet;
-                AssertThat.IsNotNull(sheet, "Excel's worksheet is null");
-                var usedRange = worksheet.UsedRange;
-                int rowCount = usedRange.Rows.Count;
-                int colCount = usedRange.Columns.Count;
+                ExcelWorksheet worksheet = excelPackage.Workbook.Worksheets[0];
+                var rowCount = worksheet.Dimension.Rows;
+                var columnCount = worksheet.Dimension.Columns;
+                var excel_Type = _excelIns.GetType();
+                var dataProp = excel_Type.GetProperty("Data");
+                var dataIns = dataProp.GetValue(_excelIns);
+                var dataType = dataProp.PropertyType;
                 for (int i = 4; i <= rowCount; i++)
                 {
-                    var excel_Type = _excelIns.GetType();
-                    var dataProp = excel_Type.GetProperty("Data");
-                    var dataIns = dataProp.GetValue(_excelIns);
-                    var dataType = dataProp.PropertyType;
-                    var ins = _assembly.CreateInstance("HiProtobuf." + name);
-                    var addMethod = dataType.GetMethod("Add", new Type[] {typeof(int), ins.GetType()});
-                    int id = (int) ((Range) usedRange.Cells[i, 1]).Value2;
-                    addMethod.Invoke(dataIns, new[] {id, ins});
-                    for (int j = 1; j <= colCount; j++)
+                    var ins = _assembly.CreateInstance($"{NameSpace}.{name}");
+                    var addMethod = dataType.GetMethod("Add", new Type[] { ins.GetType() });
+                    //TODO 最初配置表数据用map存储，现在改为使用list存储 不需要强制第一个字段为int 作为key值
+                    //int id = (int)((Range)usedRange.Cells[i, 1]).Value2; 
+                    addMethod.Invoke(dataIns, new[] { ins });
+                    for (int j = 1; j <= columnCount; j++)
                     {
-                        var variableType = ((Range) usedRange.Cells[2, j]).Text.ToString();
-                        var variableName = ((Range) usedRange.Cells[3, j]).Text.ToString();
-                        var variableValue = ((Range) usedRange.Cells[i, j]).Text.ToString();
+                        var variableType = worksheet.Cells[2, j].Value?.ToString();
+                        var variableName = worksheet.Cells[3, j].Value?.ToString();
+                        var variableValue = worksheet.Cells[i, j].Value?.ToString();
                         var insType = ins.GetType();
-                        var fieldName = variableName + "_";
-                        FieldInfo insField =
-                            insType.GetField(fieldName, BindingFlags.NonPublic | BindingFlags.Instance);
+                        var fieldName = FirstCharToLower(variableName + "_");//首字母小写，防止获取不到正确的属性
+                        FieldInfo insField = insType.GetField(fieldName, BindingFlags.NonPublic | BindingFlags.Instance);
                         var value = GetVariableValue(variableType, variableValue);
-                        insField.SetValue(ins, value);
+                        if (insField == null)
+                        {
+                            //TODO 临时给XX_XX命名规则的数据表做兼容处理，后续要规避这种命名
+                            var index = fieldName.IndexOf("_");
+                            var charArray = fieldName.ToCharArray();
+                            var tempCharUper = charArray[index + 1].ToString().ToUpper();
+                            charArray[index + 1] = tempCharUper.ToCharArray()[0];
+                            fieldName = new string(charArray);
+                            fieldName = fieldName.Remove(index,1);
+                            insField = insType.GetField(fieldName, BindingFlags.NonPublic | BindingFlags.Instance);
+                            value = GetVariableValue(variableType, variableValue);
+                            if (insField == null)
+                            {
+                                Log.Info($"文件： {name} 属性： {variableName} 没有反射获取到对应的数据");
+                            }
+                             Log.Info($"文件： {name} 属性： {variableName} 命名规则不正常，注意修复");
+                        }
+                        insField?.SetValue(ins, value);
                     }
                 }
+                Console.WriteLine($"_excelIns  {path} ");
                 Serialize(_excelIns);
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-                throw;
-            }
-            finally
-            {
-                workbooks.Close();
-                excelApp.Quit();
-                System.Runtime.InteropServices.Marshal.ReleaseComObject(excelApp);
             }
         }
 
         object GetVariableValue(string type, string value)
         {
+            var isEmpty = false;
+            if (string.IsNullOrEmpty(value))
+            {
+                isEmpty = true;
+            }
             if (type == Common.double_)
-                return double.Parse(value);
+                return isEmpty ? 0 : double.Parse(value);
             if (type == Common.float_)
-                return float.Parse(value);
+                return isEmpty ? 0 : float.Parse(value);
             if (type == Common.int32_)
-                return int.Parse(value);
+                return isEmpty ? 0 : int.Parse(value);
             if (type == Common.int64_)
-                return long.Parse(value);
+                return isEmpty ? 0 : long.Parse(value);
             if (type == Common.uint32_)
-                return uint.Parse(value);
+                return isEmpty ? 0 : uint.Parse(value);
             if (type == Common.uint64_)
-                return ulong.Parse(value);
+                return isEmpty ? 0 : ulong.Parse(value);
             if (type == Common.sint32_)
-                return int.Parse(value);
+                return isEmpty ? 0 : int.Parse(value);
             if (type == Common.sint64_)
-                return long.Parse(value);
+                return isEmpty ? 0 : long.Parse(value);
             if (type == Common.fixed32_)
-                return uint.Parse(value);
+                return isEmpty ? 0 : uint.Parse(value);
             if (type == Common.fixed64_)
-                return ulong.Parse(value);
+                return isEmpty ? 0 : ulong.Parse(value);
             if (type == Common.sfixed32_)
-                return int.Parse(value);
+                return isEmpty ? 0 : int.Parse(value);
             if (type == Common.sfixed64_)
-                return long.Parse(value);
+                return isEmpty ? 0 : long.Parse(value);
             if (type == Common.bool_)
-                return value == "1";
+                return isEmpty ? false : (value == "1");
             if (type == Common.string_)
                 return value.ToString();
             if (type == Common.bytes_)
                 return ByteString.CopyFromUtf8(value.ToString());
             if (type == Common.double_s)
             {
-                string data = value.Trim('"');
-                string[] datas = data.Split('|');
                 RepeatedField<double> newValue = new RepeatedField<double>();
-                for (int i = 0; i < datas.Length; i++)
+                if (!isEmpty)
                 {
-                    newValue.Add(double.Parse(datas[i]));
+                    string data = value.Trim('"');
+                    string[] datas = data.Split('|');
+                    for (int i = 0; i < datas.Length; i++)
+                    {
+                        newValue.Add(double.Parse(datas[i]));
+                    }
                 }
                 return newValue;
             }
             if (type == Common.float_s)
             {
-                string data = value.Trim('"');
-                string[] datas = data.Split('|');
                 RepeatedField<float> newValue = new RepeatedField<float>();
-                for (int i = 0; i < datas.Length; i++)
+                if (!isEmpty)
                 {
-                    newValue.Add(float.Parse(datas[i]));
+                    string data = value.Trim('"');
+                    string[] datas = data.Split('|');
+                    for (int i = 0; i < datas.Length; i++)
+                    {
+                        newValue.Add(float.Parse(datas[i]));
+                    }
                 }
                 return newValue;
             }
             if (type == Common.int32_s)
             {
-                string data = value.Trim('"');
-                string[] datas = data.Split('|');
                 RepeatedField<int> newValue = new RepeatedField<int>();
-                for (int i = 0; i < datas.Length; i++)
+                if (!isEmpty)
                 {
-                    newValue.Add(int.Parse(datas[i]));
+                    string data = value.Trim('"');
+                    string[] datas = data.Split('|');
+                    for (int i = 0; i < datas.Length; i++)
+                    {
+                        newValue.Add(int.Parse(datas[i]));
+                    }
                 }
                 return newValue;
             }
             if (type == Common.int64_s)
             {
-                string data = value.Trim('"');
-                string[] datas = data.Split('|');
                 RepeatedField<long> newValue = new RepeatedField<long>();
-                for (int i = 0; i < datas.Length; i++)
+                if (!isEmpty)
                 {
-                    newValue.Add(long.Parse(datas[i]));
+                    string data = value.Trim('"');
+                    string[] datas = data.Split('|');
+                    for (int i = 0; i < datas.Length; i++)
+                    {
+                        newValue.Add(long.Parse(datas[i]));
+                    }
                 }
                 return newValue;
             }
             if (type == Common.uint32_s)
             {
-                string data = value.Trim('"');
-                string[] datas = data.Split('|');
                 RepeatedField<uint> newValue = new RepeatedField<uint>();
-                for (int i = 0; i < datas.Length; i++)
+                if (!isEmpty)
                 {
-                    newValue.Add(uint.Parse(datas[i]));
+                    string data = value.Trim('"');
+                    string[] datas = data.Split('|');
+                    for (int i = 0; i < datas.Length; i++)
+                    {
+                        newValue.Add(uint.Parse(datas[i]));
+                    }
                 }
                 return newValue;
             }
             if (type == Common.uint64_s)
             {
-                string data = value.Trim('"');
-                string[] datas = data.Split('|');
                 RepeatedField<ulong> newValue = new RepeatedField<ulong>();
-                for (int i = 0; i < datas.Length; i++)
+                if (!isEmpty)
                 {
-                    newValue.Add(ulong.Parse(datas[i]));
+                    string data = value.Trim('"');
+                    string[] datas = data.Split('|');
+                    for (int i = 0; i < datas.Length; i++)
+                    {
+                        newValue.Add(ulong.Parse(datas[i]));
+                    }
                 }
                 return newValue;
             }
             if (type == Common.sint32_s)
             {
-                string data = value.Trim('"');
-                string[] datas = data.Split('|');
                 RepeatedField<int> newValue = new RepeatedField<int>();
-                for (int i = 0; i < datas.Length; i++)
+                if (!isEmpty)
                 {
-                    newValue.Add(int.Parse(datas[i]));
+                    string data = value.Trim('"');
+                    string[] datas = data.Split('|');
+                    for (int i = 0; i < datas.Length; i++)
+                    {
+                        newValue.Add(int.Parse(datas[i]));
+                    }
                 }
                 return newValue;
             }
             if (type == Common.sint64_s)
             {
-                string data = value.Trim('"');
-                string[] datas = data.Split('|');
                 RepeatedField<long> newValue = new RepeatedField<long>();
-                for (int i = 0; i < datas.Length; i++)
+                if (!isEmpty)
                 {
-                    newValue.Add(long.Parse(datas[i]));
+                    string data = value.Trim('"');
+                    string[] datas = data.Split('|');
+                    for (int i = 0; i < datas.Length; i++)
+                    {
+                        newValue.Add(long.Parse(datas[i]));
+                    }
                 }
                 return newValue;
             }
             if (type == Common.fixed32_s)
             {
-                string data = value.Trim('"');
-                string[] datas = data.Split('|');
                 RepeatedField<uint> newValue = new RepeatedField<uint>();
-                for (int i = 0; i < datas.Length; i++)
+                if (!isEmpty)
                 {
-                    newValue.Add(uint.Parse(datas[i]));
+                    string data = value.Trim('"');
+                    string[] datas = data.Split('|');
+                    for (int i = 0; i < datas.Length; i++)
+                    {
+                        newValue.Add(uint.Parse(datas[i]));
+                    }
                 }
                 return newValue;
             }
             if (type == Common.fixed64_s)
             {
-                string data = value.Trim('"');
-                string[] datas = data.Split('|');
                 RepeatedField<ulong> newValue = new RepeatedField<ulong>();
-                for (int i = 0; i < datas.Length; i++)
+                if (!isEmpty)
                 {
-                    newValue.Add(ulong.Parse(datas[i]));
+                    string data = value.Trim('"');
+                    string[] datas = data.Split('|');
+                    for (int i = 0; i < datas.Length; i++)
+                    {
+                        newValue.Add(ulong.Parse(datas[i]));
+                    }
                 }
                 return newValue;
             }
             if (type == Common.sfixed32_s)
             {
-                string data = value.Trim('"');
-                string[] datas = data.Split('|');
                 RepeatedField<int> newValue = new RepeatedField<int>();
-                for (int i = 0; i < datas.Length; i++)
+                if (!isEmpty)
                 {
-                    newValue.Add(int.Parse(datas[i]));
+                    string data = value.Trim('"');
+                    string[] datas = data.Split('|');
+                    for (int i = 0; i < datas.Length; i++)
+                    {
+                        newValue.Add(int.Parse(datas[i]));
+                    }
                 }
                 return newValue;
             }
             if (type == Common.sfixed64_s)
             {
-                string data = value.Trim('"');
-                string[] datas = data.Split('|');
                 RepeatedField<long> newValue = new RepeatedField<long>();
-                for (int i = 0; i < datas.Length; i++)
+                if (!isEmpty)
                 {
-                    newValue.Add(long.Parse(datas[i]));
+                    string data = value.Trim('"');
+                    string[] datas = data.Split('|');
+                    for (int i = 0; i < datas.Length; i++)
+                    {
+                        newValue.Add(long.Parse(datas[i]));
+                    }
                 }
                 return newValue;
             }
             if (type == Common.bool_s)
             {
-                string data = value.Trim('"');
-                string[] datas = data.Split('|');
                 RepeatedField<bool> newValue = new RepeatedField<bool>();
-                for (int i = 0; i < datas.Length; i++)
+                if (!isEmpty)
                 {
-                    newValue.Add(datas[i] == "1");
+                    string data = value.Trim('"');
+                    string[] datas = data.Split('|');
+                    for (int i = 0; i < datas.Length; i++)
+                    {
+                        newValue.Add(datas[i] == "1");
+                    }
                 }
                 return newValue;
             }
             if (type == Common.string_s)
             {
-                string data = value.Trim('"');
-                string[] datas = data.Split('|');
                 RepeatedField<string> newValue = new RepeatedField<string>();
-                for (int i = 0; i < datas.Length; i++)
+                if (!isEmpty)
                 {
-                    newValue.Add(datas[i]);
+                    string data = value.Trim('"');
+                    string[] datas = data.Split('|');
+                    for (int i = 0; i < datas.Length; i++)
+                    {
+                        newValue.Add(datas[i]);
+                    }
                 }
                 return newValue;
             }
-            AssertThat.Fail("Type error");
+            Log.Error($"type: {type}  value: {value}");
             return null;
         }
 
@@ -298,5 +350,14 @@ namespace HiProtobuf.Lib
                 MessageExtensions.WriteTo((IMessage)obj, output);
             }
         }
+
+        public string FirstCharToLower(string input)
+        {
+            if (string.IsNullOrEmpty(input))
+                return input;
+            string str = input.First().ToString().ToLower() + input.Substring(1);
+            return str;
+        }
+
     }
 }
