@@ -87,14 +87,14 @@ namespace HiProtobuf.Lib
                             var tempCharUper = charArray[index + 1].ToString().ToUpper();
                             charArray[index + 1] = tempCharUper.ToCharArray()[0];
                             fieldName = new string(charArray);
-                            fieldName = fieldName.Remove(index,1);
+                            fieldName = fieldName.Remove(index, 1);
                             insField = insType.GetField(fieldName, BindingFlags.NonPublic | BindingFlags.Instance);
                             value = GetVariableValue(variableType, variableValue);
                             if (insField == null)
                             {
                                 Log.Info($"文件： {name} 属性： {variableName} 没有反射获取到对应的数据");
                             }
-                             Log.Info($"文件： {name} 属性： {variableName} 命名规则不正常，注意修复");
+                            Log.Info($"文件： {name} 属性： {variableName} 命名规则不正常，注意修复");
                         }
                         insField?.SetValue(ins, value);
                     }
@@ -138,9 +138,9 @@ namespace HiProtobuf.Lib
             if (type == Common.bool_)
                 return isEmpty ? false : (value == "1");
             if (type == Common.string_)
-                return value.ToString();
+                return isEmpty ? string.Empty : value.ToString();
             if (type == Common.bytes_)
-                return ByteString.CopyFromUtf8(value.ToString());
+                return isEmpty ? ByteString.CopyFromUtf8(string.Empty) : ByteString.CopyFromUtf8(value.ToString());
             if (type == Common.double_s)
             {
                 RepeatedField<double> newValue = new RepeatedField<double>();
