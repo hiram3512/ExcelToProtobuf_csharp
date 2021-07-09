@@ -5,32 +5,29 @@
  * Author: hiramtan@live.com
  ****************************************************************************/
 
-using System.Collections.Generic;
+using HiFramework.Assert;
+using HiFramework.Log;
+using OfficeOpenXml;
 using System.IO;
 using System.Linq;
-using HiFramework.Assert;
-using Microsoft.Office.Interop.Excel;
 
 namespace HiProtobuf.Lib
 {
     internal class ProtoGenerater
     {
         private string _name;
-
         private int _rowCount;
-
         private int _colCount;
-
-        private Range _Range;
-
         private string _path;
         private int _index;
-        public ProtoGenerater(string name, int rowCount, int colCount, Range range)
+        private ExcelWorksheet _excelWorksheet;
+
+        public ProtoGenerater(string name, int rowCount, int colCount, ExcelWorksheet excelWorksheet)
         {
             _name = name;
             _rowCount = rowCount;
             _colCount = colCount;
-            _Range = range;
+            _excelWorksheet = excelWorksheet;
 
             _path = Settings.Export_Folder + Settings.proto_folder + "/" + name + ".proto";
         }
@@ -59,7 +56,7 @@ option java_outer_classname = ""{0}"";
 // [END java_declaration]
 
 // [START csharp_declaration]
-option csharp_namespace = ""HiProtobuf""; 
+option csharp_namespace = ""TableTool""; 
 // [END csharp_declaration]
 ";
             header = string.Format(header, _name + "_classname");
@@ -73,8 +70,8 @@ option csharp_namespace = ""HiProtobuf"";
             var str = "message " + _name + " {\n";
             for (int j = 1; j <= _colCount; j++)
             {
-                var type = ((Range)_Range.Cells[2, j]).Value2.ToString();
-                var name = ((Range)_Range.Cells[3, j]).Value2.ToString();
+                var type = _excelWorksheet.Cells[2, j].Value.ToString();
+                var name = _excelWorksheet.Cells[3, j].Value.ToString();
                 str += GetVariableString(type, name);
             }
             str += "}";
@@ -90,7 +87,6 @@ option csharp_namespace = ""HiProtobuf"";
         private string GetVariableString(string type, string name)
         {
             AssertThat.IsTrue(Common.VariableType.Contains(type), "Type define error");
-
             _index++;//从1开始定义
             string str = "";
             if (type.Contains("[]"))//如果是数组进行转换
@@ -107,12 +103,14 @@ option csharp_namespace = ""HiProtobuf"";
             string str = @"
 message Excel_{0}
 {{
-    map<int32,{1}> {2} = 1;
+    repeated {1} {2} = 1;
 }}";
             str = string.Format(str, _name, _name, "Data");
             var sw = File.AppendText(_path);
             sw.WriteLine(str);
             sw.Close();
+
+            Log.Info($"文件 {_path} 生成");
         }
     }
 }

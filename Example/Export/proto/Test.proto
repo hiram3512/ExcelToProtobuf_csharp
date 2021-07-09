@@ -13,11 +13,11 @@ option java_outer_classname = "Test_classname";
 // [END java_declaration]
 
 // [START csharp_declaration]
-option csharp_namespace = "HiProtobuf"; 
+option csharp_namespace = "TableTool"; 
 // [END csharp_declaration]
 
 message Test {
-  int32 id = 1;
+  string id = 1;
   string name = 2;
   int32 hp = 3;
   int32 attack = 4;
@@ -26,5 +26,5 @@ message Test {
 
 message Excel_Test
 {
-    map<int32,Test> Data = 1;
+    repeated Test Data = 1;
 }

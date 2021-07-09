@@ -40,6 +40,7 @@
             // 
             // button1
             // 
+            this.button1.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.button1.Location = new System.Drawing.Point(665, 40);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
@@ -68,6 +69,7 @@
             // 
             // button2
             // 
+            this.button2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.button2.Location = new System.Drawing.Point(665, 86);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
@@ -87,6 +89,7 @@
             // 
             // button5
             // 
+            this.button5.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.button5.Location = new System.Drawing.Point(665, 139);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(75, 23);
@@ -97,6 +100,7 @@
             // 
             // button6
             // 
+            this.button6.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.button6.Location = new System.Drawing.Point(310, 181);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(160, 70);
@@ -107,12 +111,14 @@
             // 
             // textBox6
             // 
+            this.textBox6.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.textBox6.Location = new System.Drawing.Point(37, 257);
             this.textBox6.Multiline = true;
             this.textBox6.Name = "textBox6";
             this.textBox6.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.textBox6.Size = new System.Drawing.Size(703, 370);
             this.textBox6.TabIndex = 11;
+            this.textBox6.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
             // 
             // HiProtobuf
             // 

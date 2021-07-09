@@ -13,11 +13,11 @@ option java_outer_classname = "Example_classname";
 // [END java_declaration]
 
 // [START csharp_declaration]
-option csharp_namespace = "HiProtobuf"; 
+option csharp_namespace = "TableTool"; 
 // [END csharp_declaration]
 
 message Example {
-  int32 id = 1;
+  string id = 1;
   double name1 = 2;
   float name2 = 3;
   int32 name3 = 4;
@@ -38,5 +38,5 @@ message Example {
 
 message Excel_Example
 {
-    map<int32,Example> Data = 1;
+    repeated Example Data = 1;
 }

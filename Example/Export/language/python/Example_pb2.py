@@ -19,8 +19,8 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='Example.proto',
   package='HiProtobuf',
   syntax='proto3',
-  serialized_options=_b('\n\031com.HiProtobuf.HiProtobufB\021Example_classname\252\002\nHiProtobuf'),
-  serialized_pb=_b('\n\rExample.proto\x12\nHiProtobuf\"\x8c\x02\n\x07\x45xample\x12\n\n\x02id\x18\x01 \x01(\x05\x12\r\n\x05name1\x18\x02 \x01(\x01\x12\r\n\x05name2\x18\x03 \x01(\x02\x12\r\n\x05name3\x18\x04 \x01(\x05\x12\r\n\x05name4\x18\x05 \x01(\x03\x12\r\n\x05name5\x18\x06 \x01(\r\x12\r\n\x05name6\x18\x07 \x01(\x04\x12\r\n\x05name7\x18\x08 \x01(\x08\x12\r\n\x05name8\x18\t \x01(\t\x12\r\n\x05name9\x18\n \x03(\x01\x12\x0e\n\x06name10\x18\x0b \x03(\x02\x12\x0e\n\x06name11\x18\x0c \x03(\x05\x12\x0e\n\x06name12\x18\r \x03(\x03\x12\x0e\n\x06name13\x18\x0e \x03(\r\x12\x0e\n\x06name14\x18\x0f \x03(\x04\x12\x0e\n\x06name15\x18\x10 \x03(\x08\x12\x0e\n\x06name16\x18\x11 \x03(\t\"\x84\x01\n\rExcel_Example\x12\x31\n\x04\x44\x61ta\x18\x01 \x03(\x0b\x32#.HiProtobuf.Excel_Example.DataEntry\x1a@\n\tDataEntry\x12\x0b\n\x03key\x18\x01 \x01(\x05\x12\"\n\x05value\x18\x02 \x01(\x0b\x32\x13.HiProtobuf.Example:\x02\x38\x01\x42;\n\x19\x63om.HiProtobuf.HiProtobufB\x11\x45xample_classname\xaa\x02\nHiProtobufb\x06proto3')
+  serialized_options=_b('\n\031com.HiProtobuf.HiProtobufB\021Example_classname\252\002\tTableTool'),
+  serialized_pb=_b('\n\rExample.proto\x12\nHiProtobuf\"\x8c\x02\n\x07\x45xample\x12\n\n\x02id\x18\x01 \x01(\t\x12\r\n\x05name1\x18\x02 \x01(\x01\x12\r\n\x05name2\x18\x03 \x01(\x02\x12\r\n\x05name3\x18\x04 \x01(\x05\x12\r\n\x05name4\x18\x05 \x01(\x03\x12\r\n\x05name5\x18\x06 \x01(\r\x12\r\n\x05name6\x18\x07 \x01(\x04\x12\r\n\x05name7\x18\x08 \x01(\x08\x12\r\n\x05name8\x18\t \x01(\t\x12\r\n\x05name9\x18\n \x03(\x01\x12\x0e\n\x06name10\x18\x0b \x03(\x02\x12\x0e\n\x06name11\x18\x0c \x03(\x05\x12\x0e\n\x06name12\x18\r \x03(\x03\x12\x0e\n\x06name13\x18\x0e \x03(\r\x12\x0e\n\x06name14\x18\x0f \x03(\x04\x12\x0e\n\x06name15\x18\x10 \x03(\x08\x12\x0e\n\x06name16\x18\x11 \x03(\t\"2\n\rExcel_Example\x12!\n\x04\x44\x61ta\x18\x01 \x03(\x0b\x32\x13.HiProtobuf.ExampleB:\n\x19\x63om.HiProtobuf.HiProtobufB\x11\x45xample_classname\xaa\x02\tTableToolb\x06proto3')
 )
 
 
@@ -35,8 +35,8 @@ _EXAMPLE = _descriptor.Descriptor(
   fields=[
     _descriptor.FieldDescriptor(
       name='id', full_name='HiProtobuf.Example.id', index=0,
-      number=1, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
@@ -169,43 +169,6 @@ _EXAMPLE = _descriptor.Descriptor(
 )
 
 
-_EXCEL_EXAMPLE_DATAENTRY = _descriptor.Descriptor(
-  name='DataEntry',
-  full_name='HiProtobuf.Excel_Example.DataEntry',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='key', full_name='HiProtobuf.Excel_Example.DataEntry.key', index=0,
-      number=1, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='value', full_name='HiProtobuf.Excel_Example.DataEntry.value', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=_b('8\001'),
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=369,
-  serialized_end=433,
-)
-
 _EXCEL_EXAMPLE = _descriptor.Descriptor(
   name='Excel_Example',
   full_name='HiProtobuf.Excel_Example',
@@ -223,7 +186,7 @@ _EXCEL_EXAMPLE = _descriptor.Descriptor(
   ],
   extensions=[
   ],
-  nested_types=[_EXCEL_EXAMPLE_DATAENTRY, ],
+  nested_types=[],
   enum_types=[
   ],
   serialized_options=None,
@@ -232,13 +195,11 @@ _EXCEL_EXAMPLE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=301,
-  serialized_end=433,
+  serialized_start=300,
+  serialized_end=350,
 )
 
-_EXCEL_EXAMPLE_DATAENTRY.fields_by_name['value'].message_type = _EXAMPLE
-_EXCEL_EXAMPLE_DATAENTRY.containing_type = _EXCEL_EXAMPLE
-_EXCEL_EXAMPLE.fields_by_name['Data'].message_type = _EXCEL_EXAMPLE_DATAENTRY
+_EXCEL_EXAMPLE.fields_by_name['Data'].message_type = _EXAMPLE
 DESCRIPTOR.message_types_by_name['Example'] = _EXAMPLE
 DESCRIPTOR.message_types_by_name['Excel_Example'] = _EXCEL_EXAMPLE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
@@ -251,21 +212,12 @@ Example = _reflection.GeneratedProtocolMessageType('Example', (_message.Message,
 _sym_db.RegisterMessage(Example)
 
 Excel_Example = _reflection.GeneratedProtocolMessageType('Excel_Example', (_message.Message,), {
-
-  'DataEntry' : _reflection.GeneratedProtocolMessageType('DataEntry', (_message.Message,), {
-    'DESCRIPTOR' : _EXCEL_EXAMPLE_DATAENTRY,
-    '__module__' : 'Example_pb2'
-    # @@protoc_insertion_point(class_scope:HiProtobuf.Excel_Example.DataEntry)
-    })
-  ,
   'DESCRIPTOR' : _EXCEL_EXAMPLE,
   '__module__' : 'Example_pb2'
   # @@protoc_insertion_point(class_scope:HiProtobuf.Excel_Example)
   })
 _sym_db.RegisterMessage(Excel_Example)
-_sym_db.RegisterMessage(Excel_Example.DataEntry)
 
 
 DESCRIPTOR._options = None
-_EXCEL_EXAMPLE_DATAENTRY._options = None
 # @@protoc_insertion_point(module_scope)

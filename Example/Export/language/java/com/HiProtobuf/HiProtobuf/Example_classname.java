@@ -19,9 +19,14 @@ public final class Example_classname {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 id = 1;</code>
+     * <code>string id = 1;</code>
      */
-    int getId();
+    java.lang.String getId();
+    /**
+     * <code>string id = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getIdBytes();
 
     /**
      * <code>double name1 = 2;</code>
@@ -191,6 +196,7 @@ public final class Example_classname {
       super(builder);
     }
     private Example() {
+      id_ = "";
       name8_ = "";
       name9_ = emptyDoubleList();
       name10_ = emptyFloatList();
@@ -233,9 +239,10 @@ public final class Example_classname {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              id_ = input.readInt32();
+              id_ = s;
               break;
             }
             case 17: {
@@ -492,12 +499,37 @@ public final class Example_classname {
     }
 
     public static final int ID_FIELD_NUMBER = 1;
-    private int id_;
+    private volatile java.lang.Object id_;
     /**
-     * <code>int32 id = 1;</code>
+     * <code>string id = 1;</code>
      */
-    public int getId() {
-      return id_;
+    public java.lang.String getId() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        id_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string id = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getIdBytes() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        id_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int NAME1_FIELD_NUMBER = 2;
@@ -802,8 +834,8 @@ public final class Example_classname {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
-      if (id_ != 0) {
-        output.writeInt32(1, id_);
+      if (!getIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
       }
       if (name1_ != 0D) {
         output.writeDouble(2, name1_);
@@ -890,9 +922,8 @@ public final class Example_classname {
       if (size != -1) return size;
 
       size = 0;
-      if (id_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(1, id_);
+      if (!getIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
       }
       if (name1_ != 0D) {
         size += com.google.protobuf.CodedOutputStream
@@ -1037,8 +1068,8 @@ public final class Example_classname {
       }
       com.HiProtobuf.HiProtobuf.Example_classname.Example other = (com.HiProtobuf.HiProtobuf.Example_classname.Example) obj;
 
-      if (getId()
-          != other.getId()) return false;
+      if (!getId()
+          .equals(other.getId())) return false;
       if (java.lang.Double.doubleToLongBits(getName1())
           != java.lang.Double.doubleToLongBits(
               other.getName1())) return false;
@@ -1085,7 +1116,7 @@ public final class Example_classname {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + ID_FIELD_NUMBER;
-      hash = (53 * hash) + getId();
+      hash = (53 * hash) + getId().hashCode();
       hash = (37 * hash) + NAME1_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           java.lang.Double.doubleToLongBits(getName1()));
@@ -1272,7 +1303,7 @@ public final class Example_classname {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        id_ = 0;
+        id_ = "";
 
         name1_ = 0D;
 
@@ -1430,8 +1461,9 @@ public final class Example_classname {
 
       public Builder mergeFrom(com.HiProtobuf.HiProtobuf.Example_classname.Example other) {
         if (other == com.HiProtobuf.HiProtobuf.Example_classname.Example.getDefaultInstance()) return this;
-        if (other.getId() != 0) {
-          setId(other.getId());
+        if (!other.getId().isEmpty()) {
+          id_ = other.id_;
+          onChanged();
         }
         if (other.getName1() != 0D) {
           setName1(other.getName1());
@@ -1568,28 +1600,71 @@ public final class Example_classname {
       }
       private int bitField0_;
 
-      private int id_ ;
+      private java.lang.Object id_ = "";
       /**
-       * <code>int32 id = 1;</code>
+       * <code>string id = 1;</code>
        */
-      public int getId() {
-        return id_;
+      public java.lang.String getId() {
+        java.lang.Object ref = id_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          id_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
-       * <code>int32 id = 1;</code>
+       * <code>string id = 1;</code>
        */
-      public Builder setId(int value) {
-        
+      public com.google.protobuf.ByteString
+          getIdBytes() {
+        java.lang.Object ref = id_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          id_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string id = 1;</code>
+       */
+      public Builder setId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         id_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>int32 id = 1;</code>
+       * <code>string id = 1;</code>
        */
       public Builder clearId() {
         
-        id_ = 0;
+        id_ = getDefaultInstance().getId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string id = 1;</code>
+       */
+      public Builder setIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        id_ = value;
         onChanged();
         return this;
       }
@@ -2465,38 +2540,28 @@ public final class Example_classname {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>map&lt;int32, .HiProtobuf.Example&gt; Data = 1;</code>
+     * <code>repeated .HiProtobuf.Example Data = 1;</code>
+     */
+    java.util.List<com.HiProtobuf.HiProtobuf.Example_classname.Example> 
+        getDataList();
+    /**
+     * <code>repeated .HiProtobuf.Example Data = 1;</code>
+     */
+    com.HiProtobuf.HiProtobuf.Example_classname.Example getData(int index);
+    /**
+     * <code>repeated .HiProtobuf.Example Data = 1;</code>
      */
     int getDataCount();
     /**
-     * <code>map&lt;int32, .HiProtobuf.Example&gt; Data = 1;</code>
+     * <code>repeated .HiProtobuf.Example Data = 1;</code>
      */
-    boolean containsData(
-        int key);
+    java.util.List<? extends com.HiProtobuf.HiProtobuf.Example_classname.ExampleOrBuilder> 
+        getDataOrBuilderList();
     /**
-     * Use {@link #getDataMap()} instead.
+     * <code>repeated .HiProtobuf.Example Data = 1;</code>
      */
-    @java.lang.Deprecated
-    java.util.Map<java.lang.Integer, com.HiProtobuf.HiProtobuf.Example_classname.Example>
-    getData();
-    /**
-     * <code>map&lt;int32, .HiProtobuf.Example&gt; Data = 1;</code>
-     */
-    java.util.Map<java.lang.Integer, com.HiProtobuf.HiProtobuf.Example_classname.Example>
-    getDataMap();
-    /**
-     * <code>map&lt;int32, .HiProtobuf.Example&gt; Data = 1;</code>
-     */
-
-    com.HiProtobuf.HiProtobuf.Example_classname.Example getDataOrDefault(
-        int key,
-        com.HiProtobuf.HiProtobuf.Example_classname.Example defaultValue);
-    /**
-     * <code>map&lt;int32, .HiProtobuf.Example&gt; Data = 1;</code>
-     */
-
-    com.HiProtobuf.HiProtobuf.Example_classname.Example getDataOrThrow(
-        int key);
+    com.HiProtobuf.HiProtobuf.Example_classname.ExampleOrBuilder getDataOrBuilder(
+        int index);
   }
   /**
    * Protobuf type {@code HiProtobuf.Excel_Example}
@@ -2511,6 +2576,7 @@ public final class Example_classname {
       super(builder);
     }
     private Excel_Example() {
+      data_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -2546,15 +2612,11 @@ public final class Example_classname {
               break;
             case 10: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                data_ = com.google.protobuf.MapField.newMapField(
-                    DataDefaultEntryHolder.defaultEntry);
+                data_ = new java.util.ArrayList<com.HiProtobuf.HiProtobuf.Example_classname.Example>();
                 mutable_bitField0_ |= 0x00000001;
               }
-              com.google.protobuf.MapEntry<java.lang.Integer, com.HiProtobuf.HiProtobuf.Example_classname.Example>
-              data__ = input.readMessage(
-                  DataDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              data_.getMutableMap().put(
-                  data__.getKey(), data__.getValue());
+              data_.add(
+                  input.readMessage(com.HiProtobuf.HiProtobuf.Example_classname.Example.parser(), extensionRegistry));
               break;
             }
             default: {
@@ -2572,6 +2634,9 @@ public final class Example_classname {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          data_ = java.util.Collections.unmodifiableList(data_);
+        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -2581,18 +2646,6 @@ public final class Example_classname {
       return com.HiProtobuf.HiProtobuf.Example_classname.internal_static_HiProtobuf_Excel_Example_descriptor;
     }
 
-    @SuppressWarnings({"rawtypes"})
-    @java.lang.Override
-    protected com.google.protobuf.MapField internalGetMapField(
-        int number) {
-      switch (number) {
-        case 1:
-          return internalGetData();
-        default:
-          throw new RuntimeException(
-              "Invalid map field number: " + number);
-      }
-    }
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -2602,79 +2655,38 @@ public final class Example_classname {
     }
 
     public static final int DATA_FIELD_NUMBER = 1;
-    private static final class DataDefaultEntryHolder {
-      static final com.google.protobuf.MapEntry<
-          java.lang.Integer, com.HiProtobuf.HiProtobuf.Example_classname.Example> defaultEntry =
-              com.google.protobuf.MapEntry
-              .<java.lang.Integer, com.HiProtobuf.HiProtobuf.Example_classname.Example>newDefaultInstance(
-                  com.HiProtobuf.HiProtobuf.Example_classname.internal_static_HiProtobuf_Excel_Example_DataEntry_descriptor, 
-                  com.google.protobuf.WireFormat.FieldType.INT32,
-                  0,
-                  com.google.protobuf.WireFormat.FieldType.MESSAGE,
-                  com.HiProtobuf.HiProtobuf.Example_classname.Example.getDefaultInstance());
-    }
-    private com.google.protobuf.MapField<
-        java.lang.Integer, com.HiProtobuf.HiProtobuf.Example_classname.Example> data_;
-    private com.google.protobuf.MapField<java.lang.Integer, com.HiProtobuf.HiProtobuf.Example_classname.Example>
-    internalGetData() {
-      if (data_ == null) {
-        return com.google.protobuf.MapField.emptyMapField(
-            DataDefaultEntryHolder.defaultEntry);
-      }
+    private java.util.List<com.HiProtobuf.HiProtobuf.Example_classname.Example> data_;
+    /**
+     * <code>repeated .HiProtobuf.Example Data = 1;</code>
+     */
+    public java.util.List<com.HiProtobuf.HiProtobuf.Example_classname.Example> getDataList() {
       return data_;
     }
-
+    /**
+     * <code>repeated .HiProtobuf.Example Data = 1;</code>
+     */
+    public java.util.List<? extends com.HiProtobuf.HiProtobuf.Example_classname.ExampleOrBuilder> 
+        getDataOrBuilderList() {
+      return data_;
+    }
+    /**
+     * <code>repeated .HiProtobuf.Example Data = 1;</code>
+     */
     public int getDataCount() {
-      return internalGetData().getMap().size();
+      return data_.size();
     }
     /**
-     * <code>map&lt;int32, .HiProtobuf.Example&gt; Data = 1;</code>
+     * <code>repeated .HiProtobuf.Example Data = 1;</code>
      */
-
-    public boolean containsData(
-        int key) {
-      
-      return internalGetData().getMap().containsKey(key);
+    public com.HiProtobuf.HiProtobuf.Example_classname.Example getData(int index) {
+      return data_.get(index);
     }
     /**
-     * Use {@link #getDataMap()} instead.
+     * <code>repeated .HiProtobuf.Example Data = 1;</code>
      */
-    @java.lang.Deprecated
-    public java.util.Map<java.lang.Integer, com.HiProtobuf.HiProtobuf.Example_classname.Example> getData() {
-      return getDataMap();
-    }
-    /**
-     * <code>map&lt;int32, .HiProtobuf.Example&gt; Data = 1;</code>
-     */
-
-    public java.util.Map<java.lang.Integer, com.HiProtobuf.HiProtobuf.Example_classname.Example> getDataMap() {
-      return internalGetData().getMap();
-    }
-    /**
-     * <code>map&lt;int32, .HiProtobuf.Example&gt; Data = 1;</code>
-     */
-
-    public com.HiProtobuf.HiProtobuf.Example_classname.Example getDataOrDefault(
-        int key,
-        com.HiProtobuf.HiProtobuf.Example_classname.Example defaultValue) {
-      
-      java.util.Map<java.lang.Integer, com.HiProtobuf.HiProtobuf.Example_classname.Example> map =
-          internalGetData().getMap();
-      return map.containsKey(key) ? map.get(key) : defaultValue;
-    }
-    /**
-     * <code>map&lt;int32, .HiProtobuf.Example&gt; Data = 1;</code>
-     */
-
-    public com.HiProtobuf.HiProtobuf.Example_classname.Example getDataOrThrow(
-        int key) {
-      
-      java.util.Map<java.lang.Integer, com.HiProtobuf.HiProtobuf.Example_classname.Example> map =
-          internalGetData().getMap();
-      if (!map.containsKey(key)) {
-        throw new java.lang.IllegalArgumentException();
-      }
-      return map.get(key);
+    public com.HiProtobuf.HiProtobuf.Example_classname.ExampleOrBuilder getDataOrBuilder(
+        int index) {
+      return data_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -2691,12 +2703,9 @@ public final class Example_classname {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      com.google.protobuf.GeneratedMessageV3
-        .serializeIntegerMapTo(
-          output,
-          internalGetData(),
-          DataDefaultEntryHolder.defaultEntry,
-          1);
+      for (int i = 0; i < data_.size(); i++) {
+        output.writeMessage(1, data_.get(i));
+      }
       unknownFields.writeTo(output);
     }
 
@@ -2706,15 +2715,9 @@ public final class Example_classname {
       if (size != -1) return size;
 
       size = 0;
-      for (java.util.Map.Entry<java.lang.Integer, com.HiProtobuf.HiProtobuf.Example_classname.Example> entry
-           : internalGetData().getMap().entrySet()) {
-        com.google.protobuf.MapEntry<java.lang.Integer, com.HiProtobuf.HiProtobuf.Example_classname.Example>
-        data__ = DataDefaultEntryHolder.defaultEntry.newBuilderForType()
-            .setKey(entry.getKey())
-            .setValue(entry.getValue())
-            .build();
+      for (int i = 0; i < data_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(1, data__);
+          .computeMessageSize(1, data_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -2731,8 +2734,8 @@ public final class Example_classname {
       }
       com.HiProtobuf.HiProtobuf.Example_classname.Excel_Example other = (com.HiProtobuf.HiProtobuf.Example_classname.Excel_Example) obj;
 
-      if (!internalGetData().equals(
-          other.internalGetData())) return false;
+      if (!getDataList()
+          .equals(other.getDataList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -2744,9 +2747,9 @@ public final class Example_classname {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (!internalGetData().getMap().isEmpty()) {
+      if (getDataCount() > 0) {
         hash = (37 * hash) + DATA_FIELD_NUMBER;
-        hash = (53 * hash) + internalGetData().hashCode();
+        hash = (53 * hash) + getDataList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -2855,28 +2858,6 @@ public final class Example_classname {
         return com.HiProtobuf.HiProtobuf.Example_classname.internal_static_HiProtobuf_Excel_Example_descriptor;
       }
 
-      @SuppressWarnings({"rawtypes"})
-      protected com.google.protobuf.MapField internalGetMapField(
-          int number) {
-        switch (number) {
-          case 1:
-            return internalGetData();
-          default:
-            throw new RuntimeException(
-                "Invalid map field number: " + number);
-        }
-      }
-      @SuppressWarnings({"rawtypes"})
-      protected com.google.protobuf.MapField internalGetMutableMapField(
-          int number) {
-        switch (number) {
-          case 1:
-            return internalGetMutableData();
-          default:
-            throw new RuntimeException(
-                "Invalid map field number: " + number);
-        }
-      }
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
@@ -2898,12 +2879,18 @@ public final class Example_classname {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
+          getDataFieldBuilder();
         }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        internalGetMutableData().clear();
+        if (dataBuilder_ == null) {
+          data_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          dataBuilder_.clear();
+        }
         return this;
       }
 
@@ -2931,8 +2918,15 @@ public final class Example_classname {
       public com.HiProtobuf.HiProtobuf.Example_classname.Excel_Example buildPartial() {
         com.HiProtobuf.HiProtobuf.Example_classname.Excel_Example result = new com.HiProtobuf.HiProtobuf.Example_classname.Excel_Example(this);
         int from_bitField0_ = bitField0_;
-        result.data_ = internalGetData();
-        result.data_.makeImmutable();
+        if (dataBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            data_ = java.util.Collections.unmodifiableList(data_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.data_ = data_;
+        } else {
+          result.data_ = dataBuilder_.build();
+        }
         onBuilt();
         return result;
       }
@@ -2981,8 +2975,32 @@ public final class Example_classname {
 
       public Builder mergeFrom(com.HiProtobuf.HiProtobuf.Example_classname.Excel_Example other) {
         if (other == com.HiProtobuf.HiProtobuf.Example_classname.Excel_Example.getDefaultInstance()) return this;
-        internalGetMutableData().mergeFrom(
-            other.internalGetData());
+        if (dataBuilder_ == null) {
+          if (!other.data_.isEmpty()) {
+            if (data_.isEmpty()) {
+              data_ = other.data_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureDataIsMutable();
+              data_.addAll(other.data_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.data_.isEmpty()) {
+            if (dataBuilder_.isEmpty()) {
+              dataBuilder_.dispose();
+              dataBuilder_ = null;
+              data_ = other.data_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              dataBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getDataFieldBuilder() : null;
+            } else {
+              dataBuilder_.addAllMessages(other.data_);
+            }
+          }
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -3013,127 +3031,244 @@ public final class Example_classname {
       }
       private int bitField0_;
 
-      private com.google.protobuf.MapField<
-          java.lang.Integer, com.HiProtobuf.HiProtobuf.Example_classname.Example> data_;
-      private com.google.protobuf.MapField<java.lang.Integer, com.HiProtobuf.HiProtobuf.Example_classname.Example>
-      internalGetData() {
-        if (data_ == null) {
-          return com.google.protobuf.MapField.emptyMapField(
-              DataDefaultEntryHolder.defaultEntry);
-        }
-        return data_;
-      }
-      private com.google.protobuf.MapField<java.lang.Integer, com.HiProtobuf.HiProtobuf.Example_classname.Example>
-      internalGetMutableData() {
-        onChanged();;
-        if (data_ == null) {
-          data_ = com.google.protobuf.MapField.newMapField(
-              DataDefaultEntryHolder.defaultEntry);
-        }
-        if (!data_.isMutable()) {
-          data_ = data_.copy();
-        }
-        return data_;
+      private java.util.List<com.HiProtobuf.HiProtobuf.Example_classname.Example> data_ =
+        java.util.Collections.emptyList();
+      private void ensureDataIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          data_ = new java.util.ArrayList<com.HiProtobuf.HiProtobuf.Example_classname.Example>(data_);
+          bitField0_ |= 0x00000001;
+         }
       }
 
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.HiProtobuf.HiProtobuf.Example_classname.Example, com.HiProtobuf.HiProtobuf.Example_classname.Example.Builder, com.HiProtobuf.HiProtobuf.Example_classname.ExampleOrBuilder> dataBuilder_;
+
+      /**
+       * <code>repeated .HiProtobuf.Example Data = 1;</code>
+       */
+      public java.util.List<com.HiProtobuf.HiProtobuf.Example_classname.Example> getDataList() {
+        if (dataBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(data_);
+        } else {
+          return dataBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .HiProtobuf.Example Data = 1;</code>
+       */
       public int getDataCount() {
-        return internalGetData().getMap().size();
-      }
-      /**
-       * <code>map&lt;int32, .HiProtobuf.Example&gt; Data = 1;</code>
-       */
-
-      public boolean containsData(
-          int key) {
-        
-        return internalGetData().getMap().containsKey(key);
-      }
-      /**
-       * Use {@link #getDataMap()} instead.
-       */
-      @java.lang.Deprecated
-      public java.util.Map<java.lang.Integer, com.HiProtobuf.HiProtobuf.Example_classname.Example> getData() {
-        return getDataMap();
-      }
-      /**
-       * <code>map&lt;int32, .HiProtobuf.Example&gt; Data = 1;</code>
-       */
-
-      public java.util.Map<java.lang.Integer, com.HiProtobuf.HiProtobuf.Example_classname.Example> getDataMap() {
-        return internalGetData().getMap();
-      }
-      /**
-       * <code>map&lt;int32, .HiProtobuf.Example&gt; Data = 1;</code>
-       */
-
-      public com.HiProtobuf.HiProtobuf.Example_classname.Example getDataOrDefault(
-          int key,
-          com.HiProtobuf.HiProtobuf.Example_classname.Example defaultValue) {
-        
-        java.util.Map<java.lang.Integer, com.HiProtobuf.HiProtobuf.Example_classname.Example> map =
-            internalGetData().getMap();
-        return map.containsKey(key) ? map.get(key) : defaultValue;
-      }
-      /**
-       * <code>map&lt;int32, .HiProtobuf.Example&gt; Data = 1;</code>
-       */
-
-      public com.HiProtobuf.HiProtobuf.Example_classname.Example getDataOrThrow(
-          int key) {
-        
-        java.util.Map<java.lang.Integer, com.HiProtobuf.HiProtobuf.Example_classname.Example> map =
-            internalGetData().getMap();
-        if (!map.containsKey(key)) {
-          throw new java.lang.IllegalArgumentException();
+        if (dataBuilder_ == null) {
+          return data_.size();
+        } else {
+          return dataBuilder_.getCount();
         }
-        return map.get(key);
       }
-
+      /**
+       * <code>repeated .HiProtobuf.Example Data = 1;</code>
+       */
+      public com.HiProtobuf.HiProtobuf.Example_classname.Example getData(int index) {
+        if (dataBuilder_ == null) {
+          return data_.get(index);
+        } else {
+          return dataBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .HiProtobuf.Example Data = 1;</code>
+       */
+      public Builder setData(
+          int index, com.HiProtobuf.HiProtobuf.Example_classname.Example value) {
+        if (dataBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureDataIsMutable();
+          data_.set(index, value);
+          onChanged();
+        } else {
+          dataBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .HiProtobuf.Example Data = 1;</code>
+       */
+      public Builder setData(
+          int index, com.HiProtobuf.HiProtobuf.Example_classname.Example.Builder builderForValue) {
+        if (dataBuilder_ == null) {
+          ensureDataIsMutable();
+          data_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          dataBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .HiProtobuf.Example Data = 1;</code>
+       */
+      public Builder addData(com.HiProtobuf.HiProtobuf.Example_classname.Example value) {
+        if (dataBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureDataIsMutable();
+          data_.add(value);
+          onChanged();
+        } else {
+          dataBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .HiProtobuf.Example Data = 1;</code>
+       */
+      public Builder addData(
+          int index, com.HiProtobuf.HiProtobuf.Example_classname.Example value) {
+        if (dataBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureDataIsMutable();
+          data_.add(index, value);
+          onChanged();
+        } else {
+          dataBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .HiProtobuf.Example Data = 1;</code>
+       */
+      public Builder addData(
+          com.HiProtobuf.HiProtobuf.Example_classname.Example.Builder builderForValue) {
+        if (dataBuilder_ == null) {
+          ensureDataIsMutable();
+          data_.add(builderForValue.build());
+          onChanged();
+        } else {
+          dataBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .HiProtobuf.Example Data = 1;</code>
+       */
+      public Builder addData(
+          int index, com.HiProtobuf.HiProtobuf.Example_classname.Example.Builder builderForValue) {
+        if (dataBuilder_ == null) {
+          ensureDataIsMutable();
+          data_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          dataBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .HiProtobuf.Example Data = 1;</code>
+       */
+      public Builder addAllData(
+          java.lang.Iterable<? extends com.HiProtobuf.HiProtobuf.Example_classname.Example> values) {
+        if (dataBuilder_ == null) {
+          ensureDataIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, data_);
+          onChanged();
+        } else {
+          dataBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .HiProtobuf.Example Data = 1;</code>
+       */
       public Builder clearData() {
-        internalGetMutableData().getMutableMap()
-            .clear();
+        if (dataBuilder_ == null) {
+          data_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          dataBuilder_.clear();
+        }
         return this;
       }
       /**
-       * <code>map&lt;int32, .HiProtobuf.Example&gt; Data = 1;</code>
+       * <code>repeated .HiProtobuf.Example Data = 1;</code>
        */
-
-      public Builder removeData(
-          int key) {
-        
-        internalGetMutableData().getMutableMap()
-            .remove(key);
+      public Builder removeData(int index) {
+        if (dataBuilder_ == null) {
+          ensureDataIsMutable();
+          data_.remove(index);
+          onChanged();
+        } else {
+          dataBuilder_.remove(index);
+        }
         return this;
       }
       /**
-       * Use alternate mutation accessors instead.
+       * <code>repeated .HiProtobuf.Example Data = 1;</code>
        */
-      @java.lang.Deprecated
-      public java.util.Map<java.lang.Integer, com.HiProtobuf.HiProtobuf.Example_classname.Example>
-      getMutableData() {
-        return internalGetMutableData().getMutableMap();
+      public com.HiProtobuf.HiProtobuf.Example_classname.Example.Builder getDataBuilder(
+          int index) {
+        return getDataFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>map&lt;int32, .HiProtobuf.Example&gt; Data = 1;</code>
+       * <code>repeated .HiProtobuf.Example Data = 1;</code>
        */
-      public Builder putData(
-          int key,
-          com.HiProtobuf.HiProtobuf.Example_classname.Example value) {
-        
-        if (value == null) { throw new java.lang.NullPointerException(); }
-        internalGetMutableData().getMutableMap()
-            .put(key, value);
-        return this;
+      public com.HiProtobuf.HiProtobuf.Example_classname.ExampleOrBuilder getDataOrBuilder(
+          int index) {
+        if (dataBuilder_ == null) {
+          return data_.get(index);  } else {
+          return dataBuilder_.getMessageOrBuilder(index);
+        }
       }
       /**
-       * <code>map&lt;int32, .HiProtobuf.Example&gt; Data = 1;</code>
+       * <code>repeated .HiProtobuf.Example Data = 1;</code>
        */
-
-      public Builder putAllData(
-          java.util.Map<java.lang.Integer, com.HiProtobuf.HiProtobuf.Example_classname.Example> values) {
-        internalGetMutableData().getMutableMap()
-            .putAll(values);
-        return this;
+      public java.util.List<? extends com.HiProtobuf.HiProtobuf.Example_classname.ExampleOrBuilder> 
+           getDataOrBuilderList() {
+        if (dataBuilder_ != null) {
+          return dataBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(data_);
+        }
+      }
+      /**
+       * <code>repeated .HiProtobuf.Example Data = 1;</code>
+       */
+      public com.HiProtobuf.HiProtobuf.Example_classname.Example.Builder addDataBuilder() {
+        return getDataFieldBuilder().addBuilder(
+            com.HiProtobuf.HiProtobuf.Example_classname.Example.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .HiProtobuf.Example Data = 1;</code>
+       */
+      public com.HiProtobuf.HiProtobuf.Example_classname.Example.Builder addDataBuilder(
+          int index) {
+        return getDataFieldBuilder().addBuilder(
+            index, com.HiProtobuf.HiProtobuf.Example_classname.Example.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .HiProtobuf.Example Data = 1;</code>
+       */
+      public java.util.List<com.HiProtobuf.HiProtobuf.Example_classname.Example.Builder> 
+           getDataBuilderList() {
+        return getDataFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.HiProtobuf.HiProtobuf.Example_classname.Example, com.HiProtobuf.HiProtobuf.Example_classname.Example.Builder, com.HiProtobuf.HiProtobuf.Example_classname.ExampleOrBuilder> 
+          getDataFieldBuilder() {
+        if (dataBuilder_ == null) {
+          dataBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.HiProtobuf.HiProtobuf.Example_classname.Example, com.HiProtobuf.HiProtobuf.Example_classname.Example.Builder, com.HiProtobuf.HiProtobuf.Example_classname.ExampleOrBuilder>(
+                  data_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          data_ = null;
+        }
+        return dataBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -3198,11 +3333,6 @@ public final class Example_classname {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_HiProtobuf_Excel_Example_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_HiProtobuf_Excel_Example_DataEntry_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_HiProtobuf_Excel_Example_DataEntry_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -3213,18 +3343,16 @@ public final class Example_classname {
   static {
     java.lang.String[] descriptorData = {
       "\n\rExample.proto\022\nHiProtobuf\"\214\002\n\007Example\022" +
-      "\n\n\002id\030\001 \001(\005\022\r\n\005name1\030\002 \001(\001\022\r\n\005name2\030\003 \001(" +
+      "\n\n\002id\030\001 \001(\t\022\r\n\005name1\030\002 \001(\001\022\r\n\005name2\030\003 \001(" +
       "\002\022\r\n\005name3\030\004 \001(\005\022\r\n\005name4\030\005 \001(\003\022\r\n\005name5" +
       "\030\006 \001(\r\022\r\n\005name6\030\007 \001(\004\022\r\n\005name7\030\010 \001(\010\022\r\n\005" +
       "name8\030\t \001(\t\022\r\n\005name9\030\n \003(\001\022\016\n\006name10\030\013 \003" +
       "(\002\022\016\n\006name11\030\014 \003(\005\022\016\n\006name12\030\r \003(\003\022\016\n\006na" +
       "me13\030\016 \003(\r\022\016\n\006name14\030\017 \003(\004\022\016\n\006name15\030\020 \003" +
-      "(\010\022\016\n\006name16\030\021 \003(\t\"\204\001\n\rExcel_Example\0221\n\004" +
-      "Data\030\001 \003(\0132#.HiProtobuf.Excel_Example.Da" +
-      "taEntry\032@\n\tDataEntry\022\013\n\003key\030\001 \001(\005\022\"\n\005val" +
-      "ue\030\002 \001(\0132\023.HiProtobuf.Example:\0028\001B;\n\031com" +
-      ".HiProtobuf.HiProtobufB\021Example_classnam" +
-      "e\252\002\nHiProtobufb\006proto3"
+      "(\010\022\016\n\006name16\030\021 \003(\t\"2\n\rExcel_Example\022!\n\004D" +
+      "ata\030\001 \003(\0132\023.HiProtobuf.ExampleB:\n\031com.Hi" +
+      "Protobuf.HiProtobufB\021Example_classname\252\002" +
+      "\tTableToolb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -3242,12 +3370,6 @@ public final class Example_classname {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_HiProtobuf_Excel_Example_descriptor,
         new java.lang.String[] { "Data", });
-    internal_static_HiProtobuf_Excel_Example_DataEntry_descriptor =
-      internal_static_HiProtobuf_Excel_Example_descriptor.getNestedTypes().get(0);
-    internal_static_HiProtobuf_Excel_Example_DataEntry_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_HiProtobuf_Excel_Example_DataEntry_descriptor,
-        new java.lang.String[] { "Key", "Value", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

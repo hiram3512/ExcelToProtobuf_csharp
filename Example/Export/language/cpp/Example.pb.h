@@ -31,9 +31,6 @@
 #include <google/protobuf/message.h>
 #include <google/protobuf/repeated_field.h>  // IWYU pragma: export
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
-#include <google/protobuf/map.h>  // IWYU pragma: export
-#include <google/protobuf/map_entry.h>
-#include <google/protobuf/map_field_inl.h>
 #include <google/protobuf/unknown_field_set.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
@@ -50,7 +47,7 @@ struct TableStruct_Example_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[3]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[2]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -64,14 +61,10 @@ extern ExampleDefaultTypeInternal _Example_default_instance_;
 class Excel_Example;
 class Excel_ExampleDefaultTypeInternal;
 extern Excel_ExampleDefaultTypeInternal _Excel_Example_default_instance_;
-class Excel_Example_DataEntry_DoNotUse;
-class Excel_Example_DataEntry_DoNotUseDefaultTypeInternal;
-extern Excel_Example_DataEntry_DoNotUseDefaultTypeInternal _Excel_Example_DataEntry_DoNotUse_default_instance_;
 }  // namespace HiProtobuf
 PROTOBUF_NAMESPACE_OPEN
 template<> ::HiProtobuf::Example* Arena::CreateMaybeMessage<::HiProtobuf::Example>(Arena*);
 template<> ::HiProtobuf::Excel_Example* Arena::CreateMaybeMessage<::HiProtobuf::Excel_Example>(Arena*);
-template<> ::HiProtobuf::Excel_Example_DataEntry_DoNotUse* Arena::CreateMaybeMessage<::HiProtobuf::Excel_Example_DataEntry_DoNotUse>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace HiProtobuf {
 
@@ -288,6 +281,18 @@ class Example :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>& name16() const;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>* mutable_name16();
 
+  // string id = 1;
+  void clear_id();
+  static const int kIdFieldNumber = 1;
+  const std::string& id() const;
+  void set_id(const std::string& value);
+  void set_id(std::string&& value);
+  void set_id(const char* value);
+  void set_id(const char* value, size_t size);
+  std::string* mutable_id();
+  std::string* release_id();
+  void set_allocated_id(std::string* id);
+
   // string name8 = 9;
   void clear_name8();
   static const int kName8FieldNumber = 9;
@@ -306,23 +311,11 @@ class Example :
   double name1() const;
   void set_name1(double value);
 
-  // int32 id = 1;
-  void clear_id();
-  static const int kIdFieldNumber = 1;
-  ::PROTOBUF_NAMESPACE_ID::int32 id() const;
-  void set_id(::PROTOBUF_NAMESPACE_ID::int32 value);
-
   // float name2 = 3;
   void clear_name2();
   static const int kName2FieldNumber = 3;
   float name2() const;
   void set_name2(float value);
-
-  // int64 name4 = 5;
-  void clear_name4();
-  static const int kName4FieldNumber = 5;
-  ::PROTOBUF_NAMESPACE_ID::int64 name4() const;
-  void set_name4(::PROTOBUF_NAMESPACE_ID::int64 value);
 
   // int32 name3 = 4;
   void clear_name3();
@@ -330,17 +323,23 @@ class Example :
   ::PROTOBUF_NAMESPACE_ID::int32 name3() const;
   void set_name3(::PROTOBUF_NAMESPACE_ID::int32 value);
 
-  // uint32 name5 = 6;
-  void clear_name5();
-  static const int kName5FieldNumber = 6;
-  ::PROTOBUF_NAMESPACE_ID::uint32 name5() const;
-  void set_name5(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  // int64 name4 = 5;
+  void clear_name4();
+  static const int kName4FieldNumber = 5;
+  ::PROTOBUF_NAMESPACE_ID::int64 name4() const;
+  void set_name4(::PROTOBUF_NAMESPACE_ID::int64 value);
 
   // uint64 name6 = 7;
   void clear_name6();
   static const int kName6FieldNumber = 7;
   ::PROTOBUF_NAMESPACE_ID::uint64 name6() const;
   void set_name6(::PROTOBUF_NAMESPACE_ID::uint64 value);
+
+  // uint32 name5 = 6;
+  void clear_name5();
+  static const int kName5FieldNumber = 6;
+  ::PROTOBUF_NAMESPACE_ID::uint32 name5() const;
+  void set_name5(::PROTOBUF_NAMESPACE_ID::uint32 value);
 
   // bool name7 = 8;
   void clear_name7();
@@ -368,48 +367,18 @@ class Example :
   ::PROTOBUF_NAMESPACE_ID::RepeatedField< bool > name15_;
   mutable std::atomic<int> _name15_cached_byte_size_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string> name16_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name8_;
   double name1_;
-  ::PROTOBUF_NAMESPACE_ID::int32 id_;
   float name2_;
-  ::PROTOBUF_NAMESPACE_ID::int64 name4_;
   ::PROTOBUF_NAMESPACE_ID::int32 name3_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 name5_;
+  ::PROTOBUF_NAMESPACE_ID::int64 name4_;
   ::PROTOBUF_NAMESPACE_ID::uint64 name6_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 name5_;
   bool name7_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_Example_2eproto;
 };
-// -------------------------------------------------------------------
-
-class Excel_Example_DataEntry_DoNotUse : public ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<Excel_Example_DataEntry_DoNotUse, 
-    ::PROTOBUF_NAMESPACE_ID::int32, ::HiProtobuf::Example,
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_INT32,
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_MESSAGE,
-    0 > {
-public:
-  typedef ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<Excel_Example_DataEntry_DoNotUse, 
-    ::PROTOBUF_NAMESPACE_ID::int32, ::HiProtobuf::Example,
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_INT32,
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_MESSAGE,
-    0 > SuperType;
-  Excel_Example_DataEntry_DoNotUse();
-  Excel_Example_DataEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  void MergeFrom(const Excel_Example_DataEntry_DoNotUse& other);
-  static const Excel_Example_DataEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const Excel_Example_DataEntry_DoNotUse*>(&_Excel_Example_DataEntry_DoNotUse_default_instance_); }
-  static bool ValidateKey(void*) { return true; }
-  static bool ValidateValue(void*) { return true; }
-  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& other) final;
-  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
-  private:
-  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
-    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_Example_2eproto);
-    return ::descriptor_table_Example_2eproto.file_level_metadata[1];
-  }
-
-  public:
-};
-
 // -------------------------------------------------------------------
 
 class Excel_Example :
@@ -454,7 +423,7 @@ class Excel_Example :
                &_Excel_Example_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    2;
+    1;
 
   void Swap(Excel_Example* other);
   friend void swap(Excel_Example& a, Excel_Example& b) {
@@ -519,29 +488,26 @@ class Excel_Example :
 
   // nested types ----------------------------------------------------
 
-
   // accessors -------------------------------------------------------
 
-  // map<int32, .HiProtobuf.Example> Data = 1;
+  // repeated .HiProtobuf.Example Data = 1;
   int data_size() const;
   void clear_data();
   static const int kDataFieldNumber = 1;
-  const ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::int32, ::HiProtobuf::Example >&
-      data() const;
-  ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::int32, ::HiProtobuf::Example >*
+  ::HiProtobuf::Example* mutable_data(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::HiProtobuf::Example >*
       mutable_data();
+  const ::HiProtobuf::Example& data(int index) const;
+  ::HiProtobuf::Example* add_data();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::HiProtobuf::Example >&
+      data() const;
 
   // @@protoc_insertion_point(class_scope:HiProtobuf.Excel_Example)
  private:
   class HasBitSetters;
 
   ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
-  ::PROTOBUF_NAMESPACE_ID::internal::MapField<
-      Excel_Example_DataEntry_DoNotUse,
-      ::PROTOBUF_NAMESPACE_ID::int32, ::HiProtobuf::Example,
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_INT32,
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_MESSAGE,
-      0 > data_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::HiProtobuf::Example > data_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_Example_2eproto;
 };
@@ -556,18 +522,55 @@ class Excel_Example :
 #endif  // __GNUC__
 // Example
 
-// int32 id = 1;
+// string id = 1;
 inline void Example::clear_id() {
-  id_ = 0;
+  id_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
-inline ::PROTOBUF_NAMESPACE_ID::int32 Example::id() const {
+inline const std::string& Example::id() const {
   // @@protoc_insertion_point(field_get:HiProtobuf.Example.id)
-  return id_;
+  return id_.GetNoArena();
 }
-inline void Example::set_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+inline void Example::set_id(const std::string& value) {
   
-  id_ = value;
+  id_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value);
   // @@protoc_insertion_point(field_set:HiProtobuf.Example.id)
+}
+inline void Example::set_id(std::string&& value) {
+  
+  id_.SetNoArena(
+    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:HiProtobuf.Example.id)
+}
+inline void Example::set_id(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  id_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:HiProtobuf.Example.id)
+}
+inline void Example::set_id(const char* value, size_t size) {
+  
+  id_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:HiProtobuf.Example.id)
+}
+inline std::string* Example::mutable_id() {
+  
+  // @@protoc_insertion_point(field_mutable:HiProtobuf.Example.id)
+  return id_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline std::string* Example::release_id() {
+  // @@protoc_insertion_point(field_release:HiProtobuf.Example.id)
+  
+  return id_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline void Example::set_allocated_id(std::string* id) {
+  if (id != nullptr) {
+    
+  } else {
+    
+  }
+  id_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), id);
+  // @@protoc_insertion_point(field_set_allocated:HiProtobuf.Example.id)
 }
 
 // double name1 = 2;
@@ -996,33 +999,41 @@ Example::mutable_name16() {
 
 // -------------------------------------------------------------------
 
-// -------------------------------------------------------------------
-
 // Excel_Example
 
-// map<int32, .HiProtobuf.Example> Data = 1;
+// repeated .HiProtobuf.Example Data = 1;
 inline int Excel_Example::data_size() const {
   return data_.size();
 }
 inline void Excel_Example::clear_data() {
   data_.Clear();
 }
-inline const ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::int32, ::HiProtobuf::Example >&
-Excel_Example::data() const {
-  // @@protoc_insertion_point(field_map:HiProtobuf.Excel_Example.Data)
-  return data_.GetMap();
+inline ::HiProtobuf::Example* Excel_Example::mutable_data(int index) {
+  // @@protoc_insertion_point(field_mutable:HiProtobuf.Excel_Example.Data)
+  return data_.Mutable(index);
 }
-inline ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::int32, ::HiProtobuf::Example >*
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::HiProtobuf::Example >*
 Excel_Example::mutable_data() {
-  // @@protoc_insertion_point(field_mutable_map:HiProtobuf.Excel_Example.Data)
-  return data_.MutableMap();
+  // @@protoc_insertion_point(field_mutable_list:HiProtobuf.Excel_Example.Data)
+  return &data_;
+}
+inline const ::HiProtobuf::Example& Excel_Example::data(int index) const {
+  // @@protoc_insertion_point(field_get:HiProtobuf.Excel_Example.Data)
+  return data_.Get(index);
+}
+inline ::HiProtobuf::Example* Excel_Example::add_data() {
+  // @@protoc_insertion_point(field_add:HiProtobuf.Excel_Example.Data)
+  return data_.Add();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::HiProtobuf::Example >&
+Excel_Example::data() const {
+  // @@protoc_insertion_point(field_list:HiProtobuf.Excel_Example.Data)
+  return data_;
 }
 
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
-// -------------------------------------------------------------------
-
 // -------------------------------------------------------------------
 
 

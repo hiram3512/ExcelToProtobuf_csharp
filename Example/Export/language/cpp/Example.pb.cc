@@ -16,16 +16,11 @@
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 extern PROTOBUF_INTERNAL_EXPORT_Example_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Example_Example_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_Example_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_Excel_Example_DataEntry_DoNotUse_Example_2eproto;
 namespace HiProtobuf {
 class ExampleDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<Example> _instance;
 } _Example_default_instance_;
-class Excel_Example_DataEntry_DoNotUseDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<Excel_Example_DataEntry_DoNotUse> _instance;
-} _Excel_Example_DataEntry_DoNotUse_default_instance_;
 class Excel_ExampleDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<Excel_Example> _instance;
@@ -58,23 +53,9 @@ static void InitDefaultsscc_info_Excel_Example_Example_2eproto() {
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_Excel_Example_Example_2eproto =
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsscc_info_Excel_Example_Example_2eproto}, {
-      &scc_info_Excel_Example_DataEntry_DoNotUse_Example_2eproto.base,}};
-
-static void InitDefaultsscc_info_Excel_Example_DataEntry_DoNotUse_Example_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::HiProtobuf::_Excel_Example_DataEntry_DoNotUse_default_instance_;
-    new (ptr) ::HiProtobuf::Excel_Example_DataEntry_DoNotUse();
-  }
-  ::HiProtobuf::Excel_Example_DataEntry_DoNotUse::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_Excel_Example_DataEntry_DoNotUse_Example_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsscc_info_Excel_Example_DataEntry_DoNotUse_Example_2eproto}, {
       &scc_info_Example_Example_2eproto.base,}};
 
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_Example_2eproto[3];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_Example_2eproto[2];
 static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_Example_2eproto = nullptr;
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_Example_2eproto = nullptr;
 
@@ -101,15 +82,6 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_Example_2eproto::offsets[] PRO
   PROTOBUF_FIELD_OFFSET(::HiProtobuf::Example, name14_),
   PROTOBUF_FIELD_OFFSET(::HiProtobuf::Example, name15_),
   PROTOBUF_FIELD_OFFSET(::HiProtobuf::Example, name16_),
-  PROTOBUF_FIELD_OFFSET(::HiProtobuf::Excel_Example_DataEntry_DoNotUse, _has_bits_),
-  PROTOBUF_FIELD_OFFSET(::HiProtobuf::Excel_Example_DataEntry_DoNotUse, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::HiProtobuf::Excel_Example_DataEntry_DoNotUse, key_),
-  PROTOBUF_FIELD_OFFSET(::HiProtobuf::Excel_Example_DataEntry_DoNotUse, value_),
-  0,
-  1,
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::HiProtobuf::Excel_Example, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -119,45 +91,40 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_Example_2eproto::offsets[] PRO
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::HiProtobuf::Example)},
-  { 22, 29, sizeof(::HiProtobuf::Excel_Example_DataEntry_DoNotUse)},
-  { 31, -1, sizeof(::HiProtobuf::Excel_Example)},
+  { 22, -1, sizeof(::HiProtobuf::Excel_Example)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::HiProtobuf::_Example_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::HiProtobuf::_Excel_Example_DataEntry_DoNotUse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::HiProtobuf::_Excel_Example_default_instance_),
 };
 
 const char descriptor_table_protodef_Example_2eproto[] =
   "\n\rExample.proto\022\nHiProtobuf\"\214\002\n\007Example\022"
-  "\n\n\002id\030\001 \001(\005\022\r\n\005name1\030\002 \001(\001\022\r\n\005name2\030\003 \001("
+  "\n\n\002id\030\001 \001(\t\022\r\n\005name1\030\002 \001(\001\022\r\n\005name2\030\003 \001("
   "\002\022\r\n\005name3\030\004 \001(\005\022\r\n\005name4\030\005 \001(\003\022\r\n\005name5"
   "\030\006 \001(\r\022\r\n\005name6\030\007 \001(\004\022\r\n\005name7\030\010 \001(\010\022\r\n\005"
   "name8\030\t \001(\t\022\r\n\005name9\030\n \003(\001\022\016\n\006name10\030\013 \003"
   "(\002\022\016\n\006name11\030\014 \003(\005\022\016\n\006name12\030\r \003(\003\022\016\n\006na"
   "me13\030\016 \003(\r\022\016\n\006name14\030\017 \003(\004\022\016\n\006name15\030\020 \003"
-  "(\010\022\016\n\006name16\030\021 \003(\t\"\204\001\n\rExcel_Example\0221\n\004"
-  "Data\030\001 \003(\0132#.HiProtobuf.Excel_Example.Da"
-  "taEntry\032@\n\tDataEntry\022\013\n\003key\030\001 \001(\005\022\"\n\005val"
-  "ue\030\002 \001(\0132\023.HiProtobuf.Example:\0028\001B;\n\031com"
-  ".HiProtobuf.HiProtobufB\021Example_classnam"
-  "e\252\002\nHiProtobufb\006proto3"
+  "(\010\022\016\n\006name16\030\021 \003(\t\"2\n\rExcel_Example\022!\n\004D"
+  "ata\030\001 \003(\0132\023.HiProtobuf.ExampleB:\n\031com.Hi"
+  "Protobuf.HiProtobufB\021Example_classname\252\002"
+  "\tTableToolb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_Example_2eproto_deps[1] = {
 };
-static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_Example_2eproto_sccs[3] = {
+static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_Example_2eproto_sccs[2] = {
   &scc_info_Example_Example_2eproto.base,
   &scc_info_Excel_Example_Example_2eproto.base,
-  &scc_info_Excel_Example_DataEntry_DoNotUse_Example_2eproto.base,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_Example_2eproto_once;
 static bool descriptor_table_Example_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_Example_2eproto = {
-  &descriptor_table_Example_2eproto_initialized, descriptor_table_protodef_Example_2eproto, "Example.proto", 502,
-  &descriptor_table_Example_2eproto_once, descriptor_table_Example_2eproto_sccs, descriptor_table_Example_2eproto_deps, 3, 0,
+  &descriptor_table_Example_2eproto_initialized, descriptor_table_protodef_Example_2eproto, "Example.proto", 418,
+  &descriptor_table_Example_2eproto_once, descriptor_table_Example_2eproto_sccs, descriptor_table_Example_2eproto_deps, 2, 0,
   schemas, file_default_instances, TableStruct_Example_2eproto::offsets,
-  file_level_metadata_Example_2eproto, 3, file_level_enum_descriptors_Example_2eproto, file_level_service_descriptors_Example_2eproto,
+  file_level_metadata_Example_2eproto, 2, file_level_enum_descriptors_Example_2eproto, file_level_service_descriptors_Example_2eproto,
 };
 
 // Force running AddDescriptors() at dynamic initialization time.
@@ -209,6 +176,10 @@ Example::Example(const Example& from)
       name15_(from.name15_),
       name16_(from.name16_) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
+  id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (from.id().size() > 0) {
+    id_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.id_);
+  }
   name8_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (from.name8().size() > 0) {
     name8_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.name8_);
@@ -221,6 +192,7 @@ Example::Example(const Example& from)
 
 void Example::SharedCtor() {
   ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_Example_Example_2eproto.base);
+  id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   name8_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   ::memset(&name1_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&name7_) -
@@ -233,6 +205,7 @@ Example::~Example() {
 }
 
 void Example::SharedDtor() {
+  id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   name8_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
@@ -259,6 +232,7 @@ void Example::Clear() {
   name14_.Clear();
   name15_.Clear();
   name16_.Clear();
+  id_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   name8_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   ::memset(&name1_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&name7_) -
@@ -274,10 +248,10 @@ const char* Example::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::in
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // int32 id = 1;
+      // string id = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParserUTF8(mutable_id(), ptr, ctx, "HiProtobuf.Example.id");
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -449,13 +423,15 @@ bool Example::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // int32 id = 1;
+      // string id = 1;
       case 1: {
-        if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (8 & 0xFF)) {
-
-          DO_((::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadPrimitive<
-                   ::PROTOBUF_NAMESPACE_ID::int32, ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_INT32>(
-                 input, &id_)));
+        if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (10 & 0xFF)) {
+          DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadString(
+                input, this->mutable_id()));
+          DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+            this->id().data(), static_cast<int>(this->id().length()),
+            ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::PARSE,
+            "HiProtobuf.Example.id"));
         } else {
           goto handle_unusual;
         }
@@ -723,9 +699,14 @@ void Example::SerializeWithCachedSizes(
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // int32 id = 1;
-  if (this->id() != 0) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32(1, this->id(), output);
+  // string id = 1;
+  if (this->id().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->id().data(), static_cast<int>(this->id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "HiProtobuf.Example.id");
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteStringMaybeAliased(
+      1, this->id(), output);
   }
 
   // double name1 = 2;
@@ -867,9 +848,15 @@ void Example::SerializeWithCachedSizes(
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // int32 id = 1;
-  if (this->id() != 0) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->id(), target);
+  // string id = 1;
+  if (this->id().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->id().data(), static_cast<int>(this->id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "HiProtobuf.Example.id");
+    target =
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteStringToArray(
+        1, this->id(), target);
   }
 
   // double name1 = 2;
@@ -1153,6 +1140,13 @@ size_t Example::ByteSizeLong() const {
       this->name16(i));
   }
 
+  // string id = 1;
+  if (this->id().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->id());
+  }
+
   // string name8 = 9;
   if (this->name8().size() > 0) {
     total_size += 1 +
@@ -1165,23 +1159,9 @@ size_t Example::ByteSizeLong() const {
     total_size += 1 + 8;
   }
 
-  // int32 id = 1;
-  if (this->id() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-        this->id());
-  }
-
   // float name2 = 3;
   if (!(this->name2() <= 0 && this->name2() >= 0)) {
     total_size += 1 + 4;
-  }
-
-  // int64 name4 = 5;
-  if (this->name4() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64Size(
-        this->name4());
   }
 
   // int32 name3 = 4;
@@ -1191,11 +1171,11 @@ size_t Example::ByteSizeLong() const {
         this->name3());
   }
 
-  // uint32 name5 = 6;
-  if (this->name5() != 0) {
+  // int64 name4 = 5;
+  if (this->name4() != 0) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->name5());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64Size(
+        this->name4());
   }
 
   // uint64 name6 = 7;
@@ -1203,6 +1183,13 @@ size_t Example::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
         this->name6());
+  }
+
+  // uint32 name5 = 6;
+  if (this->name5() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->name5());
   }
 
   // bool name7 = 8;
@@ -1245,6 +1232,10 @@ void Example::MergeFrom(const Example& from) {
   name14_.MergeFrom(from.name14_);
   name15_.MergeFrom(from.name15_);
   name16_.MergeFrom(from.name16_);
+  if (from.id().size() > 0) {
+
+    id_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.id_);
+  }
   if (from.name8().size() > 0) {
 
     name8_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.name8_);
@@ -1252,23 +1243,20 @@ void Example::MergeFrom(const Example& from) {
   if (!(from.name1() <= 0 && from.name1() >= 0)) {
     set_name1(from.name1());
   }
-  if (from.id() != 0) {
-    set_id(from.id());
-  }
   if (!(from.name2() <= 0 && from.name2() >= 0)) {
     set_name2(from.name2());
-  }
-  if (from.name4() != 0) {
-    set_name4(from.name4());
   }
   if (from.name3() != 0) {
     set_name3(from.name3());
   }
-  if (from.name5() != 0) {
-    set_name5(from.name5());
+  if (from.name4() != 0) {
+    set_name4(from.name4());
   }
   if (from.name6() != 0) {
     set_name6(from.name6());
+  }
+  if (from.name5() != 0) {
+    set_name5(from.name5());
   }
   if (from.name7() != 0) {
     set_name7(from.name7());
@@ -1308,37 +1296,21 @@ void Example::InternalSwap(Example* other) {
   name14_.InternalSwap(&other->name14_);
   name15_.InternalSwap(&other->name15_);
   name16_.InternalSwap(CastToBase(&other->name16_));
+  id_.Swap(&other->id_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
   name8_.Swap(&other->name8_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
   swap(name1_, other->name1_);
-  swap(id_, other->id_);
   swap(name2_, other->name2_);
-  swap(name4_, other->name4_);
   swap(name3_, other->name3_);
-  swap(name5_, other->name5_);
+  swap(name4_, other->name4_);
   swap(name6_, other->name6_);
+  swap(name5_, other->name5_);
   swap(name7_, other->name7_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata Example::GetMetadata() const {
   return GetMetadataStatic();
-}
-
-
-// ===================================================================
-
-Excel_Example_DataEntry_DoNotUse::Excel_Example_DataEntry_DoNotUse() {}
-Excel_Example_DataEntry_DoNotUse::Excel_Example_DataEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-    : SuperType(arena) {}
-void Excel_Example_DataEntry_DoNotUse::MergeFrom(const Excel_Example_DataEntry_DoNotUse& other) {
-  MergeFromInternal(other);
-}
-::PROTOBUF_NAMESPACE_ID::Metadata Excel_Example_DataEntry_DoNotUse::GetMetadata() const {
-  return GetMetadataStatic();
-}
-void Excel_Example_DataEntry_DoNotUse::MergeFrom(
-    const ::PROTOBUF_NAMESPACE_ID::Message& other) {
-  ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom(other);
 }
 
 
@@ -1361,9 +1333,9 @@ Excel_Example::Excel_Example()
 }
 Excel_Example::Excel_Example(const Excel_Example& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
+      _internal_metadata_(nullptr),
+      data_(from.data_) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  data_.MergeFrom(from.data_);
   // @@protoc_insertion_point(copy_constructor:HiProtobuf.Excel_Example)
 }
 
@@ -1406,13 +1378,13 @@ const char* Excel_Example::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // map<int32, .HiProtobuf.Example> Data = 1;
+      // repeated .HiProtobuf.Example Data = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           ptr -= 1;
           do {
             ptr += 1;
-            ptr = ctx->ParseMessage(&data_, ptr);
+            ptr = ctx->ParseMessage(add_data(), ptr);
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<::PROTOBUF_NAMESPACE_ID::uint8>(ptr) == 10);
@@ -1448,18 +1420,11 @@ bool Excel_Example::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // map<int32, .HiProtobuf.Example> Data = 1;
+      // repeated .HiProtobuf.Example Data = 1;
       case 1: {
         if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (10 & 0xFF)) {
-          Excel_Example_DataEntry_DoNotUse::Parser< ::PROTOBUF_NAMESPACE_ID::internal::MapField<
-              Excel_Example_DataEntry_DoNotUse,
-              ::PROTOBUF_NAMESPACE_ID::int32, ::HiProtobuf::Example,
-              ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_INT32,
-              ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_MESSAGE,
-              0 >,
-            ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::int32, ::HiProtobuf::Example > > parser(&data_);
-          DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadMessageNoVirtual(
-              input, &parser));
+          DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadMessage(
+                input, add_data()));
         } else {
           goto handle_unusual;
         }
@@ -1493,37 +1458,13 @@ void Excel_Example::SerializeWithCachedSizes(
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // map<int32, .HiProtobuf.Example> Data = 1;
-  if (!this->data().empty()) {
-    typedef ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::int32, ::HiProtobuf::Example >::const_pointer
-        ConstPtr;
-    typedef ::PROTOBUF_NAMESPACE_ID::internal::SortItem< ::PROTOBUF_NAMESPACE_ID::int32, ConstPtr > SortItem;
-    typedef ::PROTOBUF_NAMESPACE_ID::internal::CompareByFirstField<SortItem> Less;
-
-    if (output->IsSerializationDeterministic() &&
-        this->data().size() > 1) {
-      ::std::unique_ptr<SortItem[]> items(
-          new SortItem[this->data().size()]);
-      typedef ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::int32, ::HiProtobuf::Example >::size_type size_type;
-      size_type n = 0;
-      for (::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::int32, ::HiProtobuf::Example >::const_iterator
-          it = this->data().begin();
-          it != this->data().end(); ++it, ++n) {
-        items[static_cast<ptrdiff_t>(n)] = SortItem(&*it);
-      }
-      ::std::sort(&items[0], &items[static_cast<ptrdiff_t>(n)], Less());
-      for (size_type i = 0; i < n; i++) {
-        Excel_Example_DataEntry_DoNotUse::MapEntryWrapper entry(nullptr, items[static_cast<ptrdiff_t>(i)].second->first, items[static_cast<ptrdiff_t>(i)].second->second);
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteMessageMaybeToArray(1, entry, output);
-      }
-    } else {
-      for (::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::int32, ::HiProtobuf::Example >::const_iterator
-          it = this->data().begin();
-          it != this->data().end(); ++it) {
-        Excel_Example_DataEntry_DoNotUse::MapEntryWrapper entry(nullptr, it->first, it->second);
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteMessageMaybeToArray(1, entry, output);
-      }
-    }
+  // repeated .HiProtobuf.Example Data = 1;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->data_size()); i < n; i++) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteMessageMaybeToArray(
+      1,
+      this->data(static_cast<int>(i)),
+      output);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -1539,37 +1480,12 @@ void Excel_Example::SerializeWithCachedSizes(
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // map<int32, .HiProtobuf.Example> Data = 1;
-  if (!this->data().empty()) {
-    typedef ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::int32, ::HiProtobuf::Example >::const_pointer
-        ConstPtr;
-    typedef ::PROTOBUF_NAMESPACE_ID::internal::SortItem< ::PROTOBUF_NAMESPACE_ID::int32, ConstPtr > SortItem;
-    typedef ::PROTOBUF_NAMESPACE_ID::internal::CompareByFirstField<SortItem> Less;
-
-    if (false &&
-        this->data().size() > 1) {
-      ::std::unique_ptr<SortItem[]> items(
-          new SortItem[this->data().size()]);
-      typedef ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::int32, ::HiProtobuf::Example >::size_type size_type;
-      size_type n = 0;
-      for (::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::int32, ::HiProtobuf::Example >::const_iterator
-          it = this->data().begin();
-          it != this->data().end(); ++it, ++n) {
-        items[static_cast<ptrdiff_t>(n)] = SortItem(&*it);
-      }
-      ::std::sort(&items[0], &items[static_cast<ptrdiff_t>(n)], Less());
-      for (size_type i = 0; i < n; i++) {
-        Excel_Example_DataEntry_DoNotUse::MapEntryWrapper entry(nullptr, items[static_cast<ptrdiff_t>(i)].second->first, items[static_cast<ptrdiff_t>(i)].second->second);
-        target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::InternalWriteMessageNoVirtualToArray(1, entry, target);
-      }
-    } else {
-      for (::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::int32, ::HiProtobuf::Example >::const_iterator
-          it = this->data().begin();
-          it != this->data().end(); ++it) {
-        Excel_Example_DataEntry_DoNotUse::MapEntryWrapper entry(nullptr, it->first, it->second);
-        target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::InternalWriteMessageNoVirtualToArray(1, entry, target);
-      }
-    }
+  // repeated .HiProtobuf.Example Data = 1;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->data_size()); i < n; i++) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        1, this->data(static_cast<int>(i)), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -1593,15 +1509,15 @@ size_t Excel_Example::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // map<int32, .HiProtobuf.Example> Data = 1;
-  total_size += 1 *
-      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(this->data_size());
-  for (::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::int32, ::HiProtobuf::Example >::const_iterator
-      it = this->data().begin();
-      it != this->data().end(); ++it) {
-    Excel_Example_DataEntry_DoNotUse::MapEntryWrapper entry(nullptr, it->first, it->second);
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-        MessageSizeNoVirtual(entry);
+  // repeated .HiProtobuf.Example Data = 1;
+  {
+    unsigned int count = static_cast<unsigned int>(this->data_size());
+    total_size += 1UL * count;
+    for (unsigned int i = 0; i < count; i++) {
+      total_size +=
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+          this->data(static_cast<int>(i)));
+    }
   }
 
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
@@ -1659,7 +1575,7 @@ void Excel_Example::Swap(Excel_Example* other) {
 void Excel_Example::InternalSwap(Excel_Example* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
-  data_.Swap(&other->data_);
+  CastToBase(&data_)->InternalSwap(CastToBase(&other->data_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata Excel_Example::GetMetadata() const {
@@ -1672,9 +1588,6 @@ void Excel_Example::InternalSwap(Excel_Example* other) {
 PROTOBUF_NAMESPACE_OPEN
 template<> PROTOBUF_NOINLINE ::HiProtobuf::Example* Arena::CreateMaybeMessage< ::HiProtobuf::Example >(Arena* arena) {
   return Arena::CreateInternal< ::HiProtobuf::Example >(arena);
-}
-template<> PROTOBUF_NOINLINE ::HiProtobuf::Excel_Example_DataEntry_DoNotUse* Arena::CreateMaybeMessage< ::HiProtobuf::Excel_Example_DataEntry_DoNotUse >(Arena* arena) {
-  return Arena::CreateInternal< ::HiProtobuf::Excel_Example_DataEntry_DoNotUse >(arena);
 }
 template<> PROTOBUF_NOINLINE ::HiProtobuf::Excel_Example* Arena::CreateMaybeMessage< ::HiProtobuf::Excel_Example >(Arena* arena) {
   return Arena::CreateInternal< ::HiProtobuf::Excel_Example >(arena);
