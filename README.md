@@ -1,5 +1,8 @@
 # HiExcel2Protobuf(Excel转Protobuf工具)
 
+#### 不再维护
+推荐使用python版本: [https://github.com/hiram3512/ExcelToProtobuf_python](https://github.com/hiram3512/ExcelToProtobuf_python)
+
 #### 功能说明
 - 将Excel文件生成protobuf文件和protobuf数据
 - 目前支持生成五种语言C++(生成.cpp),C#(生成.cs和.dll),Golang(生成.go),Java(生成.java),Python(生成.py)
