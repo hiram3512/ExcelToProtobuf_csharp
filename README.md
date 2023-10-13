@@ -1,7 +1,8 @@
 # HiExcel2Protobuf(Excel转Protobuf工具)
 
 推荐使用python版本: [https://github.com/hiram3512/ExcelToProtobuf_python](https://github.com/hiram3512/ExcelToProtobuf_python)
-- 扩平台支持
+优势:
+- 跨平台支持(win,macOS)
 - 自定义proto作为规则
 - 不用再二次编译文件填充数据
 - 不用再依赖.Net Framework
